@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 600" role="img" aria-label="Offbeat and Overdrawn cover: a falling bar chart on a checkerboard field">
+  <defs>
+    <pattern id="o-chk" width="50" height="50" patternUnits="userSpaceOnUse">
+      <rect width="50" height="50" fill="#f4f1e8"/>
+      <rect width="25" height="25" fill="#0e0e0e"/>
+      <rect x="25" y="25" width="25" height="25" fill="#0e0e0e"/>
+    </pattern>
+  </defs>
+  <rect width="600" height="600" fill="#2f6fd0"/>
+  <rect x="0" y="0" width="600" height="600" fill="url(#o-chk)" opacity=".16"/>
+
+  <!-- the balance goes the wrong way -->
+  <g fill="#f4f1e8" stroke="#0e0e0e" stroke-width="8">
+    <rect x="72"  y="220" width="72" height="230"/>
+    <rect x="164" y="268" width="72" height="182"/>
+    <rect x="256" y="314" width="72" height="136"/>
+    <rect x="348" y="360" width="72" height="90"/>
+  </g>
+  <rect x="440" y="450" width="72" height="96" fill="#c8352b" stroke="#0e0e0e" stroke-width="8"/>
+  <path d="M64 450h480" stroke="#0e0e0e" stroke-width="12"/>
+  <path d="M92 190 L520 470" stroke="#ffc629" stroke-width="14" stroke-linecap="round"/>
+  <path d="M498 430l30 46-54 6z" fill="#ffc629" stroke="#0e0e0e" stroke-width="6"/>
+
+  <text x="300" y="104" text-anchor="middle" font-family="Haettenschweiler,'Arial Narrow Bold',Impact,sans-serif" font-size="86" fill="#f4f1e8" letter-spacing="2" textLength="360" lengthAdjust="spacingAndGlyphs">OFFBEAT</text>
+  <text x="300" y="164" text-anchor="middle" font-family="Haettenschweiler,'Arial Narrow Bold',Impact,sans-serif" font-size="60" fill="#ffc629" letter-spacing="6" textLength="420" lengthAdjust="spacingAndGlyphs">&amp; OVERDRAWN</text>
+  <text x="300" y="580" text-anchor="middle" font-family="ui-monospace,monospace" font-size="20" fill="#f4f1e8" letter-spacing="10">HALF BAD · LP02</text>
+</svg>

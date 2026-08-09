@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>HALF BAD — Eight-piece ska from Coventry</title>
+<meta name="description" content="Official site of HALF BAD, an eight-piece two-tone ska band from Coventry. Tour dates, merch, and the new album Porkpie Paranoia.">
+<meta name="theme-color" content="#0e0e0e">
+<meta property="og:title" content="HALF BAD — Official Site">
+<meta property="og:description" content="Eight-piece two-tone racket from Coventry. New album Porkpie Paranoia out now.">
+<meta property="og:type" content="website">
+<link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+
+<!-- ══ TICKER ══ -->
+<div class="ticker" aria-label="Announcements">
+  <div class="ticker__track">
+    <span class="ticker__set">
+      <b>★</b> New album <em>PORKPIE PARANOIA</em> out now
+      <b>★</b> UK &amp; EU tour on sale Friday 10am
+      <b>★</b> Free 7" with every vinyl order
+      <b>★</b> Coventry homecoming show — 2 nights, 1 left
+      <b>★</b> New album <em>PORKPIE PARANOIA</em> out now
+      <b>★</b> UK &amp; EU tour on sale Friday 10am
+      <b>★</b> Free 7" with every vinyl order
+      <b>★</b> Coventry homecoming show — 2 nights, 1 left
+    </span>
+  </div>
+</div>
+
+<!-- ══ NAV ══ -->
+<header class="nav" id="nav">
+  <div class="nav__inner">
+    <a class="brand" href="#top" aria-label="HALF BAD home">
+      <img src="assets/img/logo-halfbad.svg" alt="" width="42" height="42" class="brand__mark">
+      <span class="brand__type">HALF<span class="brand__slash">/</span>BAD</span>
+    </a>
+
+    <nav class="nav__links" id="navLinks" aria-label="Primary">
+      <a href="#tour">Tour</a>
+      <a href="#merch">Merch</a>
+      <a href="#music">Music</a>
+      <a href="#band">Band</a>
+      <a href="#list" class="nav__cta">Mailing List</a>
+    </nav>
+
+    <div class="nav__tools">
+      <button class="cart" id="cartBtn" aria-label="Open cart" aria-expanded="false" aria-controls="cartPanel">
+        <span class="cart__icon" aria-hidden="true">▣</span>
+        <span class="cart__label">Cart</span>
+        <span class="cart__count" id="cartCount">0</span>
+      </button>
+      <button class="burger" id="burger" aria-label="Menu" aria-expanded="false" aria-controls="navLinks">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+  <div class="checkerstrip" aria-hidden="true"></div>
+</header>
+
+<main id="main">
+
+<!-- ══ HERO ══ -->
+<section class="hero" id="top">
+  <div class="hero__board" aria-hidden="true"></div>
+  <div class="hero__inner">
+    <div class="hero__copy">
+      <p class="eyebrow">Coventry, England · est. 2017 · eight pieces, one bad habit</p>
+      <h1 class="hero__title"><span class="checkertext">HALF</span><br><span class="checkertext">BAD</span></h1>
+      <p class="hero__blurb">
+        Two-tone, three horns and a rhythm section that refuses to be told.
+        Skanking loud since the first offbeat.
+      </p>
+      <div class="hero__actions">
+        <a class="btn btn--primary" href="#tour">Tour Dates</a>
+        <a class="btn btn--ghost" href="#music">Hear the Record</a>
+      </div>
+      <ul class="hero__stats">
+        <li><b id="statReleases">–</b><span>Releases</span></li>
+        <li><b id="statShows">–</b><span>Shows Announced</span></li>
+        <li><b>08</b><span>Members</span></li>
+      </ul>
+    </div>
+    <div class="hero__art">
+      <img src="assets/img/hero-figure.svg" alt="Silhouette of a horn player in a porkpie hat and dark glasses" width="520" height="620">
+      <div class="hero__badge">
+        <span>NEW LP</span>
+        <strong>PORKPIE<br>PARANOIA</strong>
+        <a href="#music">Out Now →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ TOUR ══ -->
+<section class="section section--tour" id="tour">
+  <div class="wrap">
+    <header class="sechead">
+      <h2 class="sechead__title">On Tour</h2>
+      <p class="sechead__sub">The Paranoia Tour · 2026 — 2027. Doors at 7, offbeat at 8.</p>
+    </header>
+
+    <div class="tour__bar">
+      <div class="filters" role="group" aria-label="Filter tour dates by region">
+        <button class="chip is-on" data-region="all">All Dates</button>
+        <button class="chip" data-region="uk">UK &amp; Ireland</button>
+        <button class="chip" data-region="eu">Europe</button>
+        <button class="chip" data-region="na">North America</button>
+        <button class="chip" data-region="fest">Festivals</button>
+      </div>
+      <p class="tour__count"><span id="tourCount">0</span> shows listed</p>
+    </div>
+
+    <ol class="dates" id="dates"></ol>
+
+    <p class="tour__empty" id="tourEmpty" hidden>No dates in that territory yet. Shout at us and we'll come.</p>
+
+    <div class="tour__foot">
+      <div class="callout">
+        <h3>Not coming to your town?</h3>
+        <p>Tell us where you are. We route the next run off this list — no joke, that's how we ended up in Ghent twice.</p>
+        <a class="btn btn--small" href="#list">Request a Show</a>
+      </div>
+      <div class="callout callout--alt">
+        <h3>Guest list &amp; accessibility</h3>
+        <p>Every venue on this run is step-free with accessible viewing. Email <a href="mailto:access@halfbad.example">access@halfbad.example</a> and we'll sort you out.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ MERCH ══ -->
+<section class="section section--merch" id="merch">
+  <div class="wrap">
+    <header class="sechead">
+      <h2 class="sechead__title">Merch</h2>
+      <p class="sechead__sub">Printed in Coventry. Shipped worldwide. Free 7" with every vinyl order.</p>
+    </header>
+
+    <div class="filters filters--merch" role="group" aria-label="Filter merch by category">
+      <button class="chip is-on" data-cat="all">Everything</button>
+      <button class="chip" data-cat="apparel">Apparel</button>
+      <button class="chip" data-cat="vinyl">Vinyl</button>
+      <button class="chip" data-cat="bits">Odds &amp; Ends</button>
+      <button class="chip" data-cat="bundle">Bundles</button>
+    </div>
+
+    <div class="grid" id="merchGrid"></div>
+
+    <ul class="shopinfo">
+      <li><b>Shipping</b> UK £3.95 · EU £7.50 · Rest of world £12. Free over £75.</li>
+      <li><b>Returns</b> 30 days, unworn, no interrogation.</li>
+      <li><b>Ethics</b> Organic cotton, WRAP-certified printer, water-based inks.</li>
+    </ul>
+  </div>
+</section>
+
+<!-- ══ DISCOGRAPHY ══ -->
+<section class="section section--music" id="music">
+  <div class="wrap">
+    <header class="sechead">
+      <h2 class="sechead__title">Discography</h2>
+      <p class="sechead__sub">Four albums, one EP, and a live record we probably shouldn't have released.</p>
+    </header>
+    <div class="discog" id="discog"></div>
+  </div>
+</section>
+
+<!-- ══ BAND ══ -->
+<section class="section section--band" id="band">
+  <div class="wrap">
+    <header class="sechead">
+      <h2 class="sechead__title">The Band</h2>
+      <p class="sechead__sub">Eight people, one van, an ongoing argument about the setlist.</p>
+    </header>
+    <div class="bandgrid">
+      <article class="bio"><h3>Winnie Okafor</h3><p>Lead vocals</p></article>
+      <article class="bio"><h3>Dex Mallory</h3><p>Vocals &amp; guitar</p></article>
+      <article class="bio"><h3>Sez Bramble</h3><p>Trombone</p></article>
+      <article class="bio"><h3>Kofi Adjei</h3><p>Trumpet</p></article>
+      <article class="bio"><h3>Priya Raval</h3><p>Tenor sax</p></article>
+      <article class="bio"><h3>Marco Sette</h3><p>Organ &amp; keys</p></article>
+      <article class="bio"><h3>Tommy Bright</h3><p>Bass</p></article>
+      <article class="bio"><h3>Ruth Delacroix</h3><p>Drums</p></article>
+    </div>
+    <div class="story">
+      <p>
+        HALF BAD started in 2017 in the back room of a Coventry pub that has since become a
+        letting agency. Eight people turned up to a jam advertised for four. Nobody left.
+      </p>
+      <p>
+        Since then: four records, two vans (RIP the first), a Reading slot at 11:40am that
+        nobody expected to be full, and a reputation for playing longer than the curfew allows.
+        The horns are loud, the organ is louder, and the whole thing is about three per cent
+        more sincere than it lets on.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- ══ MAILING LIST ══ -->
+<section class="section section--list" id="list">
+  <div class="wrap wrap--narrow">
+    <h2 class="sechead__title sechead__title--center">Join the Rude Mail</h2>
+    <p class="list__sub">Presales, tour routing votes, and roughly one email a month. No noise.</p>
+    <form class="signup" id="signup" novalidate>
+      <div class="field">
+        <label for="email">Email address</label>
+        <input type="email" id="email" name="email" placeholder="you@example.com" autocomplete="email" required>
+      </div>
+      <div class="field">
+        <label for="city">Your town (so we can route to it)</label>
+        <input type="text" id="city" name="city" placeholder="Coventry" autocomplete="address-level2">
+      </div>
+      <button class="btn btn--primary btn--wide" type="submit">Sign Me Up</button>
+      <p class="formnote" id="formNote" role="status" aria-live="polite"></p>
+    </form>
+  </div>
+</section>
+
+</main>
+
+<!-- ══ FOOTER ══ -->
+<footer class="foot">
+  <div class="checkerstrip" aria-hidden="true"></div>
+  <div class="wrap foot__inner">
+    <div class="foot__brand">
+      <img src="assets/img/logo-halfbad.svg" alt="" width="52" height="52">
+      <p>HALF BAD<br><small>Coventry, England</small></p>
+    </div>
+    <nav class="foot__col" aria-label="Site">
+      <h3>Site</h3>
+      <a href="#tour">Tour</a><a href="#merch">Merch</a><a href="#music">Music</a><a href="#band">Band</a>
+    </nav>
+    <nav class="foot__col" aria-label="Elsewhere">
+      <h3>Elsewhere</h3>
+      <a href="#">Bandcamp</a><a href="#">Spotify</a><a href="#">Instagram</a><a href="#">YouTube</a>
+    </nav>
+    <div class="foot__col">
+      <h3>Business</h3>
+      <a href="mailto:booking@halfbad.example">Booking</a>
+      <a href="mailto:press@halfbad.example">Press &amp; photos</a>
+      <a href="mailto:shop@halfbad.example">Order help</a>
+    </div>
+  </div>
+  <p class="foot__legal">© <span id="year">2026</span> HALF BAD. All dates subject to the van. Site built with two colours.</p>
+</footer>
+
+<!-- ══ CART PANEL ══ -->
+<div class="cartpanel" id="cartPanel" hidden aria-label="Shopping cart">
+  <div class="cartpanel__head">
+    <h2>Your Cart</h2>
+    <button class="cartpanel__close" id="cartClose" aria-label="Close cart">✕</button>
+  </div>
+  <ul class="cartpanel__list" id="cartList"></ul>
+  <div class="cartpanel__foot">
+    <p class="cartpanel__total"><span>Subtotal</span><b id="cartTotal">£0.00</b></p>
+    <button class="btn btn--primary btn--wide" id="checkout">Checkout</button>
+    <p class="cartpanel__note">Demo store — nothing is charged.</p>
+  </div>
+</div>
+<div class="scrim" id="scrim" hidden></div>
+
+<script src="assets/js/data.js"></script>
+<script src="assets/js/main.js"></script>
+</body>
+</html>

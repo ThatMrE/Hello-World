@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" role="img" aria-label="Black t-shirt with a two-tone checkerboard chest panel">
+  <defs>
+    <pattern id="t-chk" width="28" height="28" patternUnits="userSpaceOnUse">
+      <rect width="28" height="28" fill="#f4f1e8"/>
+      <rect width="14" height="14" fill="#0e0e0e"/>
+      <rect x="14" y="14" width="14" height="14" fill="#0e0e0e"/>
+    </pattern>
+    <path id="tee" d="M148 74 L112 92 L74 158 L118 184 L132 154 L132 348 Q200 360 268 348 L268 154 L282 184 L326 158 L288 92 L252 74 Q200 108 148 74 Z"/>
+    <clipPath id="teeClip"><use href="#tee"/></clipPath>
+  </defs>
+  <rect width="400" height="400" fill="#d9d4c6"/>
+  <use href="#tee" fill="#0e0e0e"/>
+  <g clip-path="url(#teeClip)">
+    <rect x="120" y="176" width="160" height="84" fill="url(#t-chk)"/>
+    <rect x="120" y="176" width="160" height="84" fill="none" stroke="#f4f1e8" stroke-width="5"/>
+  </g>
+  <!-- ringer collar -->
+  <path d="M148 74 Q200 108 252 74" fill="none" stroke="#c8352b" stroke-width="9"/>
+  <use href="#tee" fill="none" stroke="#0e0e0e" stroke-width="5"/>
+  <text x="200" y="300" text-anchor="middle" font-family="Haettenschweiler,'Arial Narrow Bold',Impact,sans-serif" font-size="30" fill="#f4f1e8" letter-spacing="4" textLength="120" lengthAdjust="spacingAndGlyphs">HALF BAD</text>
+</svg>

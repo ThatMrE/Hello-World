@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" role="img" aria-label="Tour survival kit box containing a tee, pin set, tote and signed setlist">
+  <defs>
+    <pattern id="k-chk" width="22" height="22" patternUnits="userSpaceOnUse">
+      <rect width="22" height="22" fill="#f4f1e8"/>
+      <rect width="11" height="11" fill="#0e0e0e"/>
+      <rect x="11" y="11" width="11" height="11" fill="#0e0e0e"/>
+    </pattern>
+  </defs>
+  <rect width="400" height="400" fill="#ffc629"/>
+
+  <!-- setlist paper -->
+  <g transform="rotate(-7 200 210)">
+    <rect x="118" y="96" width="164" height="200" fill="#f4f1e8" stroke="#0e0e0e" stroke-width="5"/>
+    <text x="200" y="128" text-anchor="middle" font-family="Haettenschweiler,'Arial Narrow Bold',Impact,sans-serif" font-size="24" fill="#0e0e0e" letter-spacing="3" textLength="110" lengthAdjust="spacingAndGlyphs">SETLIST</text>
+    <g stroke="#0e0e0e" stroke-width="4" opacity=".8">
+      <path d="M136 150h128M136 172h112M136 194h128M136 216h96M136 238h120"/>
+    </g>
+    <path d="M142 268q26-22 48 0t54-14" fill="none" stroke="#c8352b" stroke-width="5" stroke-linecap="round"/>
+  </g>
+
+  <!-- box front -->
+  <rect x="52" y="238" width="296" height="122" fill="#0e0e0e" stroke="#0e0e0e" stroke-width="6"/>
+  <rect x="52" y="238" width="296" height="22" fill="url(#k-chk)"/>
+  <text x="200" y="308" text-anchor="middle" font-family="Haettenschweiler,'Arial Narrow Bold',Impact,sans-serif" font-size="40" fill="#f4f1e8" letter-spacing="3" textLength="280" lengthAdjust="spacingAndGlyphs">TOUR SURVIVAL</text>
+  <text x="200" y="340" text-anchor="middle" font-family="ui-monospace,monospace" font-size="16" fill="#ffc629" letter-spacing="10" textLength="190" lengthAdjust="spacingAndGlyphs">FOUR ITEMS</text>
+
+  <!-- pin peeking out -->
+  <circle cx="82" cy="222" r="30" fill="#c8352b" stroke="#0e0e0e" stroke-width="5"/>
+  <g fill="#0e0e0e">
+    <rect x="70" y="212" width="24" height="11" rx="2"/>
+    <ellipse cx="82" cy="224" rx="19" ry="4.5"/>
+  </g>
+  <!-- tote peeking out -->
+  <rect x="292" y="190" width="66" height="62" fill="#e8e2d2" stroke="#0e0e0e" stroke-width="5"/>
+  <path d="M310 190v-14a15 9 0 0 1 30 0v14" fill="none" stroke="#0e0e0e" stroke-width="5"/>
+</svg>

@@ -3,9 +3,24 @@
 A static site for **HALF BAD**, a (fictional) eight-piece ska band from Coventry.
 No build step, no dependencies — open `index.html` and it runs.
 
+**Live:** https://half-bad-official-site-cd-0ce7814b5e.netlify.app
+
 ```bash
 python3 -m http.server 8000   # then visit http://localhost:8000
 ```
+
+## Deploying
+
+The live site is the single-file bundle, not the multi-file tree:
+
+```bash
+python3 tools/bundle.py        # writes dist/index.html, everything inlined
+```
+
+Re-deploy by rebuilding the bundle, pushing, and re-importing it to Netlify from
+its public raw URL. `netlify.toml` covers the alternative route — pointing
+Netlify (or any static host) straight at this repo, publishing the root with no
+build step.
 
 ## Sections
 

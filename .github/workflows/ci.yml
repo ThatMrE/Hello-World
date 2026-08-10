@@ -1,0 +1,30 @@
+name: CI
+
+# Deployment is handled by the git-linked Netlify project, which builds this
+# repo on every push and opens a preview per pull request. This workflow only
+# guards the generated bundles.
+on:
+  push:
+    branches: [master]
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  check:
+    name: Bundle is in sync
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      # dist/ is generated. If someone edits assets/ without rebuilding, the
+      # standalone bundles silently drift from the site — fail loudly instead.
+      - run: python3 tools/bundle.py
+      - name: dist/ matches source
+        run: |
+          if ! git diff --quiet -- dist/; then
+            echo "::error::dist/ is stale. Run 'python3 tools/bundle.py' and commit the result."
+            git diff --stat -- dist/
+            exit 1
+          fi

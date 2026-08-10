@@ -3,7 +3,7 @@
 A static site for **HALF BAD**, a (fictional) eight-piece ska band from Coventry.
 No build step, no dependencies — open `index.html` and it runs.
 
-**Live:** https://thatmre.github.io/Hello-World/
+**Live:** https://half-bad.netlify.app
 
 ```bash
 python3 -m http.server 8000   # then visit http://localhost:8000
@@ -75,13 +75,13 @@ and links between them stay relative, so the folder works as a unit. The build
 fails loudly if any `assets/` reference survives the rewrite, so a renamed image
 can't silently ship as a broken link.
 
-Publishing is automatic: `.github/workflows/pages.yml` serves the repo root via
-GitHub Pages on every push to `master`, so the live site is never a snapshot.
-The same workflow runs `tools/bundle.py` on pull requests and fails if `dist/`
-has drifted from source, so the standalone bundles cannot go stale unnoticed.
+Publishing is automatic. The Netlify project is linked to this repo and builds
+it on every push to `master`, with a preview deploy per pull request, so the
+live site is never a hand-made snapshot. `netlify.toml` supplies the publish
+directory and headers; there is no build step.
 
-`netlify.toml` remains for anyone who would rather point Netlify (or another
-static host) at this repo instead — publish the root, no build step.
+`.github/workflows/ci.yml` runs `tools/bundle.py` and fails if `dist/` has
+drifted from source, so the standalone bundles cannot go stale unnoticed.
 
 ## Notes
 

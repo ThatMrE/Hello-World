@@ -1,0 +1,896 @@
+/*
+ * THE ANALOG ATLAS — global register of analog astronaut mission locations.
+ *
+ * Each record carries an Analog Fidelity Index score set (see standards.js).
+ * `precision` is honest about the coordinate: "exact" means a published or
+ * well-attested position for the habitat itself; "approx" means the settlement,
+ * valley, crater or campus that hosts it, good to roughly a few kilometres.
+ *
+ * Corrections and additions are welcome — use the SUBMIT panel on the map, or
+ * open a pull request against assets/js/sites.js.
+ */
+
+window.ANALOG_SITES = [
+
+/* ─────────────────────────  NORTH AMERICA  ───────────────────────── */
+{
+  id: 'mdrs', name: 'Mars Desert Research Station', alias: 'MDRS',
+  operator: 'The Mars Society', country: 'United States', flag: '🇺🇸', region: 'North America',
+  lat: 38.4065, lon: -110.7919, precision: 'exact',
+  env: 'desert', kind: 'habitat', target: 'Mars', status: 'active',
+  since: 2001, crew: '6–7', duration: '2–3 weeks (rotating field season)',
+  url: 'https://mdrs.marssociety.org/',
+  summary:
+    'The longest-running and most heavily used Mars surface analog in the world, on the San Rafael Swell about 11 km northwest of Hanksville, Utah. Rotating crews live in a two-storey cylindrical Hab with a GreenHab, Science Dome, RAM and observatories, running a full field season of 2–3 week missions with mandatory EVA suits, airlock protocol and daily reporting to a remote mission support team. Its published crew reports form the single largest continuous body of analog operations data anywhere.',
+  scores: { isolation: 4, environment: 5, duration: 3, eva: 4, comms: 3, closure: 3, ops: 4, science: 4 }
+},
+{
+  id: 'fmars', name: 'Flashline Mars Arctic Research Station', alias: 'FMARS',
+  operator: 'The Mars Society', country: 'Canada', flag: '🇨🇦', region: 'North America',
+  lat: 75.4313, lon: -89.8234, precision: 'exact',
+  env: 'arctic', kind: 'habitat', target: 'Mars', status: 'dormant',
+  since: 2000, crew: '6–7', duration: '1 week – 100 days',
+  url: 'https://www.marssociety.org/',
+  summary:
+    'The first Mars analog habitat ever built, deployed in 2000 on the northern rim of the Haughton impact crater on Devon Island in the Canadian high Arctic — the largest uninhabited island on Earth. Its 2007 Mars Arctic 365 lineage and the 2007 four-month campaign remain among the most demanding analog deployments attempted: genuine polar isolation, no possibility of evacuation for days, and impact-crater geology that is a legitimate planetary analog rather than a stand-in.',
+  scores: { isolation: 5, environment: 5, duration: 3, eva: 4, comms: 3, closure: 3, ops: 4, science: 4 }
+},
+{
+  id: 'hmp', name: 'Haughton–Mars Project Research Station', alias: 'HMP',
+  operator: 'Mars Institute / SETI Institute / NASA', country: 'Canada', flag: '🇨🇦', region: 'North America',
+  lat: 75.4333, lon: -89.8167, precision: 'approx',
+  env: 'crater', kind: 'field', target: 'Moon & Mars', status: 'seasonal',
+  since: 1997, crew: '10–40 (field camp)', duration: '4–8 week summer campaigns',
+  url: 'https://www.marsinstitute.no/hmp',
+  summary:
+    'An international field research station on the Haughton impact crater, Devon Island, run since 1997 and supported principally by NASA. HMP is the flagship of the "field campaign" model: pressurised rover prototypes, drills, spacesuit and EVA hardware, telemedicine and traverse planning are tested against real Arctic logistics. Crews are genuinely remote, but the emphasis is on hardware and operations rather than sealed habitation.',
+  scores: { isolation: 5, environment: 5, duration: 3, eva: 4, comms: 3, closure: 2, ops: 4, science: 5 }
+},
+{
+  id: 'hera', name: 'Human Exploration Research Analog', alias: 'HERA',
+  operator: 'NASA Johnson Space Center', country: 'United States', flag: '🇺🇸', region: 'North America',
+  lat: 29.5586, lon: -95.0900, precision: 'approx',
+  env: 'chamber', kind: 'chamber', target: 'Deep space', status: 'active',
+  since: 2014, crew: '4 (6 for short runs)', duration: '30–45 days, up to 6 months capability',
+  url: 'https://www.nasa.gov/analogs/hera',
+  summary:
+    'A three-storey sealed habitat inside Building 220 at Johnson Space Center, purpose-built as an isolation, confinement and remote-conditions testbed. Configurable for deep-space transit, lunar surface, Mars surface or hybrid scenarios, with imposed communication delay, virtual EVAs, continuous physiological and behavioural monitoring, and an agency flight-control and flight-surgeon structure. It has essentially no environmental analogy — and that is deliberate: HERA isolates the human variables.',
+  scores: { isolation: 5, environment: 1, duration: 4, eva: 1, comms: 5, closure: 2, ops: 5, science: 5 }
+},
+{
+  id: 'chapea', name: 'CHAPEA — Mars Dune Alpha', alias: 'CHAPEA',
+  operator: 'NASA Johnson Space Center', country: 'United States', flag: '🇺🇸', region: 'North America',
+  lat: 29.5583, lon: -95.0853, precision: 'approx',
+  env: 'chamber', kind: 'chamber', target: 'Mars', status: 'active',
+  since: 2023, crew: '4', duration: '378 days (1 Mars-surface year analog)',
+  url: 'https://www.nasa.gov/humans-in-space/chapea/',
+  summary:
+    'The Crew Health and Performance Exploration Analog: a 3D-printed 158 m² habitat produced by ICON to a Bjarke Ingels Group design, sited inside a hangar at JSC with an adjoining sand yard for simulated surface EVAs. Crews serve a full 378-day Mars surface year under 22-minute one-way communication delay, resource restriction and a scripted degradation of consumables. The first mission ran 25 Jun 2023 – 6 Jul 2024. Duration and autonomy fidelity are unmatched; terrain fidelity is not the point.',
+  scores: { isolation: 5, environment: 2, duration: 5, eva: 2, comms: 5, closure: 3, ops: 5, science: 5 }
+},
+{
+  id: 'hiseas', name: 'HI-SEAS', alias: 'Hawaiʻi Space Exploration Analog and Simulation',
+  operator: 'International MoonBase Alliance (formerly Univ. of Hawaiʻi / NASA)', country: 'United States', flag: '🇺🇸', region: 'North America',
+  lat: 19.6024, lon: -155.4872, precision: 'exact',
+  env: 'volcanic', kind: 'habitat', target: 'Moon & Mars', status: 'active',
+  since: 2013, crew: '4–6', duration: '1–2 weeks now; historically 4, 8 and 12 months',
+  url: 'https://www.hi-seas.org/',
+  summary:
+    'A solar-powered 11 m geodesic dome at ~2,500 m on the barren Mauna Loa lava fields, one of the very few sites combining genuine Moon/Mars terrain with genuine long-duration isolation. The NASA-funded era produced four-, eight- and twelve-month sealed missions under a strict 20-minute one-way comms delay and full EVA suit protocol — among the longest terrestrial Mars simulations ever run outside a chamber. Now operated by IMBA for shorter analog and lunar-technology missions.',
+  scores: { isolation: 5, environment: 5, duration: 4, eva: 4, comms: 5, closure: 3, ops: 4, science: 5 }
+},
+{
+  id: 'neemo', name: 'NEEMO — Aquarius Reef Base', alias: 'NEEMO',
+  operator: 'NASA / Florida International University', country: 'United States', flag: '🇺🇸', region: 'North America',
+  lat: 25.0378, lon: -80.4519, precision: 'approx',
+  env: 'underwater', kind: 'underwater', target: 'Moon & Mars', status: 'active',
+  since: 2001, crew: '4–6 aquanauts', duration: '7–21 days',
+  url: 'https://www.nasa.gov/mission/neemo/',
+  summary:
+    'The world\'s only undersea research station, 19 m down on Conch Reef 9 km off Key Largo, used by NASA since 2001 to fly astronauts, engineers and scientists as aquanauts. Saturation diving makes the analogy physical rather than notional: after 24 hours the crew is saturated and cannot surface without decompression, so the habitat is as unforgiving as a spacecraft. Extravehicular excursions in weighted rigs give the best partial-gravity EVA training available on Earth.',
+  scores: { isolation: 5, environment: 3, duration: 2, eva: 5, comms: 4, closure: 4, ops: 5, science: 5 }
+},
+{
+  id: 'sam-b2', name: 'SAM — Space Analog for the Moon and Mars', alias: 'SAM',
+  operator: 'University of Arizona Biosphere 2', country: 'United States', flag: '🇺🇸', region: 'North America',
+  lat: 32.5786, lon: -110.8515, precision: 'approx',
+  env: 'chamber', kind: 'habitat', target: 'Moon & Mars', status: 'active',
+  since: 2023, crew: '4–6', duration: '3 days – 2 weeks',
+  url: 'https://samb2.space/',
+  summary:
+    'A hermetically sealed, pressurised habitat built around Biosphere 2\'s original 1987 Test Module, with a pressure-regulation "lung", a four-chamber CO₂ scrubber, hydroponics, crew quarters, an airlock and a 280 m² geologically accurate indoor Mars yard. SAM is the strongest resource-closure analog operating today — air and water are actually metered and recycled, not rationed by agreement — and it hosted a habitat in the 2025 World\'s Biggest Analog.',
+  scores: { isolation: 5, environment: 3, duration: 2, eva: 4, comms: 4, closure: 5, ops: 4, science: 5 }
+},
+{
+  id: 'biosphere2', name: 'Biosphere 2 (closure missions)', alias: 'B2',
+  operator: 'University of Arizona (originally Space Biospheres Ventures)', country: 'United States', flag: '🇺🇸', region: 'North America',
+  lat: 32.5786, lon: -110.8515, precision: 'exact',
+  env: 'chamber', kind: 'historic', target: 'Deep space', status: 'historic',
+  since: 1991, crew: '8 / 7', duration: '2 years (1991–93), 6 months (1994)',
+  url: 'https://biosphere2.org/',
+  summary:
+    'The 1.27-hectare sealed glass ecosystem near Oracle, Arizona, whose two crewed closures remain the most ambitious materially-closed life-support experiments ever attempted with people inside. Biosphere 2 established most of what the field knows about oxygen decline, food shortfall, crew fracture and the psychology of a genuinely closed system — and is the reason resource closure is scored separately in almost every modern analog rubric.',
+  scores: { isolation: 5, environment: 2, duration: 5, eva: 1, comms: 2, closure: 5, ops: 3, science: 4 }
+},
+{
+  id: 'drats', name: 'Desert RATS — Black Point Lava Flow', alias: 'D-RATS',
+  operator: 'NASA', country: 'United States', flag: '🇺🇸', region: 'North America',
+  lat: 35.5330, lon: -111.4200, precision: 'approx',
+  env: 'volcanic', kind: 'field', target: 'Moon & Mars', status: 'seasonal',
+  since: 1997, crew: 'varies (2 in rover cabin)', duration: '1–14 days',
+  url: 'https://www.nasa.gov/analog-missions/',
+  summary:
+    'Desert Research and Technology Studies: NASA\'s long-running Arizona field campaign on the Black Point Lava Flow and around the San Francisco volcanic field, where pressurised rover prototypes, suit ports, robotic assistants and traverse planning are exercised on basaltic terrain. The 14-day 2010 dual-rover traverse with a habitat demonstration unit is the reference example of a mobile surface-exploration analog.',
+  scores: { isolation: 3, environment: 5, duration: 2, eva: 5, comms: 4, closure: 2, ops: 5, science: 5 }
+},
+{
+  id: 'meteor-crater', name: 'Meteor Crater / Barringer field site', alias: 'Meteor Crater',
+  operator: 'NASA / USGS Astrogeology (training use)', country: 'United States', flag: '🇺🇸', region: 'North America',
+  lat: 35.0272, lon: -111.0225, precision: 'exact',
+  env: 'crater', kind: 'field', target: 'Moon', status: 'active',
+  since: 1963, crew: 'training groups', duration: 'days',
+  url: 'https://www.usgs.gov/centers/astrogeo-sc',
+  summary:
+    'Where Apollo astronauts learned to read an impact structure. The Barringer Crater and the neighbouring cinder fields north of Flagstaff — including the deliberately cratered "Cinder Lake" lunar training field blasted to match a Ranger image of the Moon — remain the archetype of geological field training for surface crews, and are still used for suited-traverse and sampling practice.',
+  scores: { isolation: 1, environment: 5, duration: 0, eva: 3, comms: 1, closure: 0, ops: 3, science: 4 }
+},
+{
+  id: 'jsc-rockyard', name: 'JSC Rock Yard & Planetary Analog Terrain', alias: 'Rock Yard',
+  operator: 'NASA Johnson Space Center', country: 'United States', flag: '🇺🇸', region: 'North America',
+  lat: 29.5525, lon: -95.0930, precision: 'approx',
+  env: 'analog-terrain', kind: 'field', target: 'Moon & Mars', status: 'active',
+  since: 1990, crew: 'test teams', duration: 'hours – days',
+  url: 'https://www.nasa.gov/reference/jsc-analogs-mockups/',
+  summary:
+    'JSC\'s outdoor planetary surface testbed — graded lunar and Martian terrain, craters, slopes and boulder fields used for rover mobility, suited mobility, sample handling and robotics development, alongside the indoor Space Vehicle Mockup Facility and the Active Response Gravity Offload System. High engineering value, no habitation or isolation component.',
+  scores: { isolation: 0, environment: 4, duration: 0, eva: 3, comms: 2, closure: 0, ops: 4, science: 4 }
+},
+{
+  id: 'nbl', name: 'Neutral Buoyancy Laboratory', alias: 'NBL',
+  operator: 'NASA Johnson Space Center', country: 'United States', flag: '🇺🇸', region: 'North America',
+  lat: 29.5960, lon: -95.1030, precision: 'approx',
+  env: 'underwater', kind: 'field', target: 'Deep space', status: 'active',
+  since: 1997, crew: '2 suited + dive team', duration: '6-hour runs',
+  url: 'https://www.nasa.gov/johnson/neutral-buoyancy-laboratory/',
+  summary:
+    'A 23-million-litre pool holding full-scale ISS and exploration mockups, where astronauts fly pressurised EMU suits at neutral buoyancy for six-hour training runs. Not a mission analog — no isolation, no duration — but the highest-fidelity EVA workload and suit-ergonomics environment that exists outside orbit, and the benchmark against which every analog "suit" is honestly measured.',
+  scores: { isolation: 1, environment: 1, duration: 0, eva: 5, comms: 4, closure: 1, ops: 5, science: 4 }
+},
+{
+  id: 'pavilion-lake', name: 'Pavilion Lake Research Project', alias: 'PLRP',
+  operator: 'NASA / Canadian Space Agency / academic consortium', country: 'Canada', flag: '🇨🇦', region: 'North America',
+  lat: 50.8600, lon: -121.7350, precision: 'approx',
+  env: 'underwater', kind: 'field', target: 'Moon & Mars', status: 'historic',
+  since: 2008, crew: 'submersible pilots + science backroom', duration: '1–2 week campaigns',
+  url: 'https://www.nasa.gov/analog-missions/',
+  summary:
+    'A science-driven analog in British Columbia using DeepWorker submersibles to survey freshwater microbialites while deliberately exercising the exploration problem: a single operator with limited bandwidth, a remote science backroom, and traverse decisions made on incomplete data. PLRP is the clearest demonstration that the hard part of surface exploration is the science-operations loop, not the vehicle.',
+  scores: { isolation: 2, environment: 3, duration: 2, eva: 4, comms: 4, closure: 1, ops: 5, science: 5 }
+},
+{
+  id: 'mmaars', name: 'MMAARS Martian-Lunar Analog Settlement', alias: 'MMAARS',
+  operator: 'Mars Moon Astronautics Academy & Research Science', country: 'United States', flag: '🇺🇸', region: 'North America',
+  lat: 35.0594, lon: -118.1520, precision: 'approx',
+  env: 'desert', kind: 'habitat', target: 'Moon & Mars', status: 'active',
+  since: 2020, crew: '6–12', duration: '12-day programmes',
+  url: 'https://www.mmaars.com/',
+  summary:
+    'A commercial analog astronautics academy running 12-day immersive missions from a Martian-Lunar settlement in the Mojave Desert near Mojave Air & Space Port, with a multi-level curriculum, austere deployments and medical/EVA training. Strong on training throughput and human-performance skills; lighter on sealed habitation and closure.',
+  scores: { isolation: 3, environment: 4, duration: 2, eva: 3, comms: 2, closure: 2, ops: 3, science: 2 }
+},
+{
+  id: 'mau', name: 'Mars Academy USA — Mars Basecamp', alias: 'MAU',
+  operator: 'Mars Academy USA', country: 'United States', flag: '🇺🇸', region: 'North America',
+  lat: 34.4470, lon: -118.3400, precision: 'approx',
+  env: 'desert', kind: 'habitat', target: 'Mars', status: 'active',
+  since: 2016, crew: '6–10', duration: '3–12 days',
+  url: 'https://marsacademyusa.com/',
+  summary:
+    'A mobile, modular integrated basecamp training system deployed in Soledad Canyon, California and at austere sites worldwide (Himalaya, Kilimanjaro, Arctic) under the NEAMAE austere-missions banner. Built around simulation-based learning and space-medicine training for next-generation analog astronauts rather than long-duration confinement research.',
+  scores: { isolation: 3, environment: 3, duration: 1, eva: 3, comms: 2, closure: 1, ops: 3, science: 2 }
+},
+{
+  id: 'pisces', name: 'PISCES Planetary Analog Test Site', alias: 'PISCES',
+  operator: 'Pacific International Space Center for Exploration Systems', country: 'United States', flag: '🇺🇸', region: 'North America',
+  lat: 19.7600, lon: -155.5300, precision: 'approx',
+  env: 'volcanic', kind: 'field', target: 'Moon & Mars', status: 'active',
+  since: 2007, crew: 'test teams', duration: 'days – weeks',
+  url: 'https://pacificspacecenter.com/',
+  summary:
+    'Hawaiʻi County\'s planetary analog programme on the Mauna Kea and Mauna Loa basalt fields, used for in-situ resource utilisation, regolith construction, sintered basalt landing pads and rover field trials — the terrestrial site whose tephra most closely matches lunar regolith chemistry, and the source of several widely used regolith simulants.',
+  scores: { isolation: 2, environment: 5, duration: 1, eva: 3, comms: 2, closure: 1, ops: 4, science: 5 }
+},
+{
+  id: 'jules-lodge', name: "Jules' Undersea Lodge", alias: 'Jules',
+  operator: 'Marine Resources Development Foundation', country: 'United States', flag: '🇺🇸', region: 'North America',
+  lat: 25.1230, lon: -80.4160, precision: 'approx',
+  env: 'underwater', kind: 'underwater', target: 'Deep space', status: 'active',
+  since: 1986, crew: '2–6', duration: '1–100 days',
+  url: 'https://jul.com/',
+  summary:
+    'A small habitat in Emerald Lagoon, Key Largo, entered only by diving, and the site of Joseph Dituri\'s 100-day 2023 stay — the longest continuous human habitation underwater. Regularly used for isolation, hyperbaric physiology and confined-team studies with direct spaceflight read-across, and one of the very few places a civilian can experience an environment they physically cannot walk out of.',
+  scores: { isolation: 5, environment: 2, duration: 3, eva: 4, comms: 2, closure: 3, ops: 2, science: 3 }
+},
+{
+  id: 'marinelab', name: 'MarineLab Undersea Laboratory', alias: 'MarineLab',
+  operator: 'Marine Resources Development Foundation', country: 'United States', flag: '🇺🇸', region: 'North America',
+  lat: 25.1226, lon: -80.4142, precision: 'approx',
+  env: 'underwater', kind: 'underwater', target: 'Deep space', status: 'active',
+  since: 1984, crew: '3', duration: 'hours – days',
+  url: 'https://mrdf.org/',
+  summary:
+    'The longest continuously operating underwater habitat in the world, at 8 m in Key Largo\'s Emerald Lagoon. Used for education, saturation-physiology familiarisation and short confined-environment studies; a common stepping stone for aquanaut-track analog crews before Aquarius-class deployments.',
+  scores: { isolation: 4, environment: 2, duration: 1, eva: 4, comms: 2, closure: 2, ops: 2, science: 2 }
+},
+
+/* ─────────────────────────  SOUTH AMERICA  ───────────────────────── */
+{
+  id: 'habitat-marte', name: 'Habitat Marte', alias: 'Habitat Marte',
+  operator: 'Habitat Marte / Universidade Federal do Rio Grande do Norte network', country: 'Brazil', flag: '🇧🇷', region: 'South America',
+  lat: -5.7900, lon: -36.0300, precision: 'approx',
+  env: 'desert', kind: 'habitat', target: 'Mars', status: 'active',
+  since: 2017, crew: '4–8', duration: '1–15 days',
+  url: 'https://www.habitatmarte.com/',
+  summary:
+    'The Southern Hemisphere\'s most prolific analog station, in the semi-arid caatinga at Caiçara do Rio do Vento about 100 km from Natal. It has run well over a hundred short missions with a strong emphasis on sustainability, hydroponics and aquaponics, food systems and education — and is the only analog station in the world with a swimming pool used for underwater EVA simulation. Mission volume and accessibility are its defining strengths.',
+  scores: { isolation: 3, environment: 3, duration: 2, eva: 3, comms: 2, closure: 3, ops: 3, science: 3 }
+},
+{
+  id: 'atacama-arads', name: 'Atacama Desert — ARADS / Yungay', alias: 'Atacama',
+  operator: 'NASA Ames / international astrobiology consortium', country: 'Chile', flag: '🇨🇱', region: 'South America',
+  lat: -24.0900, lon: -69.9800, precision: 'approx',
+  env: 'desert', kind: 'field', target: 'Mars', status: 'seasonal',
+  since: 2016, crew: 'field teams', duration: '2–4 week campaigns',
+  url: 'https://www.nasa.gov/ames/',
+  summary:
+    'The driest and oldest desert on Earth, whose hyperarid core at Yungay combines near-zero water activity, extreme UV, and saline oxidising soils with nitrate and perchlorate chemistry closely mirroring Martian regolith. The Atacama Rover Astrobiology Drilling Studies campaigns exercised a full rover-mounted drill and life-detection payload chain here — the reference site for validating Mars life-detection instruments.',
+  scores: { isolation: 3, environment: 5, duration: 2, eva: 2, comms: 2, closure: 1, ops: 4, science: 5 }
+},
+
+/* ─────────────────────────  EUROPE  ───────────────────────── */
+{
+  id: 'lunares', name: 'LunAres Research Station', alias: 'LunAres',
+  operator: 'Space Garden / Space is More', country: 'Poland', flag: '🇵🇱', region: 'Europe',
+  lat: 53.1799, lon: 16.7420, precision: 'approx',
+  env: 'chamber', kind: 'habitat', target: 'Moon & Mars', status: 'active',
+  since: 2017, crew: '6', duration: '1–4 weeks',
+  url: 'https://lunares.space/',
+  summary:
+    'Built inside a hangar on a former Polish Air Force base at Piła, LunAres is windowless by design — crews lose the day/night cycle entirely — and its airlock opens onto an enclosed artificial crater floored with basalt for EVA and robotics work. More than 40 missions and 230 analog astronauts have passed through, making it Europe\'s busiest isolation habitat, and it flew the "Nivalis" crew in the 2025 World\'s Biggest Analog.',
+  scores: { isolation: 5, environment: 2, duration: 3, eva: 3, comms: 3, closure: 3, ops: 4, science: 4 }
+},
+{
+  id: 'aatc', name: 'Analog Astronaut Training Center — Habitat 2.0', alias: 'AATC',
+  operator: 'Analog Astronaut Training Center', country: 'Poland', flag: '🇵🇱', region: 'Europe',
+  lat: 49.7833, lon: 21.0333, precision: 'approx',
+  env: 'chamber', kind: 'habitat', target: 'Moon & Mars', status: 'active',
+  since: 2018, crew: '2–6', duration: '3–14 days',
+  url: 'https://www.astronaut.center/',
+  summary:
+    'A research-first analog centre at Rzepiennik in southern Poland, originally a 57 m² sensor-instrumented smart habitat completely sealed from daylight, expanded in 2023 with the purpose-built Habitat 2.0. AATC hosts the EMMPOL series with EuroMoonMars and has produced an unusually high ratio of peer-reviewed space-biology and space-medicine output per mission — including published stress-biomarker studies from EMMPOL 6.',
+  scores: { isolation: 5, environment: 1, duration: 2, eva: 3, comms: 3, closure: 3, ops: 4, science: 5 }
+},
+{
+  id: 'astroland-ares', name: 'Astroland — Ares Station', alias: 'Ares Station',
+  operator: 'Astroland Interplanetary Agency', country: 'Spain', flag: '🇪🇸', region: 'Europe',
+  lat: 43.2500, lon: -3.5670, precision: 'approx',
+  env: 'cave', kind: 'habitat', target: 'Mars', status: 'active',
+  since: 2018, crew: '3–6', duration: '3–14 days',
+  url: 'https://astrolandagency.com/',
+  summary:
+    'The world\'s only permanent subsurface analog station, installed inside a 1.5 km cave near Arredondo, Cantabria — constant darkness, ~11 °C, high humidity and no natural light cycle, which is precisely the environment a lunar lava-tube base would present. Crews are supported from a five-module Space Center at the Cantabria Science and Technology Park, and the site has produced published human-performance research on cave-based ICE conditions.',
+  scores: { isolation: 5, environment: 4, duration: 2, eva: 3, comms: 3, closure: 3, ops: 3, science: 4 }
+},
+{
+  id: 'esa-caves', name: 'ESA CAVES — Sa Grutta cave system', alias: 'CAVES',
+  operator: 'European Space Agency', country: 'Italy', flag: '🇮🇹', region: 'Europe',
+  lat: 40.2700, lon: 9.4700, precision: 'approx',
+  env: 'cave', kind: 'expedition', target: 'Deep space', status: 'active',
+  since: 2011, crew: '6 astronauts', duration: '~2 weeks (6 days underground)',
+  url: 'https://www.esa.int/Science_Exploration/Human_and_Robotic_Exploration/Caves',
+  summary:
+    'Cooperative Adventure for Valuing and Exercising human behaviour and performance Skills — ESA\'s underground behavioural course, run in the Sa Grutta system of the Sardinian Supramonte. Career astronauts from all ISS partner agencies spend days underground with no daylight, real physical danger, genuine communication constraints and a scientific traverse to complete. Widely regarded as the highest-fidelity behavioural analog in the ESA portfolio.',
+  scores: { isolation: 5, environment: 4, duration: 2, eva: 4, comms: 4, closure: 3, ops: 5, science: 4 }
+},
+{
+  id: 'pangaea', name: 'ESA PANGAEA / PANGAEA-X — Lanzarote', alias: 'PANGAEA',
+  operator: 'European Space Agency', country: 'Spain', flag: '🇪🇸', region: 'Europe',
+  lat: 29.0300, lon: -13.6300, precision: 'approx',
+  env: 'volcanic', kind: 'field', target: 'Moon & Mars', status: 'active',
+  since: 2016, crew: '3–6 astronauts + instructors', duration: '2–3 week courses',
+  url: 'https://www.esa.int/Science_Exploration/Human_and_Robotic_Exploration/Pangaea',
+  summary:
+    'ESA\'s planetary geology field course, taught across the Timanfaya lava fields and Lanzarote\'s volcanic tubes — terrain used as a Moon and Mars reference for decades. Astronauts learn to identify, sample and prioritise rocks under exploration constraints, with the PANGAEA-X extension opening the site to external teams testing rovers, drones, geochemical instruments and EVA support tools.',
+  scores: { isolation: 2, environment: 5, duration: 2, eva: 4, comms: 3, closure: 1, ops: 5, science: 5 }
+},
+{
+  id: 'luna-eac', name: 'LUNA Analogue Facility & :envihab', alias: 'LUNA',
+  operator: 'ESA European Astronaut Centre / DLR', country: 'Germany', flag: '🇩🇪', region: 'Europe',
+  lat: 50.8530, lon: 7.1180, precision: 'approx',
+  env: 'analog-terrain', kind: 'field', target: 'Moon', status: 'active',
+  since: 2024, crew: 'test crews', duration: 'hours – weeks',
+  url: 'https://www.esa.int/About_Us/EAC',
+  summary:
+    'A 1,000 m² indoor lunar surface at the Cologne campus, filled with EAC-1 mare regolith simulant and a separate highland dust chamber, with variable solar illumination, a partial-gravity offloading rig and a habitat demonstrator. Co-located with DLR\'s :envihab medical research facility — which runs its own bed-rest and hypoxia isolation studies — and the European Neutral Buoyancy Facility. Europe\'s densest concentration of analog infrastructure.',
+  scores: { isolation: 2, environment: 4, duration: 1, eva: 5, comms: 3, closure: 2, ops: 5, science: 5 }
+},
+{
+  id: 'concordia', name: 'Concordia Station, Dome C', alias: 'White Mars',
+  operator: 'IPEV (France) / PNRA (Italy) with ESA', country: 'Antarctica', flag: '🇦🇶', region: 'Antarctica',
+  lat: -75.1000, lon: 123.3333, precision: 'exact',
+  env: 'polar', kind: 'expedition', target: 'Deep space', status: 'active',
+  since: 2005, crew: '12–16 winter-over', duration: '9 months winter-over',
+  url: 'https://blogs.esa.int/concordia/',
+  summary:
+    'ESA\'s flagship long-duration analog, 3,233 m up on the Antarctic plateau: hypoxia equivalent to ~3,800 m, temperatures to −80 °C, four months of unbroken darkness, and — decisively — complete physical isolation for nine months, during which no aircraft can reach the station. An ESA-sponsored research MD winters over each year running immunology, sleep, cognition and psychosocial protocols. Nothing else on Earth reproduces the "cannot leave" condition so completely.',
+  scores: { isolation: 5, environment: 3, duration: 5, eva: 3, comms: 3, closure: 3, ops: 4, science: 5 }
+},
+{
+  id: 'nek-sirius', name: 'NEK Ground Experimental Complex — SIRIUS / Mars-500', alias: 'NEK',
+  operator: 'Institute of Biomedical Problems (IBMP), RAS', country: 'Russia', flag: '🇷🇺', region: 'Europe',
+  lat: 55.7100, lon: 37.5700, precision: 'approx',
+  env: 'chamber', kind: 'chamber', target: 'Deep space', status: 'active',
+  since: 1960, crew: '3–10', duration: '17 days – 520 days',
+  url: 'https://www.nasa.gov/about-nek-sirius/',
+  summary:
+    'The Moscow isolation complex that hosted Mars-500 — 520 days of unbroken confinement in 2010–11, still the longest isolation experiment ever conducted — and now the international SIRIUS series of 17-, 120-, 240- and 366-day lunar-mission simulations run jointly with NASA. Multi-module, hermetically closed, with imposed comms delay, simulated lunar landing and surface EVA phases, and the deepest longitudinal behavioural dataset in the field.',
+  scores: { isolation: 5, environment: 1, duration: 5, eva: 2, comms: 5, closure: 4, ops: 5, science: 5 }
+},
+{
+  id: 'hydronaut', name: 'Hydronaut DeepLab H03 / Little Moon City Prague', alias: 'Hydronaut',
+  operator: 'Hydronaut Project / CTU Prague', country: 'Czechia', flag: '🇨🇿', region: 'Europe',
+  lat: 50.6167, lon: 15.3167, precision: 'approx',
+  env: 'underwater', kind: 'underwater', target: 'Moon', status: 'active',
+  since: 2019, crew: '3', duration: 'days – weeks',
+  url: 'https://hydronaut.eu/en',
+  summary:
+    'A 35-tonne, 6 m habitat originally sunk in a flooded quarry at Jesenný and since redeployed with a mission control centre and EVA tent as the "Little Moon City Prague" complex at CTU\'s Dejvice campus. Aquanauts operate H03 as though it were a lunar lander, giving the isolation and hazard profile of an undersea station with the operational script of a surface mission. Flew a habitat in the 2025 World\'s Biggest Analog.',
+  scores: { isolation: 5, environment: 2, duration: 2, eva: 4, comms: 3, closure: 3, ops: 4, science: 3 }
+},
+{
+  id: 'asclepios', name: 'Asclepios Missions — Gotthard massif', alias: 'Asclepios',
+  operator: 'EPFL Space Center / Asclepios Association', country: 'Switzerland', flag: '🇨🇭', region: 'Europe',
+  lat: 46.5560, lon: 8.5670, precision: 'approx',
+  env: 'cave', kind: 'habitat', target: 'Moon & Mars', status: 'active',
+  since: 2021, crew: '6', duration: '1–2 weeks',
+  url: 'https://asclepios.ch/',
+  summary:
+    'A student-run analog programme of unusual rigour, staged inside the Sasso San Gottardo fortress deep in the Swiss Alps — a genuine subterranean facility with no daylight and a full mission control at EPFL. Asclepios has built its own analog suits, life-support subsystems and EVA hardware, and trains an "analog astronaut" corps drawn from universities across Europe.',
+  scores: { isolation: 4, environment: 3, duration: 2, eva: 4, comms: 4, closure: 3, ops: 4, science: 3 }
+},
+{
+  id: 'chill-ice', name: 'CHILL-ICE — Stefánshellir lava tube', alias: 'CHILL-ICE',
+  operator: 'ICEE Space / EuroMoonMars / ILEWG', country: 'Iceland', flag: '🇮🇸', region: 'Europe',
+  lat: 64.7580, lon: -20.8930, precision: 'approx',
+  env: 'cave', kind: 'expedition', target: 'Moon', status: 'seasonal',
+  since: 2021, crew: '3 per mission', duration: '3 days (8-hour construction EVA)',
+  url: 'https://euromoonmars.space/Chillice/main/',
+  summary:
+    'Construction of a Habitat Inside a Lunar-analogue Lava-tube: crews deploy and inflate the ECHO habitat inside the Stefánshellir tube in Iceland\'s Hallmundarhraun lava field during a single eight-hour EVA, then live inside it. It is the only recurring mission in the world that tests the actual first-hours problem of lunar lava-tube settlement — arrive, build shelter, survive — and it does so in a real basaltic tube with 16 nations contributing science.',
+  scores: { isolation: 4, environment: 5, duration: 1, eva: 5, comms: 3, closure: 2, ops: 4, science: 4 }
+},
+{
+  id: 'ola-alqueva', name: 'Alqueva Mars Analog Station — OLA', alias: 'OLA',
+  operator: 'Observatório do Lago Alqueva / Dark Sky Alqueva', country: 'Portugal', flag: '🇵🇹', region: 'Europe',
+  lat: 38.4400, lon: -7.4700, precision: 'approx',
+  env: 'desert', kind: 'habitat', target: 'Mars', status: 'active',
+  since: 2025, crew: '4–6', duration: '1–2 weeks',
+  url: 'https://www.olagoalqueva.com/en/worlds-biggest-analog',
+  summary:
+    'Portugal\'s first analog habitat, at the Lake Alqueva Astronomical Observatory near Monsaraz in the Alentejo — described by its operators as Europe\'s only permanent open-air simulation station combining habitation with mission-support infrastructure for planetary surface field campaigns. Hosted the Monsaraz Mars Analog Mission during the 2025 World\'s Biggest Analog, with INESC TEC leading the science programme.',
+  scores: { isolation: 3, environment: 3, duration: 2, eva: 3, comms: 3, closure: 2, ops: 4, science: 3 }
+},
+{
+  id: 'euromars', name: 'EuroMARS (Krafla)', alias: 'EuroMARS',
+  operator: 'The Mars Society', country: 'Iceland', flag: '🇮🇸', region: 'Europe',
+  lat: 65.7686, lon: -16.7585, precision: 'approx',
+  env: 'volcanic', kind: 'planned', target: 'Mars', status: 'planned',
+  since: 2003, crew: '6 (design)', duration: '—',
+  url: 'https://www.marssociety.org/',
+  summary:
+    'The European member of the Mars Society\'s four-station Mars Analog Research Station programme, intended for a site by the Krafla rift volcano northeast of Mývatn. The habitat shell was fabricated but never successfully deployed, and the project has not progressed past planning — a useful reminder of how many announced analog stations never open an airlock.',
+  scores: { isolation: 0, environment: 0, duration: 0, eva: 0, comms: 0, closure: 0, ops: 0, science: 0 }
+},
+{
+  id: 'esh-x', name: 'ESH-X portable lunar base simulator', alias: 'ESH-X',
+  operator: 'EuroMoonMars / ILEWG / ESTEC', country: 'Netherlands', flag: '🇳🇱', region: 'Europe',
+  lat: 52.2200, lon: 4.4200, precision: 'approx',
+  env: 'chamber', kind: 'habitat', target: 'Moon', status: 'active',
+  since: 2024, crew: '2–4', duration: 'days',
+  url: 'https://euromoonmars.space/',
+  summary:
+    'ExoSpace-Hab Xpress — a portable, rapidly deployable lunar base simulator developed in the EuroMoonMars/ILEWG orbit around ESA\'s ESTEC in Noordwijk, used for research, education, short analog missions and outreach, and among the Dutch contributions to the 2025 World\'s Biggest Analog. Represents the "analog in a flight case" model that lets institutions without a permanent site run credible short missions.',
+  scores: { isolation: 3, environment: 1, duration: 1, eva: 2, comms: 3, closure: 1, ops: 3, science: 3 }
+},
+{
+  id: 'mamba', name: 'MaMBA — Moon and Mars Base Analog', alias: 'MaMBA',
+  operator: 'ZARM, University of Bremen', country: 'Germany', flag: '🇩🇪', region: 'Europe',
+  lat: 53.1050, lon: 8.8540, precision: 'approx',
+  env: 'chamber', kind: 'habitat', target: 'Moon & Mars', status: 'active',
+  since: 2018, crew: '2–4', duration: 'days',
+  url: 'https://www.zarm.uni-bremen.de/',
+  summary:
+    'A functional, modular base demonstrator at the University of Bremen\'s ZARM institute — pressure-tight interconnecting modules with working laboratory, workshop and greenhouse fit-out, developed to answer how a real Moon or Mars base should be laid out and operated rather than how it should look. Used for short crewed usability studies and subsystem integration.',
+  scores: { isolation: 3, environment: 1, duration: 1, eva: 2, comms: 2, closure: 3, ops: 3, science: 4 }
+},
+{
+  id: 'shee', name: 'SHEE — Self-deployable Habitat for Extreme Environments', alias: 'SHEE',
+  operator: 'European Commission FP7 consortium (LIQUIFER et al.)', country: 'Spain', flag: '🇪🇺', region: 'Europe',
+  lat: 37.6900, lon: -6.5600, precision: 'approx',
+  env: 'analog-terrain', kind: 'historic', target: 'Moon & Mars', status: 'historic',
+  since: 2015, crew: '2', duration: 'up to 2 weeks',
+  url: 'https://cordis.europa.eu/project/id/312747',
+  summary:
+    'A robotic, self-unfolding two-person habitat built under an EU FP7 grant and field-deployed at Rio Tinto, Spain. SHEE fits standard commercial transport, drives to a site, deploys itself with no human intervention and repacks afterwards — the strongest European demonstration of the deployable-habitat concept that lunar surface architectures now assume.',
+  scores: { isolation: 3, environment: 4, duration: 2, eva: 3, comms: 2, closure: 3, ops: 3, science: 3 }
+},
+{
+  id: 'rio-tinto', name: 'Río Tinto Mars analog', alias: 'Río Tinto',
+  operator: 'Centro de Astrobiología (CSIC-INTA) / NASA MARTE / OeWF', country: 'Spain', flag: '🇪🇸', region: 'Europe',
+  lat: 37.6900, lon: -6.5600, precision: 'approx',
+  env: 'desert', kind: 'field', target: 'Mars', status: 'active',
+  since: 2003, crew: 'field teams', duration: '1–3 week campaigns',
+  url: 'https://cab.inta-csic.es/',
+  summary:
+    'The acidic, iron- and sulphate-rich Tinto river basin in Andalusia — the terrestrial chemistry closest to the jarosite-bearing sediments Opportunity found at Meridiani Planum. Site of NASA\'s MARTE subsurface drilling project, the SHEE habitat deployment, and the Austrian Space Forum\'s 2011 Mars simulation. A geochemical rather than a habitation analog, and an exceptionally good one.',
+  scores: { isolation: 2, environment: 5, duration: 2, eva: 3, comms: 3, closure: 1, ops: 4, science: 5 }
+},
+{
+  id: 'kaunertal', name: 'AMADEE-15 — Kaunertal Glacier', alias: 'Kaunertal',
+  operator: 'Austrian Space Forum (OeWF)', country: 'Austria', flag: '🇦🇹', region: 'Europe',
+  lat: 46.8600, lon: 10.7300, precision: 'approx',
+  env: 'polar', kind: 'expedition', target: 'Mars', status: 'historic',
+  since: 2015, crew: '2 suited + ~20 support', duration: '12 days',
+  url: 'https://oewf.org/en/amadee-program/',
+  summary:
+    'The Austrian Space Forum\'s glacier simulation in the Tyrolean Alps, testing the Aouda spacesuit simulators, rovers and ice-drilling operations on a debris-covered glacier as an analog for Martian mid-latitude ice. One of the clearest demonstrations that "analog site" and "analog mission" can be separated: OeWF flies its mission control from Innsbruck wherever the field site happens to be.',
+  scores: { isolation: 3, environment: 4, duration: 1, eva: 5, comms: 4, closure: 1, ops: 5, science: 4 }
+},
+{
+  id: 'oewf-mcc', name: 'OeWF Mission Control (Innsbruck / MICO-VIE Vienna)', alias: 'OeWF MCC',
+  operator: 'Austrian Space Forum (OeWF)', country: 'Austria', flag: '🇦🇹', region: 'Europe',
+  lat: 47.2692, lon: 11.4041, precision: 'approx',
+  env: 'chamber', kind: 'field', target: 'Mars', status: 'active',
+  since: 2010, crew: '30–60 flight controllers', duration: 'campaign-length',
+  url: 'https://oewf.org/en/',
+  summary:
+    'The Austrian Space Forum\'s Mission Support Center in Innsbruck — and the MICO-VIE coordination centre in Vienna that ran the 2025 World\'s Biggest Analog across 16 habitats on five continents. Not a habitat, but arguably the most important single node in the analog world: it supplies the flight-control discipline, 10-minute signal delay, remote science support and meteorological products that turn field camps into missions.',
+  scores: { isolation: 0, environment: 0, duration: 4, eva: 0, comms: 5, closure: 0, ops: 5, science: 5 }
+},
+{
+  id: 'eras-ims', name: 'ERAS / V-ERAS — European Mars Analog Station', alias: 'ERAS',
+  operator: 'Italian Mars Society', country: 'Italy', flag: '🇮🇹', region: 'Europe',
+  lat: 45.4642, lon: 9.1900, precision: 'approx',
+  env: 'chamber', kind: 'chamber', target: 'Mars', status: 'active',
+  since: 2012, crew: '4–6', duration: 'days',
+  url: 'https://www.marssociety.it/',
+  summary:
+    'The Italian Mars Society\'s European Mars Analog Station programme and its virtual-reality precursor V-ERAS, which combines omnidirectional treadmills, motion capture and head-mounted displays with hypogravity simulation to prototype station layouts and EVA procedures before any steel is cut. A distinct and underrated branch of the field: analog missions in which the environment itself is synthetic.',
+  scores: { isolation: 2, environment: 1, duration: 1, eva: 3, comms: 3, closure: 0, ops: 3, science: 3 }
+},
+{
+  id: 'etna-arches', name: 'Mount Etna — ARCHES / ROBEX demonstration site', alias: 'Etna',
+  operator: 'DLR / ESA / Helmholtz consortium', country: 'Italy', flag: '🇮🇹', region: 'Europe',
+  lat: 37.7500, lon: 14.9950, precision: 'approx',
+  env: 'volcanic', kind: 'field', target: 'Moon', status: 'seasonal',
+  since: 2017, crew: 'robotic teams + operators', duration: '4–6 week campaigns',
+  url: 'https://www.dlr.de/',
+  summary:
+    'The 2,600 m Piano del Lago slopes of Etna, whose basaltic ash and lapilli give one of the best lunar surface textures in Europe. The 2022 ARCHES campaign flew a heterogeneous robotic team — rover, lander, drone and instrument packages — under a lunar-orbit relay concept with human operators supervising from a distance, the model for future crewed-robotic surface work.',
+  scores: { isolation: 2, environment: 5, duration: 1, eva: 2, comms: 4, closure: 0, ops: 5, science: 5 }
+},
+{
+  id: 'lunark', name: 'LUNARK — Moriusaq, Northern Greenland', alias: 'LUNARK',
+  operator: 'SAGA Space Architects', country: 'Greenland', flag: '🇬🇱', region: 'Europe',
+  lat: 76.7500, lon: -69.9000, precision: 'approx',
+  env: 'arctic', kind: 'historic', target: 'Moon', status: 'historic',
+  since: 2020, crew: '2', duration: '61 days',
+  url: 'https://saga.dk/projects/lunark',
+  summary:
+    'Two Danish architects folded an origami-inspired habitat that expands 750 % on deployment, shipped it to the high Arctic near Moriusaq, and lived in it for 61 days through hurricane-force winds and −30 °C in total isolation. The first crewed Arctic Moon analog of its kind, it produced peer-reviewed findings on circadian lighting and on structured wellbeing sessions as a countermeasure in extreme isolation.',
+  scores: { isolation: 5, environment: 4, duration: 4, eva: 3, comms: 3, closure: 3, ops: 2, science: 4 }
+},
+{
+  id: 'amase', name: 'AMASE — Arctic Mars Analog Svalbard Expedition', alias: 'AMASE',
+  operator: 'Vestfonna Geophysical / NASA / ESA / Norwegian Space Agency', country: 'Norway', flag: '🇳🇴', region: 'Europe',
+  lat: 79.4200, lon: 13.3000, precision: 'approx',
+  env: 'arctic', kind: 'expedition', target: 'Mars', status: 'historic',
+  since: 2003, crew: 'field teams', duration: '2–3 week expeditions',
+  url: 'https://www.nasa.gov/',
+  summary:
+    'Annual ship-based expeditions to Svalbard\'s Bockfjorden, where the Sverrefjell volcano\'s carbonate globules in basalt are among the closest terrestrial matches to the ALH84001 Mars meteorite. Flight instruments including CheMin and SAM — later carried by Curiosity — were exercised here in blind, end-to-end life-detection trials before launch.',
+  scores: { isolation: 4, environment: 5, duration: 2, eva: 3, comms: 3, closure: 1, ops: 4, science: 5 }
+},
+{
+  id: 'ny-alesund', name: 'Ny-Ålesund research settlement', alias: 'Ny-Ålesund',
+  operator: 'Kings Bay AS / multinational institutes', country: 'Norway', flag: '🇳🇴', region: 'Europe',
+  lat: 78.9250, lon: 11.9300, precision: 'exact',
+  env: 'arctic', kind: 'expedition', target: 'Deep space', status: 'active',
+  since: 1968, crew: '30–150 seasonal', duration: 'winter-over',
+  url: 'https://kingsbay.no/',
+  summary:
+    'The world\'s northernmost permanent civilian settlement, at 79° N on Spitsbergen, used for polar-night isolation, chronobiology and small-team behavioural studies with direct spaceflight read-across, as well as for Arctic field-instrument testing. A "found" analog rather than a built one — the category that produces most of the field\'s long-duration human data.',
+  scores: { isolation: 4, environment: 3, duration: 4, eva: 2, comms: 2, closure: 2, ops: 3, science: 4 }
+},
+{
+  id: 'deep-sentinel', name: 'DEEP Sentinel', alias: 'Sentinel',
+  operator: 'DEEP', country: 'United Kingdom', flag: '🇬🇧', region: 'Europe',
+  lat: 51.6510, lon: -2.6580, precision: 'approx',
+  env: 'underwater', kind: 'planned', target: 'Deep space', status: 'planned',
+  since: 2027, crew: '6 per module', duration: 'up to 28 days saturation',
+  url: 'https://www.deep.com/',
+  summary:
+    'A modular, recoverable and redeployable saturation habitat under construction at DEEP\'s campus in a flooded quarry at Tidenham in the Wye Valley, designed for six-person crews at depths to 200 m with first permanent deployment targeted mid-decade. Explicitly marketed for spaceflight-relevant simulation alongside marine science: if realised at scale it would become the highest-fidelity long-duration confinement platform outside Antarctica.',
+  scores: { isolation: 0, environment: 0, duration: 0, eva: 0, comms: 0, closure: 0, ops: 0, science: 0 }
+},
+{
+  id: 'halley', name: 'Halley VI Research Station', alias: 'Halley VI',
+  operator: 'British Antarctic Survey (with ESA)', country: 'Antarctica', flag: '🇦🇶', region: 'Antarctica',
+  lat: -75.5667, lon: -25.5167, precision: 'approx',
+  env: 'polar', kind: 'expedition', target: 'Deep space', status: 'seasonal',
+  since: 2013, crew: '~13 winter (historically)', duration: '9 months winter-over',
+  url: 'https://www.bas.ac.uk/polar-operations/sites-and-facilities/facility/halley/',
+  summary:
+    'A modular station on skis on the floating Brunt Ice Shelf, used by ESA as the sea-level control for Concordia\'s hypoxia variable — running two of the five Concordia experiments so that altitude can be separated from isolation and darkness in the immune and psychological data. Winter-over has been suspended in recent seasons because of ice-shelf chasm risk.',
+  scores: { isolation: 5, environment: 3, duration: 5, eva: 3, comms: 3, closure: 3, ops: 4, science: 5 }
+},
+{
+  id: 'neumayer', name: 'Neumayer Station III', alias: 'Neumayer III',
+  operator: 'Alfred Wegener Institute (with DLR/ESA)', country: 'Antarctica', flag: '🇦🇶', region: 'Antarctica',
+  lat: -70.6667, lon: -8.2667, precision: 'approx',
+  env: 'polar', kind: 'expedition', target: 'Deep space', status: 'active',
+  since: 2009, crew: '9 winter-over', duration: '9 months winter-over',
+  url: 'https://www.awi.de/',
+  summary:
+    'The coastal Antarctic counterpart in the ESA/NASA winter-over programme, on the Ekström Ice Shelf, contributing immunology and latent-herpesvirus-reactivation data alongside Concordia. It also hosts EDEN ISS — the DLR greenhouse that has grown fresh crops through multiple Antarctic winters as a bioregenerative food-production analog for Moon and Mars.',
+  scores: { isolation: 5, environment: 3, duration: 5, eva: 3, comms: 3, closure: 4, ops: 4, science: 5 }
+},
+{
+  id: 'vostok', name: 'Vostok Station', alias: 'Vostok',
+  operator: 'Russian Antarctic Expedition', country: 'Antarctica', flag: '🇦🇶', region: 'Antarctica',
+  lat: -78.4645, lon: 106.8339, precision: 'exact',
+  env: 'polar', kind: 'expedition', target: 'Deep space', status: 'active',
+  since: 1957, crew: '~13 winter-over', duration: '12 months',
+  url: 'https://www.aari.ru/',
+  summary:
+    'The coldest inhabited place on Earth, at 3,488 m on the East Antarctic plateau, where a year-long stay combines hypobaric hypoxia, hypokinesia and near-total isolation. Russian physiological programmes have explicitly framed Vostok as an analog for a future lunar base, tracking cardiorespiratory adaptation across a full annual cycle.',
+  scores: { isolation: 5, environment: 3, duration: 5, eva: 2, comms: 2, closure: 3, ops: 3, science: 4 }
+},
+{
+  id: 'south-pole', name: 'Amundsen–Scott South Pole Station', alias: 'South Pole',
+  operator: 'United States Antarctic Program (NSF)', country: 'Antarctica', flag: '🇦🇶', region: 'Antarctica',
+  lat: -90.0000, lon: 0.0000, precision: 'exact',
+  env: 'polar', kind: 'expedition', target: 'Deep space', status: 'active',
+  since: 1956, crew: '~45 winter-over', duration: '8.5 months winter-over',
+  url: 'https://www.nsf.gov/geo/opp/support/southp.jsp',
+  summary:
+    'The canonical NASA behavioural-health analog: an 8.5-month winter-over at 2,835 m during which no aircraft can land, producing the "winter-over syndrome" literature — the third-quarter effect, sleep and thyroid disruption, cognitive slowing — that underpins current expectations for Mars-transit crew psychology.',
+  scores: { isolation: 5, environment: 2, duration: 5, eva: 2, comms: 3, closure: 3, ops: 4, science: 5 }
+},
+{
+  id: 'mcmurdo', name: 'McMurdo Station', alias: 'McMurdo',
+  operator: 'United States Antarctic Program (NSF)', country: 'Antarctica', flag: '🇦🇶', region: 'Antarctica',
+  lat: -77.8419, lon: 166.6863, precision: 'exact',
+  env: 'polar', kind: 'expedition', target: 'Deep space', status: 'active',
+  since: 1956, crew: '150 winter / 1,000 summer', duration: '6–12 months',
+  url: 'https://www.usap.gov/',
+  summary:
+    'Antarctica\'s logistics hub and the gateway to the Dry Valleys — themselves a premier cold-desert Mars analog, with permafrost, ice-cemented ground and endolithic communities used to test life-detection approaches. As a station, McMurdo is a large-community analog: valuable for logistics, medicine and supply-chain modelling rather than small-crew confinement.',
+  scores: { isolation: 4, environment: 4, duration: 4, eva: 2, comms: 2, closure: 1, ops: 4, science: 5 }
+},
+
+/* ─────────────────────────  MIDDLE EAST & AFRICA  ───────────────────────── */
+{
+  id: 'd-mars', name: 'D-MARS — Desert Mars Analog Ramon Station', alias: 'D-MARS',
+  operator: 'D-MARS / Israel Space Agency', country: 'Israel', flag: '🇮🇱', region: 'Middle East',
+  lat: 30.5900, lon: 34.8000, precision: 'approx',
+  env: 'desert', kind: 'habitat', target: 'Mars', status: 'active',
+  since: 2017, crew: '4–6 "ramonauts"', duration: '4 days – 1 month',
+  url: 'https://www.d-mars.org/',
+  summary:
+    'A habitat in the Makhtesh Ramon erosion crater in the Negev, chosen for Mars-like geomorphology, hyper-aridity and isolation. D-MARS runs its own mission seasons and hosted the Austrian Space Forum\'s month-long AMADEE-20 in October 2021, one of the most instrumented integrated Mars field simulations yet flown, with Aouda suits, rovers and a Vienna mission control on a 10-minute delay.',
+  scores: { isolation: 4, environment: 5, duration: 3, eva: 4, comms: 4, closure: 2, ops: 5, science: 4 }
+},
+{
+  id: 'petra-wadi-rum', name: 'PETRA Analog Habitat — Wadi Rum', alias: 'PETRA',
+  operator: 'Jordan Space Research Initiative (JSRI)', country: 'Jordan', flag: '🇯🇴', region: 'Middle East',
+  lat: 29.5760, lon: 35.4200, precision: 'approx',
+  env: 'desert', kind: 'habitat', target: 'Mars', status: 'active',
+  since: 2024, crew: '4–6', duration: '1–2 weeks',
+  url: 'https://www.jsri.space/analog-missions',
+  summary:
+    'Psychological, Environmental and Technological Research Analog — Jordan\'s flagship programme in the red sandstone desert of Wadi Rum, a landscape so Mars-like it has doubled for the planet in half a dozen films. PETRA-1 in 2024 was the country\'s first analog mission; PETRA-2 flew in the 2025 World\'s Biggest Analog with the first all-Arab female analog crew, representing Jordan and Palestine.',
+  scores: { isolation: 4, environment: 5, duration: 2, eva: 3, comms: 4, closure: 2, ops: 4, science: 3 }
+},
+{
+  id: 'mena-wadi-rum', name: 'MENA Analog Habitat — Wadi Rum', alias: 'MENA-00-WR',
+  operator: 'MENA Engineering Education and Training', country: 'Jordan', flag: '🇯🇴', region: 'Middle East',
+  lat: 29.5900, lon: 35.4300, precision: 'approx',
+  env: 'desert', kind: 'habitat', target: 'Mars', status: 'active',
+  since: 2025, crew: '4–8', duration: '1–2 weeks',
+  url: 'https://menaorg.com/analog-mission-2025',
+  summary:
+    'The second Wadi Rum habitat and the first purpose-built analog station designed and operated within the Arab region, running the MENA-00-WR pilot simulation with a mixed crew of scientists, engineers, educators and analog astronauts, and a strong regional STEM-development mandate alongside the science programme.',
+  scores: { isolation: 4, environment: 5, duration: 2, eva: 3, comms: 3, closure: 2, ops: 3, science: 3 }
+},
+{
+  id: 'amadee18-oman', name: 'AMADEE-18 / Space Habitat Center — Dhofar', alias: 'Dhofar',
+  operator: 'Austrian Space Forum / Oman Astronomical Society / Zone 88', country: 'Oman', flag: '🇴🇲', region: 'Middle East',
+  lat: 18.1300, lon: 55.1800, precision: 'approx',
+  env: 'desert', kind: 'field', target: 'Mars', status: 'active',
+  since: 2018, crew: '5 analog astronauts + ~100 support', duration: '4 weeks',
+  url: 'https://oewf.org/en/amadee-program/',
+  summary:
+    'The Dhofar gravel plains near Marmul hosted AMADEE-18, a four-week integrated Mars field simulation with roughly 20 experiments, 25 contributing nations and a full Aouda-suit EVA programme under Innsbruck mission control. Oman has since developed the Space Habitat Center at Zone 88 and hosted a habitat in the 2025 World\'s Biggest Analog.',
+  scores: { isolation: 4, environment: 5, duration: 3, eva: 5, comms: 4, closure: 2, ops: 5, science: 5 }
+},
+{
+  id: 'amadee24-armash', name: 'AMADEE-24 Mars Analog Station — Armash', alias: 'Armash',
+  operator: 'Austrian Space Forum / Armenia Aerospace Agency', country: 'Armenia', flag: '🇦🇲', region: 'Middle East',
+  lat: 39.8900, lon: 44.7800, precision: 'approx',
+  env: 'desert', kind: 'field', target: 'Mars', status: 'active',
+  since: 2024, crew: '6 analog astronauts', duration: '4 weeks',
+  url: 'https://oewf.org/en/amadee-24/',
+  summary:
+    'The village of Armash in Ararat Province was selected for AMADEE-24 on geological and topographic similarity to Mars. Six analog astronauts from five countries served a month in isolation while Vienna ran flight control on a Mars-representative signal delay; Armenia hosted a habitat again in the 2025 World\'s Biggest Analog.',
+  scores: { isolation: 4, environment: 4, duration: 3, eva: 5, comms: 5, closure: 2, ops: 5, science: 5 }
+},
+{
+  id: 'oaseas', name: 'OASEAS — Omni-Africa Space Exploration Analog Simulation', alias: 'OASEAS',
+  operator: 'Mars Society Kenya', country: 'Kenya', flag: '🇰🇪', region: 'Africa',
+  lat: 3.0000, lon: 37.3000, precision: 'approx',
+  env: 'desert', kind: 'habitat', target: 'Mars', status: 'active',
+  since: 2024, crew: '4–6', duration: '1–2 weeks',
+  url: 'https://kenyamarssociety.org/',
+  summary:
+    'Africa\'s first dedicated analog habitat programme, sited in the Chalbi Desert in northern Kenya — a genuinely hostile, remote lava-and-salt-pan landscape — with a research agenda spanning robotics, water and waste, agri-technology and habitat architecture. Mars Society Kenya qualified OASEAS as an intermediate habitat in the 2025 World\'s Biggest Analog, the first African node in a global analog campaign.',
+  scores: { isolation: 4, environment: 4, duration: 2, eva: 3, comms: 3, closure: 2, ops: 3, science: 3 }
+},
+{
+  id: 'mars-science-city', name: 'Mars Science City', alias: 'MSC',
+  operator: 'Mohammed Bin Rashid Space Centre', country: 'United Arab Emirates', flag: '🇦🇪', region: 'Middle East',
+  lat: 25.1300, lon: 55.4500, precision: 'approx',
+  env: 'analog-terrain', kind: 'planned', target: 'Mars', status: 'planned',
+  since: 2017, crew: '—', duration: 'up to 1 year (design intent)',
+  url: 'https://www.mbrsc.ae/',
+  summary:
+    'Dubai\'s announced AED 500 m Martian city — 3D-printed structures, biodomes, a space robotics laboratory, analog facilities and a habitat for long-duration simulation. Still in design and relocation, so no crewed missions have flown; in the meantime the UAE Analog Programme flies Emirati crew members inside NASA\'s HERA, which is how the country actually accumulates analog experience today.',
+  scores: { isolation: 0, environment: 0, duration: 0, eva: 0, comms: 0, closure: 0, ops: 0, science: 0 }
+},
+{
+  id: 'danakil', name: 'Danakil Depression / Dallol', alias: 'Danakil',
+  operator: 'Europlanet / international astrobiology teams', country: 'Ethiopia', flag: '🇪🇹', region: 'Africa',
+  lat: 14.2417, lon: 40.3000, precision: 'approx',
+  env: 'volcanic', kind: 'field', target: 'Mars', status: 'seasonal',
+  since: 2016, crew: 'field teams', duration: '1–2 week campaigns',
+  url: 'https://www.europlanet-society.org/',
+  summary:
+    'Hyperacidic, hypersaline, iron-rich brine pools at 125 m below sea level and above 45 °C — the closest terrestrial approach to the polyextreme chemistry inferred for parts of early Mars, and a Europlanet-designated planetary field analog for habitability limits and biosignature preservation. A pure science analog: no habitation, extreme logistics.',
+  scores: { isolation: 3, environment: 5, duration: 1, eva: 2, comms: 1, closure: 0, ops: 3, science: 5 }
+},
+
+/* ─────────────────────────  ASIA & OCEANIA  ───────────────────────── */
+{
+  id: 'yuegong', name: 'Yuegong-1 (Lunar Palace 1)', alias: '月宫一号',
+  operator: 'Beihang University', country: 'China', flag: '🇨🇳', region: 'Asia',
+  lat: 39.9800, lon: 116.3450, precision: 'approx',
+  env: 'chamber', kind: 'chamber', target: 'Moon', status: 'active',
+  since: 2014, crew: '4', duration: '105 days, 370 days',
+  url: 'https://www.buaa.edu.cn/',
+  summary:
+    'A 160 m² sealed bioregenerative life-support facility in Beijing — two plant cabins and a living cabin — and the third such system ever built. Its 2017–18 run kept four students inside for 370 days with humans, plants, animals and microorganisms in closed material cycles, a world record for a bioregenerative closure and the strongest resource-closure result since Biosphere 2.',
+  scores: { isolation: 5, environment: 1, duration: 5, eva: 1, comms: 3, closure: 5, ops: 4, science: 5 }
+},
+{
+  id: 'mars-base-1', name: 'Mars Base 1 Camp', alias: 'Mars Base 1',
+  operator: 'C-Space (with China Astronaut Research and Training Center support)', country: 'China', flag: '🇨🇳', region: 'Asia',
+  lat: 38.4500, lon: 102.1000, precision: 'approx',
+  env: 'desert', kind: 'habitat', target: 'Mars', status: 'active',
+  since: 2019, crew: 'visitor groups', duration: '1–5 days',
+  url: 'http://www.c-space.cn/',
+  summary:
+    'A 67 km² Mars-themed base in the Gobi outside Jinchang, Gansu, with a domed habitat, EVA suits, rovers and survival scenarios, developed with technical support from the China Astronaut Research and Training Center. Its own designers describe it as primarily educational and tourism-facing rather than a research analog — a good example of a site with real terrain fidelity and low mission fidelity.',
+  scores: { isolation: 2, environment: 4, duration: 1, eva: 2, comms: 1, closure: 1, ops: 2, science: 1 }
+},
+{
+  id: 'qaidam', name: 'Qaidam Basin / Lenghu Mars analog', alias: 'Qaidam',
+  operator: 'Chinese Academy of Sciences / Qinghai provincial programmes', country: 'China', flag: '🇨🇳', region: 'Asia',
+  lat: 38.7500, lon: 93.3300, precision: 'approx',
+  env: 'desert', kind: 'field', target: 'Mars', status: 'active',
+  since: 2018, crew: 'field teams', duration: 'campaigns',
+  url: 'https://www.cas.cn/',
+  summary:
+    'A 2,700–3,000 m hyperarid basin on the Tibetan Plateau with yardangs, playa evaporites and wind-sculpted terrain widely cited in Chinese literature as the country\'s best Mars surface analog, and used for rover mobility trials, spectroscopy ground-truthing and site selection studies around Lenghu.',
+  scores: { isolation: 3, environment: 5, duration: 1, eva: 2, comms: 2, closure: 0, ops: 3, science: 4 }
+},
+{
+  id: 'hab1-ladakh', name: 'Hab-1 Analog Mission — Leh, Ladakh', alias: 'Hab-1',
+  operator: 'ISRO Human Spaceflight Centre / AAKA Space Studio / IIT Bombay / Univ. of Ladakh', country: 'India', flag: '🇮🇳', region: 'Asia',
+  lat: 34.1642, lon: 77.5848, precision: 'approx',
+  env: 'altitude', kind: 'habitat', target: 'Moon & Mars', status: 'active',
+  since: 2024, crew: '1–4', duration: '3 weeks (first mission)',
+  url: 'https://www.isro.gov.in/',
+  summary:
+    'India\'s first analog space mission, launched 1 November 2024 at Leh: a compact inflatable habitat with hydroponics, galley and sanitation, at over 3,500 m where oxygen partial pressure is roughly 40 % of sea level. The combination of high-altitude hypoxia, cold desert terrain and permafrost makes Ladakh one of the few sites offering a genuine physiological stressor alongside Mars-like ground.',
+  scores: { isolation: 4, environment: 5, duration: 3, eva: 3, comms: 3, closure: 3, ops: 3, science: 3 }
+},
+{
+  id: 'tso-kar', name: 'Tso Kar & Changthang Mars analog terrain', alias: 'Tso Kar',
+  operator: 'Indian academic consortia / Univ. of Ladakh', country: 'India', flag: '🇮🇳', region: 'Asia',
+  lat: 33.3200, lon: 78.0000, precision: 'approx',
+  env: 'altitude', kind: 'field', target: 'Mars', status: 'seasonal',
+  since: 2016, crew: 'field teams', duration: 'weeks',
+  url: 'https://www.isro.gov.in/',
+  summary:
+    'High-altitude saline lake basins and permafrost terrain on the Changthang plateau above 4,500 m, studied for hypersaline brines, sulphate and carbonate mineralogy and cold-desert microbial communities as a Martian analog — the field-science counterpart to the Hab-1 habitation work further north.',
+  scores: { isolation: 4, environment: 5, duration: 2, eva: 2, comms: 1, closure: 0, ops: 2, science: 4 }
+},
+{
+  id: 'ceef-rokkasho', name: 'CEEF — Closed Ecology Experiment Facilities', alias: 'CEEF',
+  operator: 'Institute for Environmental Sciences', country: 'Japan', flag: '🇯🇵', region: 'Asia',
+  lat: 40.9600, lon: 141.3700, precision: 'approx',
+  env: 'chamber', kind: 'chamber', target: 'Deep space', status: 'historic',
+  since: 1998, crew: '2', duration: 'up to 2 weeks closure',
+  url: 'https://www.ies.or.jp/',
+  summary:
+    'Japan\'s materially-closed ecosystem at Rokkasho, Aomori: a closed plantation, animal and habitation module cycling carbon, water and nitrogen with humans and goats inside. Built for radionuclide-transfer research, it doubles as one of the very few facilities anywhere to have demonstrated near-complete material closure with a human crew.',
+  scores: { isolation: 4, environment: 1, duration: 2, eva: 0, comms: 2, closure: 5, ops: 3, science: 4 }
+},
+{
+  id: 'adama-adelaide', name: 'ADAMA Mission — Adelaide', alias: 'ADAMA',
+  operator: 'University of Adelaide / ICEE Space', country: 'Australia', flag: '🇦🇺', region: 'Oceania',
+  lat: -34.9200, lon: 138.6040, precision: 'approx',
+  env: 'chamber', kind: 'habitat', target: 'Moon & Mars', status: 'active',
+  since: 2025, crew: '4–6', duration: '2 weeks',
+  url: 'https://www.adelaide.edu.au/',
+  summary:
+    'Australia\'s first analogue space mission, flown by the University of Adelaide with ICEE Space as part of the 2025 World\'s Biggest Analog — a university-based habitat running the WBA common experiment set under Vienna coordination, and the seed of a permanent Australian analog capability.',
+  scores: { isolation: 3, environment: 1, duration: 2, eva: 2, comms: 4, closure: 2, ops: 4, science: 3 }
+},
+{
+  id: 'mars-oz', name: 'MARS-Oz / Mars Arkaroola Research Station', alias: 'MARS-Oz',
+  operator: 'Mars Society Australia', country: 'Australia', flag: '🇦🇺', region: 'Oceania',
+  lat: -30.3400, lon: 139.3400, precision: 'approx',
+  env: 'desert', kind: 'planned', target: 'Mars', status: 'planned',
+  since: 2001, crew: '6 (design)', duration: '—',
+  url: 'https://www.marssociety.org.au/project/mars-oz',
+  summary:
+    'A long-planned two-module horizontal-lander-style station on the Arkaroola private nature reserve in the northern Flinders Ranges — chosen after a formal site-selection study for its ancient, deeply weathered, vegetation-poor terrain. Mars Society Australia has run expedition-style campaigns in the region for two decades; the permanent station remains unbuilt.',
+  scores: { isolation: 0, environment: 0, duration: 0, eva: 0, comms: 0, closure: 0, ops: 0, science: 0 }
+},
+{
+  id: 'bios-3', name: 'BIOS-3', alias: 'BIOS-3',
+  operator: 'Institute of Biophysics, Krasnoyarsk', country: 'Russia', flag: '🇷🇺', region: 'Asia',
+  lat: 56.0100, lon: 92.8500, precision: 'approx',
+  env: 'chamber', kind: 'historic', target: 'Deep space', status: 'historic',
+  since: 1972, crew: '2–3', duration: 'up to 180 days',
+  url: 'http://www.ibp.ru/',
+  summary:
+    'The Soviet closed ecological system in Krasnoyarsk — 315 m³ underground, with phytotrons growing wheat and vegetables under xenon lamps. Crews of three achieved essentially complete air and water recycling and roughly 80 % food closure across runs up to six months, decades before Biosphere 2, and it remains the benchmark for practical bioregenerative closure.',
+  scores: { isolation: 5, environment: 1, duration: 4, eva: 0, comms: 2, closure: 5, ops: 3, science: 4 }
+},
+{
+  id: 'star-city-hydrolab', name: 'Gagarin Cosmonaut Training Center Hydrolab', alias: 'Star City',
+  operator: 'GCTC / Roscosmos', country: 'Russia', flag: '🇷🇺', region: 'Europe',
+  lat: 55.8790, lon: 38.1180, precision: 'approx',
+  env: 'underwater', kind: 'field', target: 'Deep space', status: 'active',
+  since: 1980, crew: '2 suited + dive team', duration: '4–6 hour runs',
+  url: 'http://www.gctc.ru/',
+  summary:
+    'The 5,000 m³ neutral-buoyancy hydrolaboratory at Star City, with full-scale Russian segment mockups, where Orlan-suited cosmonauts rehearse EVAs. Together with the NBL in Houston and ESA\'s facility in Cologne it forms the global neutral-buoyancy triad — the highest-fidelity EVA workload analog available anywhere.',
+  scores: { isolation: 1, environment: 1, duration: 0, eva: 5, comms: 4, closure: 1, ops: 5, science: 3 }
+},
+
+/* ─────────────────────────  FIELD ANALOG SITES & EXPEDITION CAMPAIGNS  ───────────────────────── */
+{
+  id: 'dachstein', name: 'Dachstein Giant Ice Cave — Mars2012', alias: 'Dachstein',
+  operator: 'Austrian Space Forum (OeWF)', country: 'Austria', flag: '🇦🇹', region: 'Europe',
+  lat: 47.5350, lon: 13.6100, precision: 'approx',
+  env: 'cave', kind: 'expedition', target: 'Mars', status: 'historic',
+  since: 2012, crew: '2 suited + ~60 support', duration: '5 days',
+  url: 'https://oewf.org/en/amadee-program/',
+  summary:
+    'The first of the Austrian Space Forum\'s large integrated simulations, staged in the ice caves of the Dachstein massif — subsurface ice as an analog for Martian ground ice, with the Aouda.X suit simulator, rovers and a full Innsbruck mission control on signal delay. It established the OeWF template later exported to Morocco, Oman, Israel and Armenia.',
+  scores: { isolation: 3, environment: 4, duration: 1, eva: 5, comms: 4, closure: 1, ops: 5, science: 4 }
+},
+{
+  id: 'erfoud', name: 'Mars2013 — Erfoud, Northern Sahara', alias: 'Erfoud',
+  operator: 'Austrian Space Forum / Ibn Battuta Centre', country: 'Morocco', flag: '🇲🇦', region: 'Africa',
+  lat: 31.4300, lon: -4.2300, precision: 'approx',
+  env: 'desert', kind: 'field', target: 'Mars', status: 'historic',
+  since: 2013, crew: '3 suited + ~100 support', duration: '4 weeks',
+  url: 'https://oewf.org/en/amadee-program/',
+  summary:
+    'A four-week Mars field simulation on the Saharan hamada near Erfoud, with 19 experiments from 23 nations, suited EVAs, rover traverses and a 10-minute one-way signal delay to Innsbruck. The surrounding Ibn Battuta Centre field sites in the Moroccan desert remain a standing European reference terrain for rover and instrument trials.',
+  scores: { isolation: 4, environment: 5, duration: 3, eva: 5, comms: 4, closure: 1, ops: 5, science: 5 }
+},
+{
+  id: 'askja', name: 'Askja & Holuhraun lava fields', alias: 'Askja',
+  operator: 'Multiple (NASA Apollo era; ESA/academic today)', country: 'Iceland', flag: '🇮🇸', region: 'Europe',
+  lat: 65.0300, lon: -16.7500, precision: 'approx',
+  env: 'volcanic', kind: 'field', target: 'Moon & Mars', status: 'seasonal',
+  since: 1965, crew: 'field teams', duration: 'days – weeks',
+  url: 'https://en.vedur.is/',
+  summary:
+    'The Icelandic highland where Apollo astronauts trained in 1965 and 1967, and where fresh basaltic lava, tephra, glaciofluvial outwash and hydrothermal systems continue to serve as Moon and Mars terrain for rover trials, spectral ground-truthing and geology field courses.',
+  scores: { isolation: 4, environment: 5, duration: 1, eva: 3, comms: 2, closure: 0, ops: 3, science: 5 }
+},
+{
+  id: 'mistastin', name: 'Mistastin Lake impact structure', alias: 'Mistastin',
+  operator: 'Canadian Space Agency / Western University', country: 'Canada', flag: '🇨🇦', region: 'North America',
+  lat: 55.8830, lon: -63.3000, precision: 'approx',
+  env: 'crater', kind: 'field', target: 'Moon', status: 'seasonal',
+  since: 2009, crew: 'field teams', duration: '1–3 week campaigns',
+  url: 'https://www.asc-csa.gc.ca/',
+  summary:
+    'A 28 km impact crater in remote Labrador whose anorthositic target rock makes it the closest geological match on Earth to a lunar highland impact — used for training crews to recognise impact melt, for sampling-strategy studies, and for testing how much a suited geologist can actually accomplish in a timed traverse.',
+  scores: { isolation: 5, environment: 5, duration: 2, eva: 4, comms: 2, closure: 1, ops: 4, science: 5 }
+},
+{
+  id: 'sudbury', name: 'Sudbury impact structure', alias: 'Sudbury',
+  operator: 'Canadian Space Agency / academic consortia', country: 'Canada', flag: '🇨🇦', region: 'North America',
+  lat: 46.6000, lon: -81.1830, precision: 'approx',
+  env: 'crater', kind: 'field', target: 'Moon & Mars', status: 'active',
+  since: 2000, crew: 'training groups', duration: 'days',
+  url: 'https://www.asc-csa.gc.ca/',
+  summary:
+    'One of the largest and best-exposed impact structures on Earth, and the CSA\'s standing field classroom for impact geology, breccia interpretation and analog rover science operations — including CanMars-style simulated rover missions run with a blind science team working from downlinked data alone.',
+  scores: { isolation: 1, environment: 4, duration: 0, eva: 2, comms: 4, closure: 0, ops: 4, science: 5 }
+},
+{
+  id: 'tuz-golu', name: 'Tuz Gölü calibration site', alias: 'Tuz Gölü',
+  operator: 'ESA / TÜBİTAK', country: 'Türkiye', flag: '🇹🇷', region: 'Middle East',
+  lat: 38.7800, lon: 33.3800, precision: 'approx',
+  env: 'desert', kind: 'field', target: 'Mars', status: 'active',
+  since: 2009, crew: 'instrument teams', duration: 'days',
+  url: 'https://www.esa.int/',
+  summary:
+    'A vast, flat, seasonally dry salt lake on the Anatolian plateau used as a radiometric and spectral calibration target, and as an evaporite-mineralogy analog for Martian playa and sulphate deposits. Not a crewed analog — an instrument analog, and one of the very few sites in that category with formal international standing.',
+  scores: { isolation: 1, environment: 4, duration: 0, eva: 0, comms: 1, closure: 0, ops: 3, science: 4 }
+},
+{
+  id: 'jaxa-isolation', name: 'JAXA Closed Environment Isolation Facility', alias: 'Tsukuba',
+  operator: 'Japan Aerospace Exploration Agency', country: 'Japan', flag: '🇯🇵', region: 'Asia',
+  lat: 36.0650, lon: 140.1300, precision: 'approx',
+  env: 'chamber', kind: 'chamber', target: 'Deep space', status: 'active',
+  since: 2009, crew: '6–10', duration: '1–2 weeks',
+  url: 'https://humans-in-space.jaxa.jp/en/',
+  summary:
+    'The isolation chamber at Tsukuba Space Center used in JAXA astronaut selection and in behavioural research, where candidate groups live under continuous observation and are given deliberately ambiguous, cooperation-dependent tasks. A small-volume, high-observation analog focused narrowly and effectively on team behaviour under confinement.',
+  scores: { isolation: 5, environment: 0, duration: 2, eva: 0, comms: 3, closure: 2, ops: 4, science: 4 }
+},
+{
+  id: 'summit-greenland', name: 'Summit Station, Greenland Ice Sheet', alias: 'Summit',
+  operator: 'US National Science Foundation', country: 'Greenland', flag: '🇬🇱', region: 'Europe',
+  lat: 72.5796, lon: -38.4592, precision: 'exact',
+  env: 'polar', kind: 'expedition', target: 'Deep space', status: 'active',
+  since: 1989, crew: '5 winter / 40 summer', duration: 'up to 6 months',
+  url: 'https://geosummit.org/',
+  summary:
+    'A five-person winter crew at 3,216 m on the Greenland ice sheet, isolated for months at a time — a northern-hemisphere counterpart to Antarctic winter-over analogs, and used for small-team confinement, cold-weather medicine and remote-logistics research relevant to polar lunar outposts.',
+  scores: { isolation: 5, environment: 3, duration: 4, eva: 2, comms: 2, closure: 2, ops: 3, science: 3 }
+},
+{
+  id: 'proteus', name: 'PROTEUS underwater research station', alias: 'PROTEUS',
+  operator: 'Fabien Cousteau Ocean Learning Center', country: 'Curaçao', flag: '🇨🇼', region: 'South America',
+  lat: 12.1224, lon: -68.9500, precision: 'approx',
+  env: 'underwater', kind: 'planned', target: 'Deep space', status: 'planned',
+  since: 2028, crew: '12', duration: 'up to 30 days',
+  url: 'https://fabiencousteauolc.org/proteus',
+  summary:
+    'A proposed 370 m² two-storey habitat on stilts at ~20 m off Curaçao, conceived as an "International Space Station of the sea" with a video studio, laboratories and a moon pool. If built, it would be the largest saturation habitat ever operated and an obvious high-fidelity platform for long-duration confinement and EVA-analog research.',
+  scores: { isolation: 0, environment: 0, duration: 0, eva: 0, comms: 0, closure: 0, ops: 0, science: 0 }
+},
+{
+  id: 'la-joya', name: 'Pampas de La Joya', alias: 'La Joya',
+  operator: 'Universidad Católica de Santa María / international teams', country: 'Peru', flag: '🇵🇪', region: 'South America',
+  lat: -16.7000, lon: -71.9000, precision: 'approx',
+  env: 'desert', kind: 'field', target: 'Mars', status: 'seasonal',
+  since: 2004, crew: 'field teams', duration: 'days – weeks',
+  url: 'https://www.ucsm.edu.pe/',
+  summary:
+    'A hyperarid Peruvian desert plain with vanishingly low organic content and oxidising soils, sampled repeatedly as a Mars soil analog after the Viking labelled-release controversy, and used for testing the detection limits of organic-analysis instruments in soils near the edge of habitability.',
+  scores: { isolation: 3, environment: 5, duration: 1, eva: 1, comms: 1, closure: 0, ops: 2, science: 4 }
+}
+
+];

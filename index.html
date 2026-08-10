@@ -1,0 +1,552 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The Analog Atlas — every analog astronaut mission location on Earth</title>
+<meta name="description" content="A researched world map of analog astronaut mission sites — habitats, chambers, caves, deserts, ice and undersea stations — each rated on an eight-criterion Analog Fidelity Index. Submit and update locations.">
+<meta name="theme-color" content="#05060c">
+<meta property="og:title" content="The Analog Atlas">
+<meta property="og:description" content="Every analog astronaut mission location on Earth, mapped and rated for fidelity.">
+<meta property="og:type" content="website">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🛰️</text></svg>">
+<link rel="preconnect" href="https://unpkg.com">
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+      integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="">
+<link rel="stylesheet" href="/assets/css/style.css">
+</head>
+<body>
+
+<canvas id="starfield" aria-hidden="true"></canvas>
+<div class="nebula" aria-hidden="true"></div>
+
+<div class="page">
+
+<nav class="nav">
+  <div class="nav-in">
+    <span class="brand">🛰️ THE ANALOG <b>ATLAS</b></span>
+    <div class="nav-links">
+      <a class="navlink" href="#define">Definition</a>
+      <a class="navlink" href="#rubric">Fidelity index</a>
+      <a class="navlink" href="#atlas">Map</a>
+      <a class="navlink" href="#ranking">Ranking</a>
+      <a class="navlink" href="#submit">Submit a site</a>
+      <a class="navlink" href="#method">Method</a>
+    </div>
+  </div>
+</nav>
+
+<!-- ══════════════════ HERO ══════════════════ -->
+<header class="hero">
+  <div class="wrap hero-grid">
+    <div>
+      <p class="eyebrow">Terrestrial analogs · Moon &amp; Mars · <span id="siteCountEyebrow">—</span> locations</p>
+      <h1>Every place on Earth<br>we <span class="grad">practise leaving it</span></h1>
+      <p class="lede">
+        Somewhere right now a crew is sealed in a windowless hangar in Poland, waiting twenty
+        minutes for an answer to a question. Someone else is in a lava tube in Iceland with eight
+        hours of air and a habitat that has to be inflated before dark. A physician is entering
+        her seventh month of Antarctic night, and a habitat in Arizona is measuring exactly how
+        much oxygen four people just used.
+      </p>
+      <p class="lede">
+        These are analog astronaut missions. This atlas maps them — and rates how honestly each
+        one reproduces the thing it stands in for.
+      </p>
+      <div class="btn-row">
+        <a class="btn btn-primary" href="#atlas">Open the map →</a>
+        <a class="btn" href="#rubric">How fidelity is scored</a>
+        <a class="btn" href="#submit">Add a location</a>
+      </div>
+      <div class="stats">
+        <div class="stat"><b id="statSites">—</b><span>Locations</span></div>
+        <div class="stat"><b id="statCountries">—</b><span>Countries</span></div>
+        <div class="stat"><b id="statActive">—</b><span>Active</span></div>
+        <div class="stat"><b id="statPeak">—</b><span>Tier IV+</span></div>
+      </div>
+    </div>
+    <div>
+      <div class="hero-visual-wrap">
+        <div class="orbit" aria-hidden="true"></div>
+        <div class="hero-visual"><img id="heroImg" alt="" loading="lazy"></div>
+      </div>
+      <p class="hint" id="heroCredit" style="text-align:center;margin-top:12px;font-family:var(--mono);font-size:.68rem"></p>
+    </div>
+  </div>
+</header>
+
+<!-- ══════════════════ DEFINITION ══════════════════ -->
+<section id="define">
+  <div class="wrap">
+    <p class="eyebrow">01 · What counts</p>
+    <h2>What actually makes something<br>an analog astronaut mission</h2>
+    <p class="lede" style="margin-bottom:34px">
+      The phrase gets used for everything from a NASA year-long sealed habitat to a themed
+      weekend in the desert, and that ambiguity is a real scientific problem: missions run
+      differently cannot be pooled, so results cannot be compared and conclusions cannot be
+      drawn. Standardisation efforts — <b>IGSA-STD-1</b>, released in 2023 by an international
+      group of analog mission managers and habitat directors, and the fidelity-classification
+      work published in the behavioural-health literature — exist precisely to fix this.
+    </p>
+
+    <p style="color:var(--text-dim);max-width:74ch">
+      An <b>analog</b> is a place on Earth that resembles a target environment in some
+      significant way. An <b>analog mission</b> is what happens when people go and live there as
+      though it were that environment. The first three conditions below are necessary for
+      anything to be called an analog astronaut mission at all; the last two are what separate a
+      mission from a mere analog <em>site</em>.
+    </p>
+
+    <div class="grid grid-3" style="margin-top:30px" id="defineGrid"></div>
+
+    <div class="callout" style="margin-top:26px">
+      <b>The corollary.</b> A rover trial in the Atacama, an instrument calibration on a Turkish
+      salt flat and a suited traverse across a Canadian impact crater are all analog
+      <em>research</em>, and this atlas maps them — but they are scored honestly, which means
+      they score near zero on isolation and duration. A place can be a superb Mars analog and a
+      poor analog mission, and the index is designed to say so out loud rather than average the
+      distinction away.
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════ RUBRIC ══════════════════ -->
+<section id="rubric">
+  <div class="wrap">
+    <p class="eyebrow">02 · The rubric</p>
+    <h2>The Analog Fidelity Index</h2>
+    <p class="lede">
+      Eight criteria, each scored 0–5 against published anchors, combined as a weighted mean and
+      expressed 0–100. The weights below are the defaults — <b>move the sliders and the entire
+      atlas re-ranks in front of you</b>, because the right weighting depends on what you are
+      trying to study. A behavioural-health researcher should push isolation and duration; an
+      EVA systems engineer should push suit and operations; an ISRU team probably cares about
+      almost nothing except the ground outside.
+    </p>
+
+    <div class="card" style="margin:26px 0">
+      <h3 style="margin-bottom:16px">Weighting model</h3>
+      <div class="weights" id="weightPanel"></div>
+      <div style="display:flex;gap:12px;margin-top:18px;flex-wrap:wrap">
+        <button class="btn" id="resetWeights">Reset to defaults</button>
+        <button class="btn" id="presetBehav">Behavioural-health preset</button>
+        <button class="btn" id="presetEVA">Surface-operations preset</button>
+        <button class="btn" id="presetGeo">Field-science preset</button>
+      </div>
+    </div>
+
+    <div class="grid grid-2" id="critGrid"></div>
+
+    <h3 style="margin:44px 0 14px">Fidelity tiers</h3>
+    <div class="tiers" id="tierLegend"></div>
+  </div>
+</section>
+
+<!-- ══════════════════ MAP ══════════════════ -->
+<section id="atlas">
+  <div class="wrap">
+    <p class="eyebrow">03 · The atlas</p>
+    <h2>The map</h2>
+    <p class="lede" style="margin-bottom:26px">
+      Marker colour is fidelity tier; marker size is the Analog Fidelity Index under your current
+      weighting. Click any marker or list row for the full record. Sites you add yourself are
+      stored in your browser and drawn in <span style="color:var(--violet)">violet</span>.
+    </p>
+
+    <div class="map-shell">
+      <aside class="map-side">
+        <div class="filters">
+          <input type="search" id="q" placeholder="Search name, operator, country…" aria-label="Search sites">
+          <div class="filter-row">
+            <select id="fRegion" aria-label="Filter by region"><option value="">All regions</option></select>
+            <select id="fEnv" aria-label="Filter by environment"><option value="">All environments</option></select>
+          </div>
+          <div class="filter-row">
+            <select id="fTarget" aria-label="Filter by target body"><option value="">All targets</option></select>
+            <select id="fStatus" aria-label="Filter by status"><option value="">All statuses</option></select>
+          </div>
+          <select id="fTier" aria-label="Filter by tier">
+            <option value="">All fidelity tiers</option>
+            <option value="V">Tier V — Peak fidelity</option>
+            <option value="IV">Tier IV — High fidelity</option>
+            <option value="III">Tier III — Moderate fidelity</option>
+            <option value="II">Tier II — Entry fidelity</option>
+            <option value="I">Tier I — Experiential</option>
+          </select>
+          <div class="filter-meta">
+            <span id="shownCount">—</span>
+            <button class="btn" style="padding:2px 10px;font-size:.66rem" id="clearFilters">Clear</button>
+          </div>
+        </div>
+        <div class="site-list" id="siteList"></div>
+      </aside>
+      <div id="map"></div>
+    </div>
+
+    <div style="display:flex;gap:12px;margin-top:16px;flex-wrap:wrap">
+      <button class="btn" id="dlJson">⬇ Download dataset (JSON)</button>
+      <button class="btn" id="dlGeo">⬇ Download GeoJSON</button>
+      <button class="btn" id="dlCsv">⬇ Download CSV</button>
+      <a class="btn" href="#submit">＋ Add or correct a location</a>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════ RANKING ══════════════════ -->
+<section id="ranking">
+  <div class="wrap">
+    <p class="eyebrow">04 · Ranking</p>
+    <h2>Ranked by fidelity</h2>
+    <p class="lede" style="margin-bottom:24px">
+      Click any column header to sort. This table reflects your current weighting, so it is not a
+      league table so much as an argument you can rerun. Sites with no crewed missions flown —
+      planned or cancelled stations — are scored zero throughout and sit at the bottom by design.
+    </p>
+    <div class="table-wrap">
+      <table id="rankTable">
+        <thead>
+          <tr>
+            <th data-sort="rank" class="num">#</th>
+            <th data-sort="name">Location</th>
+            <th data-sort="country">Country</th>
+            <th data-sort="env">Environment</th>
+            <th data-sort="afi" class="num">AFI</th>
+            <th data-sort="tier">Tier</th>
+            <th data-sort="isolation" class="num">ISO</th>
+            <th data-sort="environment" class="num">ENV</th>
+            <th data-sort="duration" class="num">DUR</th>
+            <th data-sort="eva" class="num">EVA</th>
+            <th data-sort="comms" class="num">COM</th>
+            <th data-sort="closure" class="num">CLO</th>
+            <th data-sort="ops" class="num">OPS</th>
+            <th data-sort="science" class="num">SCI</th>
+          </tr>
+        </thead>
+        <tbody id="rankBody"></tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════ SUBMIT ══════════════════ -->
+<section id="submit">
+  <div class="wrap">
+    <p class="eyebrow">05 · Contribute</p>
+    <h2>Add a location, or correct one</h2>
+    <p class="lede">
+      This atlas is certainly incomplete. New habitats open every year, several of the 2025
+      World's Biggest Analog nodes are not individually documented anywhere public, and some
+      coordinates here are the host village rather than the airlock. If you run a station, flew a
+      mission, or simply know better — tell the atlas.
+    </p>
+
+    <div class="grid grid-2" style="align-items:start;margin-top:26px">
+      <div class="form-card">
+        <div class="form-note">
+          <b>Two things happen when you submit.</b> The record is added to your own map
+          immediately and kept in this browser, so you can see it, filter it and export it right
+          away. It is also sent to the site maintainers for review before it enters the public
+          dataset — nothing you submit changes what other visitors see until a human has checked
+          it.
+        </div>
+
+        <form id="siteForm" name="analog-site" method="POST" action="/success" data-netlify="true" netlify-honeypot="bot-field">
+          <input type="hidden" name="form-name" value="analog-site">
+          <p class="hidden-form"><label>Leave blank: <input name="bot-field"></label></p>
+
+          <div class="field">
+            <label for="f_kind">Submission type</label>
+            <select id="f_kind" name="submission_type">
+              <option value="new">New location</option>
+              <option value="correction">Correction to an existing location</option>
+              <option value="coords">Better coordinates</option>
+              <option value="score">Disagreement with a fidelity score</option>
+            </select>
+          </div>
+
+          <div class="field">
+            <label for="f_name">Location / mission name *</label>
+            <input id="f_name" name="name" required placeholder="e.g. Lunares Research Station">
+          </div>
+
+          <div class="filter-row">
+            <div class="field">
+              <label for="f_operator">Operator</label>
+              <input id="f_operator" name="operator" placeholder="Organisation running it">
+            </div>
+            <div class="field">
+              <label for="f_country">Country *</label>
+              <input id="f_country" name="country" required placeholder="e.g. Poland">
+            </div>
+          </div>
+
+          <div class="filter-row">
+            <div class="field">
+              <label for="f_lat">Latitude *</label>
+              <input id="f_lat" name="lat" required type="number" step="any" min="-90" max="90" placeholder="53.1799">
+            </div>
+            <div class="field">
+              <label for="f_lon">Longitude *</label>
+              <input id="f_lon" name="lon" required type="number" step="any" min="-180" max="180" placeholder="16.7420">
+            </div>
+          </div>
+
+          <div class="filter-row">
+            <div class="field">
+              <label for="f_env">Environment</label>
+              <select id="f_env" name="environment">
+                <option value="desert">Desert</option>
+                <option value="volcanic">Volcanic / basaltic</option>
+                <option value="polar">Polar</option>
+                <option value="arctic">Arctic / glacial</option>
+                <option value="cave">Cave / lava tube</option>
+                <option value="underwater">Underwater</option>
+                <option value="crater">Impact crater</option>
+                <option value="altitude">High altitude</option>
+                <option value="chamber">Sealed chamber / habitat</option>
+                <option value="analog-terrain">Engineered analog terrain</option>
+              </select>
+            </div>
+            <div class="field">
+              <label for="f_target">Target body</label>
+              <select id="f_target" name="target">
+                <option>Mars</option><option>Moon</option>
+                <option>Moon &amp; Mars</option><option>Deep space</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="filter-row">
+            <div class="field">
+              <label for="f_status">Status</label>
+              <select id="f_status" name="status">
+                <option value="active">Active</option><option value="seasonal">Seasonal</option>
+                <option value="dormant">Dormant</option><option value="planned">Planned</option>
+                <option value="historic">Historic</option>
+              </select>
+            </div>
+            <div class="field">
+              <label for="f_url">Website</label>
+              <input id="f_url" name="url" type="url" placeholder="https://">
+            </div>
+          </div>
+
+          <div class="filter-row">
+            <div class="field">
+              <label for="f_crew">Typical crew size</label>
+              <input id="f_crew" name="crew" placeholder="e.g. 6">
+            </div>
+            <div class="field">
+              <label for="f_duration">Typical mission length</label>
+              <input id="f_duration" name="duration" placeholder="e.g. 2 weeks">
+            </div>
+          </div>
+
+          <div class="field">
+            <label for="f_summary">Description</label>
+            <textarea id="f_summary" name="summary" placeholder="What is it, what does a mission there involve, and what makes it a credible analog?"></textarea>
+          </div>
+
+          <label style="display:block;font-family:var(--mono);font-size:.7rem;letter-spacing:.14em;text-transform:uppercase;color:var(--text-faint);margin:22px 0 8px">
+            Fidelity self-assessment (0–5 each)
+          </label>
+          <div class="score-grid" id="scoreInputs"></div>
+
+          <div class="field" style="margin-top:16px">
+            <label for="f_evidence">Evidence &amp; sources</label>
+            <textarea id="f_evidence" name="evidence" placeholder="Links to mission reports, publications, the station website — anything that lets a reviewer verify this."></textarea>
+          </div>
+
+          <div class="filter-row">
+            <div class="field">
+              <label for="f_by">Your name</label>
+              <input id="f_by" name="submitted_by" placeholder="Optional">
+            </div>
+            <div class="field">
+              <label for="f_email">Email</label>
+              <input id="f_email" name="email" type="email" placeholder="Optional — only for follow-up">
+            </div>
+          </div>
+
+          <input type="hidden" name="computed_afi" id="f_afi">
+
+          <div class="btn-row" style="margin-top:6px">
+            <button type="submit" class="btn btn-primary">Submit to the atlas</button>
+            <button type="button" class="btn" id="addLocalOnly">Add to my map only</button>
+          </div>
+          <div class="msg" id="formMsg" role="status"></div>
+        </form>
+      </div>
+
+      <div>
+        <div class="card">
+          <h3>Your additions</h3>
+          <p style="margin-bottom:14px">
+            Locations you have added in this browser. They appear on the map in violet, are
+            included in filters, ranking and every export, and never leave your device unless you
+            submitted the form.
+          </p>
+          <div id="localList" style="font-family:var(--mono);font-size:.8rem;color:var(--text-dim)"></div>
+          <div class="btn-row">
+            <button class="btn" id="exportLocal">⬇ Export mine</button>
+            <button class="btn" id="clearLocal">Clear mine</button>
+          </div>
+        </div>
+
+        <div class="card" style="margin-top:18px">
+          <h3>Known gaps</h3>
+          <p>Places this atlas knows it is missing, and would like help with:</p>
+          <ul style="color:var(--text-dim);font-size:.9rem;padding-left:18px;margin:0">
+            <li>The French node of the 2025 World's Biggest Analog — the habitat is documented as
+              participating, but not publicly named or located.</li>
+            <li>Several university and national analog habitats commissioned since 2024 that have
+              not yet published a permanent site.</li>
+            <li>Exact habitat coordinates for the sites marked <b>approx</b> in the record panel,
+              where the published position is a village, valley or campus.</li>
+            <li>Analog programmes in South and Central America, West Africa and Southeast Asia,
+              which are almost certainly under-represented here relative to reality.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════ GALLERY ══════════════════ -->
+<section id="imagery">
+  <div class="wrap">
+    <p class="eyebrow">06 · Imagery</p>
+    <h2>The places we are rehearsing for</h2>
+    <p class="lede" style="margin-bottom:24px">
+      Public-domain imagery pulled live from the <a href="https://images.nasa.gov" rel="noopener">NASA Image and Video Library</a>
+      each time this page loads — Martian terrain, lunar surface, and the analog sites and crews
+      themselves. NASA material is generally not copyrighted; check the usage guidelines before
+      republishing, and note that NASA does not endorse anything.
+    </p>
+    <div class="gallery" id="gallery"></div>
+    <p class="hint" id="galleryNote" style="margin-top:14px"></p>
+  </div>
+</section>
+
+<!-- ══════════════════ METHOD ══════════════════ -->
+<section id="method">
+  <div class="wrap">
+    <p class="eyebrow">07 · Method &amp; honesty</p>
+    <h2>How this was built, and where to distrust it</h2>
+
+    <div class="grid grid-2" style="margin-bottom:30px">
+      <div class="card">
+        <h3>What the scores are</h3>
+        <p>
+          Every score is an editorial judgement made against the published anchors in the rubric
+          above, from public documentation of each site: operator materials, mission reports,
+          peer-reviewed papers and press coverage. They are reproducible in the sense that the
+          anchors are written down and the arithmetic is open — not in the sense that a second
+          assessor would produce identical numbers. Treat them as a structured argument, not a
+          measurement.
+        </p>
+      </div>
+      <div class="card">
+        <h3>What the scores are not</h3>
+        <p>
+          This is <b>not</b> an official rating from <a href="https://analogstandards.space/" rel="noopener">analogstandards.space</a>,
+          from the IGSA-STD-1 standard, or from any habitat operator. It is an independent index
+          built in the same spirit and informed by that work. No station has certified, reviewed
+          or endorsed its score here. Where an operator disagrees, the operator is more likely to
+          be right — the submission form is the place to say so.
+        </p>
+      </div>
+      <div class="card">
+        <h3>Coordinates</h3>
+        <p>
+          Each record is marked <b>exact</b> or <b>approx</b>. Exact means a published position
+          for the facility itself. Approx means the settlement, crater, valley or campus that
+          hosts it, typically good to a few kilometres — deliberate in some cases, since a number
+          of stations do not publish a precise location. Never navigate by this map.
+        </p>
+      </div>
+      <div class="card">
+        <h3>Selection</h3>
+        <p>
+          Included: crewed analog habitats and chambers; recurring analog mission campaigns;
+          expedition and winter-over environments used as formal spaceflight analogs; and field
+          sites of established planetary-analog standing. Excluded: pure themed attractions with
+          no research or training function, one-off publicity simulations, and proposed stations
+          with no design record. Planned facilities are listed but score zero until a crew
+          actually flies.
+        </p>
+      </div>
+    </div>
+
+    <h3>Principal sources</h3>
+    <ul class="sources">
+      <li><a href="https://analogstandards.space/" rel="noopener">analogstandards.space</a> — the standards effort that prompted this rubric.</li>
+      <li>Global Standardization of Analog Space Missions, and the IGSA-STD-1 standard (2023).</li>
+      <li>Optimise behavioural health and human factors research for deep space missions by classifying analogue scenarios and fidelity — <i>Frontiers in Space Technologies</i>, 2025 (EFCSA; PFID/HFID/MFID/LFID/VLFID classes).</li>
+      <li>Space Analogs and Behavioral Health Performance Research: review and recommendations checklist from the ESA Topical Team — <i>npj Microgravity</i>, 2024.</li>
+      <li><a href="https://www.nasa.gov/analog-missions/" rel="noopener">NASA Analog Missions</a>, HERA, CHAPEA, NEEMO and D-RATS programme pages.</li>
+      <li><a href="https://oewf.org/en/amadee-program/" rel="noopener">Austrian Space Forum</a> — AMADEE programme and the 2025 World's Biggest Analog.</li>
+      <li><a href="https://mdrs.marssociety.org/" rel="noopener">Mars Desert Research Station</a> crew reports and Mars Society station documentation.</li>
+      <li><a href="https://samb2.space/" rel="noopener">SAM at Biosphere 2</a>, <a href="https://www.hi-seas.org/" rel="noopener">HI-SEAS</a>, <a href="https://lunares.space/" rel="noopener">LunAres</a>, <a href="https://www.astronaut.center/" rel="noopener">AATC</a>, <a href="https://astrolandagency.com/" rel="noopener">Astroland</a>, <a href="https://hydronaut.eu/en" rel="noopener">Hydronaut</a>, <a href="https://www.d-mars.org/" rel="noopener">D-MARS</a>, <a href="https://www.habitatmarte.com/" rel="noopener">Habitat Marte</a>, <a href="https://www.jsri.space/analog-missions" rel="noopener">JSRI</a>, <a href="https://kenyamarssociety.org/" rel="noopener">Mars Society Kenya</a>.</li>
+      <li><a href="https://blogs.esa.int/concordia/" rel="noopener">ESA Concordia</a>, CAVES and PANGAEA programme pages; DLR/ESA LUNA and :envihab.</li>
+      <li><a href="https://wiki.astro-chasm.org/" rel="noopener">CHASM Analog Wiki</a> and <a href="https://marspedia.org/List_of_Analog_Station_Efforts" rel="noopener">Marspedia's list of analog station efforts</a>.</li>
+      <li>Imagery: <a href="https://images.nasa.gov" rel="noopener">NASA Image and Video Library</a>; optional <a href="https://www.pexels.com" rel="noopener">Pexels</a> integration.</li>
+    </ul>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="grid grid-4" style="margin-bottom:34px">
+      <div>
+        <h4>The Analog Atlas</h4>
+        <p style="font-size:.85rem">An open, correctable register of the places humanity practises leaving Earth.</p>
+      </div>
+      <div>
+        <h4>Data</h4>
+        <ul>
+          <li><a href="#" id="footJson">Dataset (JSON)</a></li>
+          <li><a href="#" id="footGeo">GeoJSON</a></li>
+          <li><a href="#" id="footCsv">CSV</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Contribute</h4>
+        <ul>
+          <li><a href="#submit">Submit a location</a></li>
+          <li><a href="#submit">Report a wrong coordinate</a></li>
+          <li><a href="#submit">Challenge a score</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Credits</h4>
+        <ul>
+          <li>Map data © OpenStreetMap contributors</li>
+          <li>Tiles © CARTO</li>
+          <li>Imagery courtesy NASA</li>
+        </ul>
+      </div>
+    </div>
+    <p style="font-size:.78rem;color:var(--text-faint);max-width:80ch">
+      Not affiliated with NASA, ESA, the Austrian Space Forum, the Mars Society,
+      analogstandards.space or any habitat operator. Fidelity scores are independent editorial
+      assessments. NASA imagery is used under its public-domain media guidelines and its
+      appearance here does not imply endorsement.
+    </p>
+  </div>
+</footer>
+
+</div><!-- /page -->
+
+<!-- Detail drawer -->
+<aside class="detail" id="detail" aria-hidden="true">
+  <div class="detail-in" id="detailIn"></div>
+</aside>
+
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+        integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+<script src="/assets/js/standards.js"></script>
+<script src="/assets/js/sites.js"></script>
+<script src="/assets/js/app.js"></script>
+</body>
+</html>

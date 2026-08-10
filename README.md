@@ -3,8 +3,7 @@
 A static site for **HALF BAD**, a (fictional) eight-piece ska band from Coventry.
 No build step, no dependencies — open `index.html` and it runs.
 
-**Live:** https://half-bad-official-site-cd-0ce7814b5e.netlify.app
-(snapshot of the earlier single-page version — see *Deploying*)
+**Live:** https://thatmre.github.io/Hello-World/
 
 ```bash
 python3 -m http.server 8000   # then visit http://localhost:8000
@@ -76,11 +75,13 @@ and links between them stay relative, so the folder works as a unit. The build
 fails loudly if any `assets/` reference survives the rewrite, so a renamed image
 can't silently ship as a broken link.
 
-The current live URL is a **snapshot of the earlier single-page site**, taken
-before this split. It was deployed by importing one self-contained HTML file, a
-route that cannot serve a multi-page site. To publish these pages, link this
-repo in Netlify — `netlify.toml` already sets the publish directory and headers,
-so the build settings can stay empty, and every push then redeploys.
+Publishing is automatic: `.github/workflows/pages.yml` serves the repo root via
+GitHub Pages on every push to `master`, so the live site is never a snapshot.
+The same workflow runs `tools/bundle.py` on pull requests and fails if `dist/`
+has drifted from source, so the standalone bundles cannot go stale unnoticed.
+
+`netlify.toml` remains for anyone who would rather point Netlify (or another
+static host) at this repo instead — publish the root, no build step.
 
 ## Notes
 

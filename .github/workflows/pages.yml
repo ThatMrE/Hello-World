@@ -1,0 +1,56 @@
+name: Deploy to GitHub Pages
+
+# The site is plain files at the repo root, so Pages serves it directly.
+# This replaces the earlier snapshot deploys: every push to master republishes.
+on:
+  push:
+    branches: [master]
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+# Never let two deploys race; queue rather than cancel so master always wins last.
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  check:
+    name: Bundle is in sync
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      # dist/ is generated. If someone edits assets/ without rebuilding, the
+      # standalone bundles silently drift from the site — fail loudly instead.
+      - run: python3 tools/bundle.py
+      - name: dist/ matches source
+        run: |
+          if ! git diff --quiet -- dist/; then
+            echo "::error::dist/ is stale. Run 'python3 tools/bundle.py' and commit the result."
+            git diff --stat -- dist/
+            exit 1
+          fi
+
+  deploy:
+    name: Deploy
+    needs: check
+    if: github.ref == 'refs/heads/master'
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/configure-pages@v5
+        with:
+          # Turns Pages on for the repo the first time this runs.
+          enablement: true
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: .
+      - id: deployment
+        uses: actions/deploy-pages@v4

@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 600" role="img" aria-label="Live at the Locarno cover: stage spotlights over a crowd">
+  <rect width="600" height="600" fill="#c8352b"/>
+
+  <!-- spotlight cones -->
+  <g fill="#ffc629" opacity=".85">
+    <path d="M120 0 L34 470 L226 470 Z"/>
+    <path d="M300 0 L206 470 L394 470 Z"/>
+    <path d="M480 0 L374 470 L566 470 Z"/>
+  </g>
+  <g fill="#f4f1e8" opacity=".35">
+    <path d="M120 0 L92 470 L168 470 Z"/>
+    <path d="M300 0 L266 470 L334 470 Z"/>
+    <path d="M480 0 L436 470 L508 470 Z"/>
+  </g>
+
+  <!-- crowd -->
+  <g fill="#0e0e0e">
+    <path d="M0 470h600v130H0z"/>
+    <circle cx="46" cy="462" r="26"/><circle cx="112" cy="446" r="30"/><circle cx="182" cy="466" r="24"/>
+    <circle cx="248" cy="440" r="30"/><circle cx="318" cy="464" r="26"/><circle cx="386" cy="444" r="30"/>
+    <circle cx="456" cy="466" r="24"/><circle cx="524" cy="446" r="30"/><circle cx="582" cy="464" r="26"/>
+    <!-- raised hands -->
+    <rect x="140" y="392" width="12" height="60" rx="6"/><rect x="292" y="376" width="12" height="76" rx="6"/>
+    <rect x="428" y="398" width="12" height="56" rx="6"/>
+  </g>
+
+  <text x="300" y="130" text-anchor="middle" font-family="Haettenschweiler,'Arial Narrow Bold',Impact,sans-serif" font-size="58" fill="#0e0e0e" letter-spacing="4" textLength="300" lengthAdjust="spacingAndGlyphs">LIVE AT THE</text>
+  <text x="300" y="206" text-anchor="middle" font-family="Haettenschweiler,'Arial Narrow Bold',Impact,sans-serif" font-size="92" fill="#0e0e0e" letter-spacing="2" textLength="430" lengthAdjust="spacingAndGlyphs">LOCARNO</text>
+  <rect x="180" y="228" width="240" height="8" fill="#0e0e0e"/>
+  <text x="300" y="566" text-anchor="middle" font-family="ui-monospace,monospace" font-size="22" fill="#f4f1e8" letter-spacing="10">HALF BAD · 2024</text>
+</svg>

@@ -1,0 +1,1229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Music — HALF BAD</title>
+<meta name="description" content="HALF BAD discography: four albums, one EP and a live record, with sleeve art, formats and full tracklists.">
+<meta name="theme-color" content="#0e0e0e">
+<meta property="og:title" content="HALF BAD — Discography">
+<meta property="og:description" content="Four albums, one EP, and a live record we probably shouldn't have released.">
+<meta property="og:type" content="website">
+<link rel="icon" href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAzMiAzMiI+CiAgPHJlY3Qgd2lkdGg9IjMyIiBoZWlnaHQ9IjMyIiBmaWxsPSIjMGUwZTBlIi8+CiAgPHJlY3Qgd2lkdGg9IjgiIGhlaWdodD0iOCIgZmlsbD0iI2Y0ZjFlOCIvPgogIDxyZWN0IHg9IjE2IiB3aWR0aD0iOCIgaGVpZ2h0PSI4IiBmaWxsPSIjZjRmMWU4Ii8+CiAgPHJlY3QgeD0iOCIgeT0iOCIgd2lkdGg9IjgiIGhlaWdodD0iOCIgZmlsbD0iI2Y0ZjFlOCIvPgogIDxyZWN0IHg9IjI0IiB5PSI4IiB3aWR0aD0iOCIgaGVpZ2h0PSI4IiBmaWxsPSIjZjRmMWU4Ii8+CiAgPHJlY3QgeD0iNiIgeT0iMTYiIHdpZHRoPSIyMCIgaGVpZ2h0PSI3IiByeD0iMS41IiBmaWxsPSIjZmZjNjI5Ii8+CiAgPGVsbGlwc2UgY3g9IjE2IiBjeT0iMjQiIHJ4PSIxNCIgcnk9IjMuNSIgZmlsbD0iI2ZmYzYyOSIvPgo8L3N2Zz4K" type="image/svg+xml">
+<style>
+/* ═══════════════════════════════════════════════════════════
+   HALF BAD — two-tone stylesheet
+   Palette and rhythm borrowed from the 2 Tone / third-wave ska
+   record-sleeve tradition: black, bone, one loud accent.
+   ═══════════════════════════════════════════════════════════ */
+
+:root {
+  --ink:      #0e0e0e;
+  --ink-soft: #1c1c1c;
+  --bone:     #f4f1e8;
+  --bone-dim: #d9d4c6;
+  --mustard:  #ffc629;
+  --oxblood:  #c8352b;
+  --green:    #1e7a5e;
+
+  --display: 'Haettenschweiler', 'Arial Narrow Bold', 'Franklin Gothic Heavy', Impact, 'Anton', sans-serif;
+  --body: ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif;
+  --mono: ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, monospace;
+
+  --check: repeating-conic-gradient(var(--ink) 0 25%, var(--bone) 0 50%) 0 0 / 28px 28px;
+  --edge: 3px solid var(--ink);
+  --shadow: 6px 6px 0 var(--ink);
+
+  --wrap: 1180px;
+  --nav-h: 72px;
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; scroll-padding-top: calc(var(--nav-h) + 34px); }
+
+body {
+  margin: 0;
+  background: var(--bone);
+  color: var(--ink);
+  font-family: var(--body);
+  font-size: 16px;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+img { max-width: 100%; display: block; }
+a { color: inherit; }
+
+.wrap { width: min(100% - 2.5rem, var(--wrap)); margin-inline: auto; }
+.wrap--narrow { width: min(100% - 2.5rem, 620px); }
+
+.skip-link {
+  position: absolute; left: -9999px; top: 0; z-index: 999;
+  background: var(--mustard); color: var(--ink); padding: .75rem 1.25rem;
+  font-weight: 800; border: var(--edge);
+}
+.skip-link:focus { left: .5rem; top: .5rem; }
+
+:focus-visible { outline: 3px solid var(--oxblood); outline-offset: 3px; }
+
+.visually-hidden {
+  position: absolute; width: 1px; height: 1px;
+  margin: -1px; padding: 0; overflow: hidden;
+  clip: rect(0 0 0 0); clip-path: inset(50%); white-space: nowrap;
+}
+
+/* ── Shared bits ─────────────────────────────────────────── */
+
+.checkerstrip { height: 14px; background: var(--check); background-size: 14px 14px; }
+
+.checkertext {
+  background: var(--check);
+  background-size: 22px 22px;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  -webkit-text-stroke: 2px var(--ink);
+  paint-order: stroke fill;
+}
+@supports not (background-clip: text) { .checkertext { color: var(--ink); } }
+
+.btn {
+  --btn-bg: var(--ink); --btn-fg: var(--bone);
+  display: inline-block;
+  font-family: var(--display);
+  font-size: 1.15rem;
+  letter-spacing: .06em;
+  text-transform: uppercase;
+  text-decoration: none;
+  padding: .7rem 1.6rem;
+  background: var(--btn-bg);
+  color: var(--btn-fg);
+  border: var(--edge);
+  box-shadow: 4px 4px 0 var(--ink);
+  cursor: pointer;
+  transition: transform .12s ease, box-shadow .12s ease, background-color .12s ease;
+}
+.btn:hover { transform: translate(-2px, -2px); box-shadow: 6px 6px 0 var(--ink); }
+.btn:active { transform: translate(2px, 2px); box-shadow: 1px 1px 0 var(--ink); }
+.btn--primary { --btn-bg: var(--mustard); --btn-fg: var(--ink); }
+.btn--ghost { --btn-bg: transparent; --btn-fg: var(--ink); }
+.btn--small { font-size: .95rem; padding: .5rem 1.1rem; box-shadow: 3px 3px 0 var(--ink); }
+.btn--wide { width: 100%; text-align: center; }
+.btn[disabled] { opacity: .45; cursor: not-allowed; box-shadow: none; transform: none; }
+
+.eyebrow {
+  font-family: var(--mono);
+  font-size: .72rem;
+  letter-spacing: .22em;
+  text-transform: uppercase;
+  margin: 0 0 1rem;
+}
+
+.sechead { margin-bottom: 2.25rem; }
+.sechead__title {
+  font-family: var(--display);
+  font-size: clamp(2.75rem, 8vw, 5.25rem);
+  line-height: .88;
+  letter-spacing: .01em;
+  text-transform: uppercase;
+  margin: 0;
+}
+.sechead__title--center { text-align: center; }
+.sechead__sub {
+  font-family: var(--mono);
+  font-size: .82rem;
+  letter-spacing: .06em;
+  margin: .9rem 0 0;
+  max-width: 56ch;
+}
+
+.section { padding: clamp(3.5rem, 8vw, 6.5rem) 0; }
+
+/* ── Ticker ──────────────────────────────────────────────── */
+
+.ticker {
+  background: var(--ink);
+  color: var(--bone);
+  overflow: hidden;
+  font-family: var(--mono);
+  font-size: .74rem;
+  letter-spacing: .18em;
+  text-transform: uppercase;
+  padding: .55rem 0;
+  white-space: nowrap;
+}
+.ticker__set { display: inline-block; padding-right: 2rem; }
+.ticker__track { display: inline-block; animation: slide 38s linear infinite; }
+.ticker b { color: var(--mustard); margin: 0 .9rem; }
+.ticker em { color: var(--mustard); font-style: normal; font-weight: 700; }
+@keyframes slide { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+
+/* ── Nav ─────────────────────────────────────────────────── */
+
+.nav { position: sticky; top: 0; z-index: 60; background: var(--bone); }
+.nav__inner {
+  width: min(100% - 2.5rem, var(--wrap));
+  margin-inline: auto;
+  height: var(--nav-h);
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+.brand { display: flex; align-items: center; gap: .65rem; text-decoration: none; }
+.brand__type {
+  font-family: var(--display);
+  font-size: 1.9rem;
+  letter-spacing: .02em;
+  line-height: 1;
+}
+.brand__slash { color: var(--oxblood); }
+
+.nav__links { margin-left: auto; display: flex; align-items: center; gap: 1.6rem; }
+.nav__links a {
+  font-family: var(--display);
+  font-size: 1.15rem;
+  letter-spacing: .07em;
+  text-transform: uppercase;
+  text-decoration: none;
+  padding: .2rem 0;
+  border-bottom: 3px solid transparent;
+}
+.nav__links a:hover { border-bottom-color: var(--oxblood); }
+.nav__links a.nav__cta {
+  background: var(--ink); color: var(--bone);
+  padding: .35rem 1rem; border-bottom: none;
+}
+.nav__links a.nav__cta:hover { background: var(--oxblood); }
+
+.nav__tools { display: flex; align-items: center; gap: .6rem; }
+
+.cart {
+  display: flex; align-items: center; gap: .45rem;
+  font-family: var(--display); font-size: 1.05rem; letter-spacing: .06em; text-transform: uppercase;
+  background: transparent; border: var(--edge); padding: .35rem .8rem; cursor: pointer;
+}
+.cart:hover { background: var(--mustard); }
+.cart__count {
+  background: var(--oxblood); color: var(--bone);
+  font-family: var(--mono); font-size: .72rem; font-weight: 700;
+  min-width: 1.4rem; text-align: center; padding: .05rem .3rem;
+}
+
+.burger { display: none; flex-direction: column; gap: 5px; background: none; border: var(--edge); padding: .55rem .5rem; cursor: pointer; }
+.burger span { display: block; width: 22px; height: 3px; background: var(--ink); }
+
+/* ── Hero ────────────────────────────────────────────────── */
+
+.hero { position: relative; background: var(--bone); overflow: hidden; padding: clamp(2.5rem, 6vw, 5rem) 0 0; }
+.hero__board {
+  position: absolute; inset: auto 0 0 0; height: 42%;
+  background: var(--check); background-size: 40px 40px;
+  opacity: .1;
+  mask-image: linear-gradient(to bottom, transparent, #000);
+  -webkit-mask-image: linear-gradient(to bottom, transparent, #000);
+}
+.hero__inner {
+  position: relative;
+  width: min(100% - 2.5rem, var(--wrap));
+  margin-inline: auto;
+  display: grid;
+  grid-template-columns: 1.05fr .95fr;
+  gap: 2.5rem;
+  align-items: end;
+  padding-bottom: clamp(2.5rem, 6vw, 4.5rem);
+}
+.hero__title {
+  font-family: var(--display);
+  font-size: clamp(4.5rem, 17vw, 11rem);
+  line-height: .82;
+  letter-spacing: .005em;
+  margin: 0 0 1.4rem;
+  text-transform: uppercase;
+}
+.hero__blurb { font-size: 1.15rem; max-width: 40ch; margin: 0 0 1.9rem; }
+.hero__actions { display: flex; flex-wrap: wrap; gap: .9rem; margin-bottom: 2.4rem; }
+
+.hero__stats { list-style: none; display: flex; gap: 2.2rem; margin: 0; padding: 1.3rem 0 0; border-top: var(--edge); }
+.hero__stats b { display: block; font-family: var(--display); font-size: 2.3rem; line-height: 1; }
+.hero__stats span { font-family: var(--mono); font-size: .68rem; letter-spacing: .16em; text-transform: uppercase; }
+
+.hero__art { position: relative; }
+.hero__art > img { width: 100%; height: auto; }
+.hero__badge {
+  position: absolute; left: -1rem; bottom: 1.5rem;
+  background: var(--oxblood); color: var(--bone);
+  border: var(--edge); box-shadow: var(--shadow);
+  padding: .9rem 1.2rem; transform: rotate(-4deg);
+}
+.hero__badge span { font-family: var(--mono); font-size: .66rem; letter-spacing: .2em; }
+.hero__badge strong { display: block; font-family: var(--display); font-size: 1.7rem; line-height: .95; margin: .25rem 0 .4rem; }
+.hero__badge a { font-family: var(--mono); font-size: .74rem; letter-spacing: .1em; color: var(--mustard); text-decoration: none; }
+.hero__badge a:hover { text-decoration: underline; }
+
+/* ── Tour ────────────────────────────────────────────────── */
+
+.section--tour { background: var(--ink); color: var(--bone); }
+.section--tour .sechead__title { color: var(--bone); }
+
+.tour__bar {
+  display: flex; flex-wrap: wrap; gap: 1rem;
+  align-items: center; justify-content: space-between;
+  margin-bottom: 1.75rem;
+}
+.filters { display: flex; flex-wrap: wrap; gap: .5rem; }
+.chip {
+  font-family: var(--display); font-size: 1rem; letter-spacing: .06em; text-transform: uppercase;
+  background: transparent; color: inherit; border: 2px solid currentColor;
+  padding: .4rem 1rem; cursor: pointer;
+}
+.chip:hover { background: var(--mustard); color: var(--ink); border-color: var(--mustard); }
+.chip.is-on { background: var(--mustard); color: var(--ink); border-color: var(--mustard); }
+.tour__count { font-family: var(--mono); font-size: .74rem; letter-spacing: .14em; text-transform: uppercase; margin: 0; opacity: .7; }
+
+.dates { list-style: none; margin: 0; padding: 0; border-top: 2px solid rgba(244,241,232,.25); }
+.datepin {
+  display: grid;
+  grid-template-columns: 108px 1fr auto;
+  gap: 1.5rem;
+  align-items: center;
+  padding: 1.15rem .25rem;
+  border-bottom: 2px solid rgba(244,241,232,.25);
+  transition: background-color .15s ease;
+}
+.datepin:hover { background: rgba(244,241,232,.06); }
+.datepin.is-past { opacity: .45; }
+
+.datepin__when { font-family: var(--display); line-height: .95; }
+.datepin__when .d { display: block; font-size: 2.15rem; }
+.datepin__when .m { display: block; font-family: var(--mono); font-size: .7rem; letter-spacing: .2em; text-transform: uppercase; margin-top: .2rem; }
+
+.datepin__where .datepin__city { font-family: var(--display); font-size: 1.65rem; letter-spacing: .02em; text-transform: uppercase; margin: 0 0 .2rem; }
+.datepin__where p { margin: 0; font-family: var(--mono); font-size: .78rem; letter-spacing: .05em; opacity: .78; }
+.datepin__where .country { color: var(--mustard); }
+
+.datepin__act { display: flex; align-items: center; gap: .75rem; }
+
+.tag {
+  font-family: var(--mono); font-size: .62rem; font-weight: 700;
+  letter-spacing: .16em; text-transform: uppercase;
+  padding: .28rem .55rem; border: 2px solid currentColor;
+}
+.tag--low { color: var(--mustard); }
+.tag--sold { color: var(--oxblood); }
+
+/* On the black panel a ghost button needs bone ink, not the default. */
+.section--tour .btn--ghost { color: var(--bone); border-color: var(--bone); box-shadow: 3px 3px 0 var(--bone); }
+.section--tour .btn--ghost:hover { background: var(--bone); color: var(--ink); }
+
+.tour__empty { font-family: var(--mono); font-size: .9rem; padding: 2.5rem 0; text-align: center; }
+
+.tour__foot { display: grid; grid-template-columns: 1fr 1fr; gap: 1.25rem; margin-top: 2.5rem; }
+.callout { border: 3px solid var(--bone); padding: 1.5rem; }
+.callout--alt { background: var(--bone); color: var(--ink); }
+.callout h2 { font-family: var(--display); font-size: 1.5rem; text-transform: uppercase; margin: 0 0 .5rem; }
+.callout p { margin: 0 0 1rem; font-size: .95rem; }
+.callout--alt .btn { box-shadow: 3px 3px 0 var(--ink); }
+.callout a { color: inherit; }
+
+/* ── Merch ───────────────────────────────────────────────── */
+
+.section--merch { background: var(--bone); }
+.filters--merch { margin-bottom: 2rem; }
+.section--merch .chip { border-color: var(--ink); }
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 1.5rem;
+}
+.card {
+  background: #fff;
+  border: var(--edge);
+  box-shadow: var(--shadow);
+  display: flex; flex-direction: column;
+  transition: transform .14s ease, box-shadow .14s ease;
+}
+.card:hover { transform: translate(-3px, -3px); box-shadow: 9px 9px 0 var(--ink); }
+.card__media { position: relative; background: var(--bone-dim); border-bottom: var(--edge); }
+/* height:auto is required — the img height attribute would otherwise beat aspect-ratio */
+.card__media img { width: 100%; height: auto; aspect-ratio: 1 / 1; object-fit: cover; }
+.card__badge {
+  position: absolute; top: .6rem; left: .6rem;
+  background: var(--mustard); border: 2px solid var(--ink);
+  font-family: var(--mono); font-size: .62rem; font-weight: 700;
+  letter-spacing: .14em; text-transform: uppercase; padding: .25rem .5rem;
+}
+.card__sold {
+  position: absolute; inset: 0; display: grid; place-items: center;
+  background: rgba(14,14,14,.72); color: var(--bone);
+  font-family: var(--display); font-size: 1.6rem; letter-spacing: .1em; text-transform: uppercase;
+}
+.card__body { padding: 1.1rem; display: flex; flex-direction: column; gap: .6rem; flex: 1; }
+.card__name { font-family: var(--display); font-size: 1.35rem; line-height: 1.05; text-transform: uppercase; margin: 0; }
+.card__blurb { font-size: .86rem; margin: 0; color: #444; flex: 1; }
+.card__price { font-family: var(--display); font-size: 1.45rem; }
+.card__row { display: flex; align-items: center; justify-content: space-between; gap: .75rem; }
+.card__size {
+  font-family: var(--mono); font-size: .78rem; padding: .4rem .5rem;
+  border: 2px solid var(--ink); background: var(--bone); max-width: 8rem;
+}
+.card .btn { font-size: 1rem; padding: .5rem 1rem; }
+
+.shopinfo {
+  list-style: none; margin: 2.5rem 0 0; padding: 1.5rem 0 0;
+  border-top: var(--edge);
+  display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1.25rem;
+  font-size: .88rem;
+}
+.shopinfo b {
+  display: block; font-family: var(--mono); font-size: .68rem;
+  letter-spacing: .18em; text-transform: uppercase; margin-bottom: .3rem; color: var(--oxblood);
+}
+
+/* ── Discography ─────────────────────────────────────────── */
+
+.section--music { background: var(--ink); color: var(--bone); }
+.section--music .sechead__title { color: var(--bone); }
+
+.discog { display: flex; flex-direction: column; gap: 2rem; }
+.rel {
+  display: grid;
+  grid-template-columns: 280px 1fr;
+  gap: 2rem;
+  padding-bottom: 2rem;
+  border-bottom: 2px solid rgba(244,241,232,.22);
+}
+.rel:last-child { border-bottom: none; padding-bottom: 0; }
+.rel__cover { border: var(--edge); box-shadow: 8px 8px 0 var(--accent, var(--mustard)); }
+.rel__cover img { width: 100%; height: auto; aspect-ratio: 1 / 1; display: block; }
+.rel__meta { font-family: var(--mono); font-size: .72rem; letter-spacing: .18em; text-transform: uppercase; margin: 0 0 .5rem; color: var(--accent, var(--mustard)); }
+.rel__title { font-family: var(--display); font-size: clamp(2rem, 5vw, 3.25rem); line-height: .9; text-transform: uppercase; margin: 0 0 .75rem; }
+.rel__blurb { max-width: 58ch; margin: 0 0 1rem; }
+.rel__formats { list-style: none; display: flex; flex-wrap: wrap; gap: .4rem; margin: 0 0 1.1rem; padding: 0; }
+.rel__formats li {
+  font-family: var(--mono); font-size: .64rem; letter-spacing: .14em; text-transform: uppercase;
+  border: 2px solid rgba(244,241,232,.45); padding: .22rem .5rem;
+}
+.rel__links { display: flex; flex-wrap: wrap; gap: .6rem; margin-bottom: 1.1rem; }
+.rel__links .btn { font-size: .95rem; padding: .45rem 1rem; box-shadow: 3px 3px 0 var(--bone); border-color: var(--bone); }
+.rel__links .btn--ghost { color: var(--bone); }
+
+.tracklist { border-top: 2px solid rgba(244,241,232,.22); }
+.tracklist summary {
+  cursor: pointer; padding: .75rem 0;
+  font-family: var(--mono); font-size: .74rem; letter-spacing: .16em; text-transform: uppercase;
+}
+.tracklist summary::marker { color: var(--mustard); }
+.tracklist ol {
+  columns: 2; column-gap: 2rem;
+  margin: 0 0 .75rem; padding-left: 1.4rem;
+  font-size: .92rem;
+}
+.tracklist li { break-inside: avoid; padding: .12rem 0; }
+.tracklist li::marker { font-family: var(--mono); font-size: .74rem; color: var(--mustard); }
+
+/* ── Band ────────────────────────────────────────────────── */
+
+.section--band { background: var(--bone); }
+.bandgrid { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 1rem; margin-bottom: 2.5rem; }
+.bio { border: var(--edge); padding: 1rem 1.1rem; background: #fff; }
+.bio:nth-child(odd) { background: var(--mustard); }
+.bio h2 { font-family: var(--display); font-size: 1.25rem; text-transform: uppercase; margin: 0 0 .15rem; }
+.bio p { margin: 0; font-family: var(--mono); font-size: .7rem; letter-spacing: .14em; text-transform: uppercase; }
+.story { columns: 2; column-gap: 2.5rem; max-width: 900px; }
+.story p { margin: 0 0 1rem; break-inside: avoid; }
+
+/* ── Mailing list ────────────────────────────────────────── */
+
+.section--list { background: var(--mustard); border-top: var(--edge); border-bottom: var(--edge); }
+.list__sub { text-align: center; font-family: var(--mono); font-size: .8rem; letter-spacing: .06em; margin: .9rem 0 2rem; }
+.signup { display: flex; flex-direction: column; gap: 1rem; }
+.field { display: flex; flex-direction: column; gap: .35rem; }
+.field label { font-family: var(--mono); font-size: .68rem; letter-spacing: .16em; text-transform: uppercase; }
+.field input {
+  font-family: var(--body); font-size: 1rem;
+  padding: .75rem .85rem; border: var(--edge); background: var(--bone);
+}
+.field input:invalid:not(:placeholder-shown) { border-color: var(--oxblood); }
+.formnote { font-family: var(--mono); font-size: .78rem; margin: 0; min-height: 1.2em; }
+.formnote.is-bad { color: var(--oxblood); font-weight: 700; }
+
+/* ── Footer ──────────────────────────────────────────────── */
+
+.foot { background: var(--ink); color: var(--bone); }
+.foot__inner {
+  display: grid; grid-template-columns: 1.4fr repeat(3, 1fr); gap: 2rem;
+  padding: 3rem 0 2rem;
+}
+.foot__brand { display: flex; gap: .9rem; align-items: center; }
+.foot__brand p { font-family: var(--display); font-size: 1.6rem; line-height: 1; margin: 0; }
+.foot__brand small { font-family: var(--mono); font-size: .62rem; letter-spacing: .16em; opacity: .7; }
+.foot__col { display: flex; flex-direction: column; gap: .4rem; }
+.foot__col h3 { font-family: var(--mono); font-size: .66rem; letter-spacing: .2em; text-transform: uppercase; color: var(--mustard); margin: 0 0 .3rem; }
+.foot__col a { text-decoration: none; font-size: .92rem; }
+.foot__col a:hover { color: var(--mustard); text-decoration: underline; }
+.foot__legal {
+  font-family: var(--mono); font-size: .68rem; letter-spacing: .1em;
+  text-align: center; padding: 1.25rem; margin: 0;
+  border-top: 2px solid rgba(244,241,232,.2); opacity: .65;
+}
+
+/* ── Cart drawer ─────────────────────────────────────────── */
+
+.cartpanel {
+  position: fixed; top: 0; right: 0; z-index: 80;
+  width: min(400px, 100%); height: 100dvh;
+  background: var(--bone); border-left: var(--edge);
+  display: flex; flex-direction: column;
+}
+/* display:flex above would otherwise beat the [hidden] attribute */
+.cartpanel[hidden] { display: none; }
+.cartpanel__head {
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 1.1rem 1.25rem; border-bottom: var(--edge); background: var(--ink); color: var(--bone);
+}
+.cartpanel__head h2 { font-family: var(--display); font-size: 1.6rem; text-transform: uppercase; margin: 0; }
+.cartpanel__close { background: none; border: none; color: inherit; font-size: 1.2rem; cursor: pointer; padding: .25rem .5rem; }
+.cartpanel__list { list-style: none; margin: 0; padding: 1rem 1.25rem; overflow-y: auto; flex: 1; }
+.cartline { display: grid; grid-template-columns: 1fr auto; gap: .5rem; padding: .8rem 0; border-bottom: 2px solid var(--bone-dim); }
+.cartline h3 { font-family: var(--display); font-size: 1.1rem; text-transform: uppercase; margin: 0; }
+.cartline p { font-family: var(--mono); font-size: .72rem; margin: .2rem 0 0; opacity: .75; }
+.cartline__price { font-family: var(--display); font-size: 1.1rem; text-align: right; }
+.cartline__rm { background: none; border: none; font-family: var(--mono); font-size: .66rem; letter-spacing: .1em; text-transform: uppercase; cursor: pointer; text-decoration: underline; padding: .25rem 0 0; }
+.cartpanel__empty { font-family: var(--mono); font-size: .8rem; text-align: center; padding: 2rem 0; opacity: .6; }
+.cartpanel__foot { padding: 1.1rem 1.25rem; border-top: var(--edge); display: flex; flex-direction: column; gap: .75rem; }
+.cartpanel__total { display: flex; justify-content: space-between; align-items: baseline; margin: 0; font-family: var(--display); font-size: 1.5rem; text-transform: uppercase; }
+.cartpanel__note { font-family: var(--mono); font-size: .66rem; text-align: center; margin: 0; opacity: .6; }
+
+.scrim { position: fixed; inset: 0; z-index: 70; background: rgba(14,14,14,.55); }
+
+/* ── Responsive ──────────────────────────────────────────── */
+
+@media (max-width: 940px) {
+  .hero__inner { grid-template-columns: 1fr; }
+  .hero__art { max-width: 420px; margin-inline: auto; }
+  .rel { grid-template-columns: 200px 1fr; gap: 1.25rem; }
+  .tour__foot { grid-template-columns: 1fr; }
+  .foot__inner { grid-template-columns: 1fr 1fr; }
+}
+
+@media (max-width: 720px) {
+  .burger { display: flex; }
+  .cart__label { display: none; }
+  .nav__links {
+    position: absolute; top: 100%; left: 0; right: 0;
+    flex-direction: column; align-items: stretch; gap: 0;
+    background: var(--bone); border-bottom: var(--edge);
+    padding: .5rem 1.25rem 1.25rem;
+    display: none;
+  }
+  .nav__links.is-open { display: flex; }
+  .nav__links a { padding: .7rem 0; border-bottom: 2px solid var(--bone-dim); }
+  .nav__links a.nav__cta { margin-top: .6rem; text-align: center; }
+
+  .datepin { grid-template-columns: 76px 1fr; row-gap: .75rem; }
+  .datepin__act { grid-column: 1 / -1; justify-content: flex-start; }
+  .datepin__when .d { font-size: 1.7rem; }
+
+  .rel { grid-template-columns: 1fr; }
+  .rel__cover { max-width: 260px; }
+  .tracklist ol { columns: 1; }
+  .story { columns: 1; }
+  .hero__stats { gap: 1.4rem; }
+  .foot__inner { grid-template-columns: 1fr; }
+  .hero__badge { left: 0; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .ticker__track { animation: none; }
+  *, *::before, *::after { transition-duration: .01ms !important; }
+}
+
+@media print {
+  .nav, .ticker, .cartpanel, .scrim, .hero__art, .section--list { display: none; }
+  body { background: #fff; color: #000; }
+}
+
+/* ── Page headers (sub-pages) ────────────────────────────── */
+
+.pagehead {
+  background: var(--ink);
+  color: var(--bone);
+  padding: clamp(2.5rem, 6vw, 4.25rem) 0 clamp(2rem, 4vw, 3rem);
+  border-bottom: 6px solid var(--mustard);
+}
+.pagehead--light {
+  background: var(--bone);
+  color: var(--ink);
+  border-bottom-color: var(--ink);
+}
+.pagehead__title {
+  font-family: var(--display);
+  font-size: clamp(3rem, 11vw, 7rem);
+  line-height: .86;
+  letter-spacing: .01em;
+  text-transform: uppercase;
+  margin: 0;
+}
+.pagehead__sub {
+  font-family: var(--mono);
+  font-size: .82rem;
+  letter-spacing: .06em;
+  margin: 1rem 0 0;
+  max-width: 60ch;
+}
+/* A page header already carries the checker, so the section under it
+   should not repeat the full-bleed top padding. */
+.pagehead + .section { padding-top: clamp(2.5rem, 5vw, 4rem); }
+
+/* ── Section head with a trailing action ─────────────────── */
+
+.sechead--row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 1.25rem;
+}
+/* Only the shadow needs inverting on the dark panels — an ink border still
+   reads against mustard, whereas a bone one washes out. */
+.section--tour .sechead--row .btn,
+.section--music .sechead--row .btn { box-shadow: 4px 4px 0 var(--bone); }
+
+.rel--feature { border-bottom: none; padding-bottom: 0; }
+
+/* ── No-JS fallback nav ──────────────────────────────────── */
+
+.noscript-nav {
+  display: flex; flex-wrap: wrap; gap: 1rem;
+  padding: 1rem 1.25rem;
+  background: var(--mustard);
+  border-bottom: var(--edge);
+  font-family: var(--display); font-size: 1.15rem;
+  letter-spacing: .07em; text-transform: uppercase;
+}
+
+/* ── Current page marker ─────────────────────────────────── */
+
+.nav__links a.is-current { border-bottom-color: var(--ink); }
+.nav__links a.nav__cta.is-current { background: var(--oxblood); }
+
+@media (max-width: 720px) {
+  .sechead--row { align-items: flex-start; }
+}
+
+/* The mailing-list panel is itself mustard, so a mustard primary button
+   disappears into it — invert to ink there. */
+.section--list .btn--primary { --btn-bg: var(--ink); --btn-fg: var(--bone); }
+
+</style>
+</head>
+<body data-page="music">
+<a class="skip-link" href="#main">Skip to content</a>
+<div id="siteChrome"></div>
+<noscript><nav class="noscript-nav"><a href="index.html">Home</a><a href="tour.html">Tour</a><a href="merch.html">Merch</a><a href="band.html">Band</a><a href="list.html">Mailing List</a></nav></noscript>
+
+<main id="main">
+
+<header class="pagehead">
+  <div class="wrap">
+    <p class="eyebrow">2019 — 2026 · everything we have put out</p>
+    <h1 class="pagehead__title">Discography</h1>
+    <p class="pagehead__sub">Four albums, one EP, and a live record we probably shouldn't have released.</p>
+  </div>
+</header>
+
+<section class="section section--music">
+  <div class="wrap">
+    <div class="discog" id="discog"></div>
+  </div>
+</section>
+
+</main>
+
+<footer class="foot" id="siteFooter"></footer>
+<script>
+/* HALF BAD — site content.
+   Everything the page renders lives here so copy edits never touch markup. */
+
+const TOUR = [
+  // ── Festivals, late summer 2026 ──
+  { date: '2026-08-22', region: 'fest', city: 'Malvern Hills', country: 'UK', venue: 'Skankwell Festival', status: 'onsale', note: 'Main stage, 18:40' },
+  { date: '2026-09-05', region: 'fest', city: 'Rotterdam',     country: 'NL', venue: 'Offbeat Open Air',   status: 'low',    note: 'Second on the bill' },
+
+  // ── UK & Ireland, autumn 2026 ──
+  { date: '2026-09-18', region: 'uk', city: 'Bristol',    country: 'UK', venue: 'The Marble Factory',      status: 'onsale',  note: '+ The Bad Manors' },
+  { date: '2026-09-19', region: 'uk', city: 'Manchester', country: 'UK', venue: 'Gorilla',                 status: 'soldout', note: '+ The Bad Manors' },
+  { date: '2026-09-20', region: 'uk', city: 'Glasgow',    country: 'UK', venue: "King Tut's Wah Wah Hut",  status: 'onsale',  note: '+ The Bad Manors' },
+  { date: '2026-09-24', region: 'uk', city: 'Leeds',      country: 'UK', venue: 'Brudenell Social Club',   status: 'low',     note: '+ Pressure Drop Sound' },
+  { date: '2026-09-25', region: 'uk', city: 'Dublin',     country: 'IE', venue: "Whelan's",                status: 'onsale',  note: '+ Pressure Drop Sound' },
+  { date: '2026-09-26', region: 'uk', city: 'Belfast',    country: 'UK', venue: 'Limelight 2',             status: 'onsale',  note: '+ Pressure Drop Sound' },
+  { date: '2026-10-02', region: 'uk', city: 'Coventry',   country: 'UK', venue: 'The Empire — Night 1',    status: 'soldout', note: 'Homecoming' },
+  { date: '2026-10-03', region: 'uk', city: 'Coventry',   country: 'UK', venue: 'The Empire — Night 2',    status: 'low',     note: 'Homecoming' },
+  { date: '2026-10-04', region: 'uk', city: 'London',     country: 'UK', venue: 'Electric Ballroom',       status: 'low',     note: 'Full horn section + strings' },
+
+  // ── Europe, autumn 2026 ──
+  { date: '2026-10-15', region: 'eu', city: 'Amsterdam', country: 'NL', venue: 'Melkweg (Oude Zaal)', status: 'onsale',  note: '+ Rudi & The Lot' },
+  { date: '2026-10-16', region: 'eu', city: 'Ghent',     country: 'BE', venue: 'Trefpunt',            status: 'onsale',  note: 'Third time lucky' },
+  { date: '2026-10-17', region: 'eu', city: 'Cologne',   country: 'DE', venue: 'Gebäude 9',           status: 'onsale',  note: '+ Rudi & The Lot' },
+  { date: '2026-10-19', region: 'eu', city: 'Berlin',    country: 'DE', venue: 'Lido',                status: 'low',     note: '+ Rudi & The Lot' },
+  { date: '2026-10-21', region: 'eu', city: 'Prague',    country: 'CZ', venue: 'Futurum Music Bar',   status: 'onsale',  note: '' },
+  { date: '2026-10-23', region: 'eu', city: 'Milan',     country: 'IT', venue: 'Legend Club',         status: 'onsale',  note: '' },
+  { date: '2026-10-24', region: 'eu', city: 'Zurich',    country: 'CH', venue: 'Dynamo',              status: 'onsale',  note: '' },
+  { date: '2026-10-26', region: 'eu', city: 'Paris',     country: 'FR', venue: 'Petit Bain',          status: 'low',     note: '+ Les Rudes' },
+  { date: '2026-10-27', region: 'eu', city: 'Barcelona', country: 'ES', venue: 'Sala Upload',         status: 'onsale',  note: '+ Les Rudes' },
+
+  // ── North America, early 2027 ──
+  { date: '2027-02-20', region: 'na', city: 'Brooklyn, NY',     country: 'US', venue: 'Music Hall of Williamsburg', status: 'onsale',  note: '+ Skankton Ave.' },
+  { date: '2027-02-21', region: 'na', city: 'Philadelphia, PA', country: 'US', venue: 'Underground Arts',           status: 'onsale',  note: '+ Skankton Ave.' },
+  { date: '2027-02-23', region: 'na', city: 'Toronto, ON',      country: 'CA', venue: "Lee's Palace",               status: 'onsale',  note: '' },
+  { date: '2027-02-25', region: 'na', city: 'Chicago, IL',      country: 'US', venue: 'Bottom Lounge',              status: 'onsale',  note: '+ Skankton Ave.' },
+  { date: '2027-02-27', region: 'na', city: 'Denver, CO',       country: 'US', venue: 'Bluebird Theater',           status: 'onsale',  note: '' },
+  { date: '2027-03-01', region: 'na', city: 'Seattle, WA',      country: 'US', venue: 'Neumos',                     status: 'onsale',  note: '+ Puget Rudeboys' },
+  { date: '2027-03-03', region: 'na', city: 'San Francisco, CA',country: 'US', venue: 'Great American Music Hall',  status: 'low',     note: '+ Puget Rudeboys' },
+  { date: '2027-03-05', region: 'na', city: 'Los Angeles, CA',  country: 'US', venue: 'The Regent Theater',         status: 'soldout', note: '+ Puget Rudeboys' },
+  { date: '2027-03-06', region: 'na', city: 'San Diego, CA',    country: 'US', venue: 'The Casbah',                 status: 'onsale',  note: '' },
+  { date: '2027-03-08', region: 'na', city: 'Austin, TX',       country: 'US', venue: 'Mohawk (Outdoor)',           status: 'onsale',  note: '' },
+
+  // ── Festivals, summer 2027 ──
+  { date: '2027-06-26', region: 'fest', city: 'Leipzig',  country: 'DE', venue: 'Brassneck Weekender', status: 'onsale', note: 'Saturday headline' },
+  { date: '2027-07-10', region: 'fest', city: 'Coventry', country: 'UK', venue: 'Porkpie Picnic',      status: 'onsale', note: 'We curate the whole thing' }
+];
+
+const MERCH = [
+  {
+    id: 'tee-checker', cat: 'apparel', name: 'Checkerboard Ringer Tee', price: 26,
+    img: 'data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA0MDAgNDAwIiByb2xlPSJpbWciIGFyaWEtbGFiZWw9IkJsYWNrIHQtc2hpcnQgd2l0aCBhIHR3by10b25lIGNoZWNrZXJib2FyZCBjaGVzdCBwYW5lbCI+CiAgPGRlZnM+CiAgICA8cGF0dGVybiBpZD0idC1jaGsiIHdpZHRoPSIyOCIgaGVpZ2h0PSIyOCIgcGF0dGVyblVuaXRzPSJ1c2VyU3BhY2VPblVzZSI+CiAgICAgIDxyZWN0IHdpZHRoPSIyOCIgaGVpZ2h0PSIyOCIgZmlsbD0iI2Y0ZjFlOCIvPgogICAgICA8cmVjdCB3aWR0aD0iMTQiIGhlaWdodD0iMTQiIGZpbGw9IiMwZTBlMGUiLz4KICAgICAgPHJlY3QgeD0iMTQiIHk9IjE0IiB3aWR0aD0iMTQiIGhlaWdodD0iMTQiIGZpbGw9IiMwZTBlMGUiLz4KICAgIDwvcGF0dGVybj4KICAgIDxwYXRoIGlkPSJ0ZWUiIGQ9Ik0xNDggNzQgTDExMiA5MiBMNzQgMTU4IEwxMTggMTg0IEwxMzIgMTU0IEwxMzIgMzQ4IFEyMDAgMzYwIDI2OCAzNDggTDI2OCAxNTQgTDI4MiAxODQgTDMyNiAxNTggTDI4OCA5MiBMMjUyIDc0IFEyMDAgMTA4IDE0OCA3NCBaIi8+CiAgICA8Y2xpcFBhdGggaWQ9InRlZUNsaXAiPjx1c2UgaHJlZj0iI3RlZSIvPjwvY2xpcFBhdGg+CiAgPC9kZWZzPgogIDxyZWN0IHdpZHRoPSI0MDAiIGhlaWdodD0iNDAwIiBmaWxsPSIjZDlkNGM2Ii8+CiAgPHVzZSBocmVmPSIjdGVlIiBmaWxsPSIjMGUwZTBlIi8+CiAgPGcgY2xpcC1wYXRoPSJ1cmwoI3RlZUNsaXApIj4KICAgIDxyZWN0IHg9IjEyMCIgeT0iMTc2IiB3aWR0aD0iMTYwIiBoZWlnaHQ9Ijg0IiBmaWxsPSJ1cmwoI3QtY2hrKSIvPgogICAgPHJlY3QgeD0iMTIwIiB5PSIxNzYiIHdpZHRoPSIxNjAiIGhlaWdodD0iODQiIGZpbGw9Im5vbmUiIHN0cm9rZT0iI2Y0ZjFlOCIgc3Ryb2tlLXdpZHRoPSI1Ii8+CiAgPC9nPgogIDwhLS0gcmluZ2VyIGNvbGxhciAtLT4KICA8cGF0aCBkPSJNMTQ4IDc0IFEyMDAgMTA4IDI1MiA3NCIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjYzgzNTJiIiBzdHJva2Utd2lkdGg9IjkiLz4KICA8dXNlIGhyZWY9IiN0ZWUiIGZpbGw9Im5vbmUiIHN0cm9rZT0iIzBlMGUwZSIgc3Ryb2tlLXdpZHRoPSI1Ii8+CiAgPHRleHQgeD0iMjAwIiB5PSIzMDAiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGZvbnQtZmFtaWx5PSJIYWV0dGVuc2Nod2VpbGVyLCdBcmlhbCBOYXJyb3cgQm9sZCcsSW1wYWN0LHNhbnMtc2VyaWYiIGZvbnQtc2l6ZT0iMzAiIGZpbGw9IiNmNGYxZTgiIGxldHRlci1zcGFjaW5nPSI0IiB0ZXh0TGVuZ3RoPSIxMjAiIGxlbmd0aEFkanVzdD0ic3BhY2luZ0FuZEdseXBocyI+SEFMRiBCQUQ8L3RleHQ+Cjwvc3ZnPgo=', badge: 'Best seller',
+    blurb: 'Heavyweight organic cotton, black ringer collar, two-tone chest panel.',
+    sizes: ['S', 'M', 'L', 'XL', '2XL', '3XL']
+  },
+  {
+    id: 'tee-album', cat: 'apparel', name: '"Porkpie Paranoia" Album Tee', price: 24,
+    img: 'data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA0MDAgNDAwIiByb2xlPSJpbWciIGFyaWEtbGFiZWw9IkJvbmUtY29sb3VyZWQgdC1zaGlydCBwcmludGVkIHdpdGggdGhlIFBvcmtwaWUgUGFyYW5vaWEgYWxidW0gY292ZXIiPgogIDxkZWZzPgogICAgPHBhdGggaWQ9InRlZTIiIGQ9Ik0xNDggNzQgTDExMiA5MiBMNzQgMTU4IEwxMTggMTg0IEwxMzIgMTU0IEwxMzIgMzQ4IFEyMDAgMzYwIDI2OCAzNDggTDI2OCAxNTQgTDI4MiAxODQgTDMyNiAxNTggTDI4OCA5MiBMMjUyIDc0IFEyMDAgMTA4IDE0OCA3NCBaIi8+CiAgPC9kZWZzPgogIDxyZWN0IHdpZHRoPSI0MDAiIGhlaWdodD0iNDAwIiBmaWxsPSIjMGUwZTBlIi8+CiAgPHVzZSBocmVmPSIjdGVlMiIgZmlsbD0iI2Y0ZjFlOCIvPgoKICA8IS0tIGFsYnVtIHByaW50IC0tPgogIDxnPgogICAgPHJlY3QgeD0iMTQ2IiB5PSIxNjQiIHdpZHRoPSIxMDgiIGhlaWdodD0iMTA4IiBmaWxsPSIjZmZjNjI5IiBzdHJva2U9IiMwZTBlMGUiIHN0cm9rZS13aWR0aD0iNCIvPgogICAgPGVsbGlwc2UgY3g9IjIwMCIgY3k9IjIxOCIgcng9IjM0IiByeT0iMjIiIGZpbGw9IiNmNGYxZTgiIHN0cm9rZT0iIzBlMGUwZSIgc3Ryb2tlLXdpZHRoPSI0Ii8+CiAgICA8Y2lyY2xlIGN4PSIyMDAiIGN5PSIyMTgiIHI9IjEzIiBmaWxsPSIjYzgzNTJiIiBzdHJva2U9IiMwZTBlMGUiIHN0cm9rZS13aWR0aD0iMyIvPgogICAgPHJlY3QgeD0iMTc2IiB5PSIxODAiIHdpZHRoPSI0OCIgaGVpZ2h0PSIxOCIgcng9IjMiIGZpbGw9IiMwZTBlMGUiLz4KICAgIDxlbGxpcHNlIGN4PSIyMDAiIGN5PSIxOTkiIHJ4PSI1NCIgcnk9IjciIGZpbGw9IiMwZTBlMGUiLz4KICAgIDxyZWN0IHg9IjE0NiIgeT0iMjUyIiB3aWR0aD0iMTA4IiBoZWlnaHQ9IjIwIiBmaWxsPSIjMGUwZTBlIi8+CiAgPC9nPgogIDx0ZXh0IHg9IjIwMCIgeT0iMzAwIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmb250LWZhbWlseT0iSGFldHRlbnNjaHdlaWxlciwnQXJpYWwgTmFycm93IEJvbGQnLEltcGFjdCxzYW5zLXNlcmlmIiBmb250LXNpemU9IjIyIiBmaWxsPSIjMGUwZTBlIiBsZXR0ZXItc3BhY2luZz0iMiIgdGV4dExlbmd0aD0iMTA0IiBsZW5ndGhBZGp1c3Q9InNwYWNpbmdBbmRHbHlwaHMiPlBPUktQSUUgUEFSQU5PSUE8L3RleHQ+CiAgPHVzZSBocmVmPSIjdGVlMiIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjMGUwZTBlIiBzdHJva2Utd2lkdGg9IjUiLz4KPC9zdmc+Cg==', badge: 'New',
+    blurb: 'Front cover print, tour routing on the back. Water-based ink, no plastic feel.',
+    sizes: ['S', 'M', 'L', 'XL', '2XL', '3XL']
+  },
+  {
+    id: 'jacket', cat: 'apparel', name: 'Half Bad Work Jacket', price: 68,
+    img: 'data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA0MDAgNDAwIiByb2xlPSJpbWciIGFyaWEtbGFiZWw9Ik5hdnkgY2hvcmUgamFja2V0IHdpdGggZW1icm9pZGVyZWQgY2hlc3QgbWFyayI+CiAgPGRlZnM+CiAgICA8cGF0aCBpZD0iamt0IiBkPSJNMTQyIDY2IEwxMDQgODYgTDY0IDE2OCBMMTEyIDE5NiBMMTI4IDE2MCBMMTI4IDM1MiBRMjAwIDM2NCAyNzIgMzUyIEwyNzIgMTYwIEwyODggMTk2IEwzMzYgMTY4IEwyOTYgODYgTDI1OCA2NiBMMjAwIDEwNCBaIi8+CiAgPC9kZWZzPgogIDxyZWN0IHdpZHRoPSI0MDAiIGhlaWdodD0iNDAwIiBmaWxsPSIjZDlkNGM2Ii8+CiAgPHVzZSBocmVmPSIjamt0IiBmaWxsPSIjMWYzMzQ2Ii8+CiAgPCEtLSBwbGFja2V0ICsgYnV0dG9ucyAtLT4KICA8cGF0aCBkPSJNMjAwIDEwNCBWMzU2IiBzdHJva2U9IiMwZTBlMGUiIHN0cm9rZS13aWR0aD0iNCIvPgogIDxyZWN0IHg9IjE4NiIgeT0iMTA0IiB3aWR0aD0iMjgiIGhlaWdodD0iMjUyIiBmaWxsPSIjMjIzODRkIiBzdHJva2U9IiMwZTBlMGUiIHN0cm9rZS13aWR0aD0iMyIvPgogIDxnIGZpbGw9IiNmZmM2MjkiPgogICAgPGNpcmNsZSBjeD0iMjAwIiBjeT0iMTUwIiByPSI2Ii8+PGNpcmNsZSBjeD0iMjAwIiBjeT0iMjA0IiByPSI2Ii8+CiAgICA8Y2lyY2xlIGN4PSIyMDAiIGN5PSIyNTgiIHI9IjYiLz48Y2lyY2xlIGN4PSIyMDAiIGN5PSIzMTIiIHI9IjYiLz4KICA8L2c+CiAgPCEtLSBjb2xsYXIgLS0+CiAgPHBhdGggZD0iTTE0MiA2NiBMMjAwIDEwNCBMMjU4IDY2IEwyNDYgOTYgTDIwMCAxMjYgTDE1NCA5NiBaIiBmaWxsPSIjMTYyODNhIiBzdHJva2U9IiMwZTBlMGUiIHN0cm9rZS13aWR0aD0iMyIvPgogIDwhLS0gcG9ja2V0cyAtLT4KICA8ZyBmaWxsPSIjMjIzODRkIiBzdHJva2U9IiMwZTBlMGUiIHN0cm9rZS13aWR0aD0iMyI+CiAgICA8cmVjdCB4PSIxNDAiIHk9IjI2NCIgd2lkdGg9IjQ0IiBoZWlnaHQ9IjUyIiByeD0iMyIvPgogICAgPHJlY3QgeD0iMjE2IiB5PSIyNjQiIHdpZHRoPSI0NCIgaGVpZ2h0PSI1MiIgcng9IjMiLz4KICA8L2c+CiAgPCEtLSBlbWJyb2lkZXJlZCBtYXJrIC0tPgogIDxnIHRyYW5zZm9ybT0idHJhbnNsYXRlKDIzOCAxNzYpIj4KICAgIDxjaXJjbGUgcj0iMjAiIGZpbGw9IiMwZTBlMGUiIHN0cm9rZT0iI2ZmYzYyOSIgc3Ryb2tlLXdpZHRoPSIzIi8+CiAgICA8cmVjdCB4PSItMTEiIHk9Ii02IiB3aWR0aD0iMjIiIGhlaWdodD0iOSIgcng9IjIiIGZpbGw9IiNmZmM2MjkiLz4KICAgIDxlbGxpcHNlIGN5PSI0IiByeD0iMTciIHJ5PSI0IiBmaWxsPSIjZmZjNjI5Ii8+CiAgPC9nPgogIDx1c2UgaHJlZj0iI2prdCIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjMGUwZTBlIiBzdHJva2Utd2lkdGg9IjUiLz4KPC9zdmc+Cg==', badge: 'Ltd. 200',
+    blurb: 'Chore-cut cotton twill, chain-stitched back panel, embroidered chest mark.',
+    sizes: ['S', 'M', 'L', 'XL', '2XL']
+  },
+  {
+    id: 'lp-porkpie', cat: 'vinyl', name: 'Porkpie Paranoia — Mustard LP', price: 28,
+    img: 'data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA2MDAgNjAwIiByb2xlPSJpbWciIGFyaWEtbGFiZWw9IlBvcmtwaWUgUGFyYW5vaWEgY292ZXI6IGEgcG9ya3BpZSBoYXQgb3ZlciBhIGNoZWNrZXJib2FyZCBleWUiPgogIDxkZWZzPgogICAgPHBhdHRlcm4gaWQ9InAtY2hrIiB3aWR0aD0iNDgiIGhlaWdodD0iNDgiIHBhdHRlcm5Vbml0cz0idXNlclNwYWNlT25Vc2UiPgogICAgICA8cmVjdCB3aWR0aD0iNDgiIGhlaWdodD0iNDgiIGZpbGw9IiNmNGYxZTgiLz4KICAgICAgPHJlY3Qgd2lkdGg9IjI0IiBoZWlnaHQ9IjI0IiBmaWxsPSIjMGUwZTBlIi8+CiAgICAgIDxyZWN0IHg9IjI0IiB5PSIyNCIgd2lkdGg9IjI0IiBoZWlnaHQ9IjI0IiBmaWxsPSIjMGUwZTBlIi8+CiAgICA8L3BhdHRlcm4+CiAgPC9kZWZzPgogIDxyZWN0IHdpZHRoPSI2MDAiIGhlaWdodD0iNjAwIiBmaWxsPSIjZmZjNjI5Ii8+CiAgPHJlY3QgeT0iMzg0IiB3aWR0aD0iNjAwIiBoZWlnaHQ9Ijk2IiBmaWxsPSJ1cmwoI3AtY2hrKSIvPgoKICA8IS0tIHN0YXJpbmcgZXllIC0tPgogIDxlbGxpcHNlIGN4PSIzMDAiIGN5PSIyNzgiIHJ4PSIxNTAiIHJ5PSI5NiIgZmlsbD0iI2Y0ZjFlOCIgc3Ryb2tlPSIjMGUwZTBlIiBzdHJva2Utd2lkdGg9IjEwIi8+CiAgPGNpcmNsZSBjeD0iMzAwIiBjeT0iMjc4IiByPSI2MiIgZmlsbD0iI2M4MzUyYiIgc3Ryb2tlPSIjMGUwZTBlIiBzdHJva2Utd2lkdGg9IjEwIi8+CiAgPGNpcmNsZSBjeD0iMzAwIiBjeT0iMjc4IiByPSIyNCIgZmlsbD0iIzBlMGUwZSIvPgogIDxjaXJjbGUgY3g9IjMyMiIgY3k9IjI1OCIgcj0iMTAiIGZpbGw9IiNmNGYxZTgiLz4KCiAgPCEtLSBoYXQgLS0+CiAgPGcgZmlsbD0iIzBlMGUwZSI+CiAgICA8cmVjdCB4PSIyMjIiIHk9IjExMiIgd2lkdGg9IjE1NiIgaGVpZ2h0PSI2MiIgcng9IjgiLz4KICAgIDxlbGxpcHNlIGN4PSIzMDAiIGN5PSIxNzYiIHJ4PSIxNzYiIHJ5PSIyNCIvPgogIDwvZz4KICA8cmVjdCB4PSIyMjIiIHk9IjExMiIgd2lkdGg9IjE1NiIgaGVpZ2h0PSIxOCIgZmlsbD0iI2M4MzUyYiIvPgoKICA8dGV4dCB4PSIzMDAiIHk9IjUzMCIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZm9udC1mYW1pbHk9IkhhZXR0ZW5zY2h3ZWlsZXIsJ0FyaWFsIE5hcnJvdyBCb2xkJyxJbXBhY3Qsc2Fucy1zZXJpZiIgZm9udC1zaXplPSI3NiIgZmlsbD0iIzBlMGUwZSIgbGV0dGVyLXNwYWNpbmc9IjIiIHRleHRMZW5ndGg9IjM0MCIgbGVuZ3RoQWRqdXN0PSJzcGFjaW5nQW5kR2x5cGhzIj5QT1JLUElFPC90ZXh0PgogIDx0ZXh0IHg9IjMwMCIgeT0iNTc4IiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmb250LWZhbWlseT0iSGFldHRlbnNjaHdlaWxlciwnQXJpYWwgTmFycm93IEJvbGQnLEltcGFjdCxzYW5zLXNlcmlmIiBmb250LXNpemU9IjUyIiBmaWxsPSIjYzgzNTJiIiBsZXR0ZXItc3BhY2luZz0iNiIgdGV4dExlbmd0aD0iMzYwIiBsZW5ndGhBZGp1c3Q9InNwYWNpbmdBbmRHbHlwaHMiPlBBUkFOT0lBPC90ZXh0PgogIDx0ZXh0IHg9IjI0IiB5PSI0NiIgZm9udC1mYW1pbHk9InVpLW1vbm9zcGFjZSxtb25vc3BhY2UiIGZvbnQtc2l6ZT0iMjAiIGZpbGw9IiMwZTBlMGUiIGxldHRlci1zcGFjaW5nPSI2Ij5IQUxGIEJBRDwvdGV4dD4KICA8dGV4dCB4PSI1NzYiIHk9IjQ2IiB0ZXh0LWFuY2hvcj0iZW5kIiBmb250LWZhbWlseT0idWktbW9ub3NwYWNlLG1vbm9zcGFjZSIgZm9udC1zaXplPSIyMCIgZmlsbD0iIzBlMGUwZSIgbGV0dGVyLXNwYWNpbmc9IjQiPkxQMDQ8L3RleHQ+Cjwvc3ZnPgo=', badge: 'Ltd. colour',
+    blurb: '180g mustard vinyl, gatefold sleeve, lyric insert. Free 7" with every order.',
+    sizes: []
+  },
+  {
+    id: 'lp-offbeat', cat: 'vinyl', name: 'Offbeat & Overdrawn — Black LP', price: 22,
+    img: 'data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA2MDAgNjAwIiByb2xlPSJpbWciIGFyaWEtbGFiZWw9Ik9mZmJlYXQgYW5kIE92ZXJkcmF3biBjb3ZlcjogYSBmYWxsaW5nIGJhciBjaGFydCBvbiBhIGNoZWNrZXJib2FyZCBmaWVsZCI+CiAgPGRlZnM+CiAgICA8cGF0dGVybiBpZD0iby1jaGsiIHdpZHRoPSI1MCIgaGVpZ2h0PSI1MCIgcGF0dGVyblVuaXRzPSJ1c2VyU3BhY2VPblVzZSI+CiAgICAgIDxyZWN0IHdpZHRoPSI1MCIgaGVpZ2h0PSI1MCIgZmlsbD0iI2Y0ZjFlOCIvPgogICAgICA8cmVjdCB3aWR0aD0iMjUiIGhlaWdodD0iMjUiIGZpbGw9IiMwZTBlMGUiLz4KICAgICAgPHJlY3QgeD0iMjUiIHk9IjI1IiB3aWR0aD0iMjUiIGhlaWdodD0iMjUiIGZpbGw9IiMwZTBlMGUiLz4KICAgIDwvcGF0dGVybj4KICA8L2RlZnM+CiAgPHJlY3Qgd2lkdGg9IjYwMCIgaGVpZ2h0PSI2MDAiIGZpbGw9IiMyZjZmZDAiLz4KICA8cmVjdCB4PSIwIiB5PSIwIiB3aWR0aD0iNjAwIiBoZWlnaHQ9IjYwMCIgZmlsbD0idXJsKCNvLWNoaykiIG9wYWNpdHk9Ii4xNiIvPgoKICA8IS0tIHRoZSBiYWxhbmNlIGdvZXMgdGhlIHdyb25nIHdheSAtLT4KICA8ZyBmaWxsPSIjZjRmMWU4IiBzdHJva2U9IiMwZTBlMGUiIHN0cm9rZS13aWR0aD0iOCI+CiAgICA8cmVjdCB4PSI3MiIgIHk9IjIyMCIgd2lkdGg9IjcyIiBoZWlnaHQ9IjIzMCIvPgogICAgPHJlY3QgeD0iMTY0IiB5PSIyNjgiIHdpZHRoPSI3MiIgaGVpZ2h0PSIxODIiLz4KICAgIDxyZWN0IHg9IjI1NiIgeT0iMzE0IiB3aWR0aD0iNzIiIGhlaWdodD0iMTM2Ii8+CiAgICA8cmVjdCB4PSIzNDgiIHk9IjM2MCIgd2lkdGg9IjcyIiBoZWlnaHQ9IjkwIi8+CiAgPC9nPgogIDxyZWN0IHg9IjQ0MCIgeT0iNDUwIiB3aWR0aD0iNzIiIGhlaWdodD0iOTYiIGZpbGw9IiNjODM1MmIiIHN0cm9rZT0iIzBlMGUwZSIgc3Ryb2tlLXdpZHRoPSI4Ii8+CiAgPHBhdGggZD0iTTY0IDQ1MGg0ODAiIHN0cm9rZT0iIzBlMGUwZSIgc3Ryb2tlLXdpZHRoPSIxMiIvPgogIDxwYXRoIGQ9Ik05MiAxOTAgTDUyMCA0NzAiIHN0cm9rZT0iI2ZmYzYyOSIgc3Ryb2tlLXdpZHRoPSIxNCIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIi8+CiAgPHBhdGggZD0iTTQ5OCA0MzBsMzAgNDYtNTQgNnoiIGZpbGw9IiNmZmM2MjkiIHN0cm9rZT0iIzBlMGUwZSIgc3Ryb2tlLXdpZHRoPSI2Ii8+CgogIDx0ZXh0IHg9IjMwMCIgeT0iMTA0IiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmb250LWZhbWlseT0iSGFldHRlbnNjaHdlaWxlciwnQXJpYWwgTmFycm93IEJvbGQnLEltcGFjdCxzYW5zLXNlcmlmIiBmb250LXNpemU9Ijg2IiBmaWxsPSIjZjRmMWU4IiBsZXR0ZXItc3BhY2luZz0iMiIgdGV4dExlbmd0aD0iMzYwIiBsZW5ndGhBZGp1c3Q9InNwYWNpbmdBbmRHbHlwaHMiPk9GRkJFQVQ8L3RleHQ+CiAgPHRleHQgeD0iMzAwIiB5PSIxNjQiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGZvbnQtZmFtaWx5PSJIYWV0dGVuc2Nod2VpbGVyLCdBcmlhbCBOYXJyb3cgQm9sZCcsSW1wYWN0LHNhbnMtc2VyaWYiIGZvbnQtc2l6ZT0iNjAiIGZpbGw9IiNmZmM2MjkiIGxldHRlci1zcGFjaW5nPSI2IiB0ZXh0TGVuZ3RoPSI0MjAiIGxlbmd0aEFkanVzdD0ic3BhY2luZ0FuZEdseXBocyI+JmFtcDsgT1ZFUkRSQVdOPC90ZXh0PgogIDx0ZXh0IHg9IjMwMCIgeT0iNTgwIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmb250LWZhbWlseT0idWktbW9ub3NwYWNlLG1vbm9zcGFjZSIgZm9udC1zaXplPSIyMCIgZmlsbD0iI2Y0ZjFlOCIgbGV0dGVyLXNwYWNpbmc9IjEwIj5IQUxGIEJBRCDCtyBMUDAyPC90ZXh0Pgo8L3N2Zz4K', badge: 'Repress',
+    blurb: 'Third pressing, corrected mastering, printed inner sleeve.',
+    sizes: []
+  },
+  {
+    id: 'lp-skank', cat: 'vinyl', name: 'Skank Etiquette — Original Press', price: 30,
+    img: 'data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA2MDAgNjAwIiByb2xlPSJpbWciIGFyaWEtbGFiZWw9IlNrYW5rIEV0aXF1ZXR0ZSBjb3ZlcjogZGFuY2Utc3RlcCBmb290cHJpbnQgZGlhZ3JhbSI+CiAgPGRlZnM+CiAgICA8cGF0dGVybiBpZD0icy1jaGsiIHdpZHRoPSI2MCIgaGVpZ2h0PSI2MCIgcGF0dGVyblVuaXRzPSJ1c2VyU3BhY2VPblVzZSI+CiAgICAgIDxyZWN0IHdpZHRoPSI2MCIgaGVpZ2h0PSI2MCIgZmlsbD0iI2Y0ZjFlOCIvPgogICAgICA8cmVjdCB3aWR0aD0iMzAiIGhlaWdodD0iMzAiIGZpbGw9IiMwZTBlMGUiLz4KICAgICAgPHJlY3QgeD0iMzAiIHk9IjMwIiB3aWR0aD0iMzAiIGhlaWdodD0iMzAiIGZpbGw9IiMwZTBlMGUiLz4KICAgIDwvcGF0dGVybj4KICAgIDxnIGlkPSJmb290Ij4KICAgICAgPGVsbGlwc2UgY3g9IjAiIGN5PSIwIiByeD0iMjYiIHJ5PSI0MCIvPgogICAgICA8ZWxsaXBzZSBjeD0iMCIgY3k9IjQ2IiByeD0iMTciIHJ5PSIxNSIvPgogICAgPC9nPgogIDwvZGVmcz4KCiAgPHJlY3Qgd2lkdGg9IjYwMCIgaGVpZ2h0PSI2MDAiIGZpbGw9IiNmNGYxZTgiLz4KICA8cmVjdCB5PSI1NTIiIHdpZHRoPSI2MDAiIGhlaWdodD0iNDgiIGZpbGw9InVybCgjcy1jaGspIi8+CiAgPHJlY3QgeD0iMzQiIHk9IjM0IiB3aWR0aD0iNTMyIiBoZWlnaHQ9IjQ5MCIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjMGUwZTBlIiBzdHJva2Utd2lkdGg9IjgiLz4KCiAgPCEtLSBzdGVwIGRpYWdyYW0gLS0+CiAgPGcgZmlsbD0iIzBlMGUwZSI+CiAgICA8dXNlIGhyZWY9IiNmb290IiB0cmFuc2Zvcm09InRyYW5zbGF0ZSgxNTAgMjUwKSByb3RhdGUoLTE4KSIvPgogICAgPHVzZSBocmVmPSIjZm9vdCIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoMjU4IDIxMCkgcm90YXRlKDE0KSIvPgogICAgPHVzZSBocmVmPSIjZm9vdCIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoMzUyIDMwMCkgcm90YXRlKC0yNCkiLz4KICA8L2c+CiAgPGcgZmlsbD0iI2M4MzUyYiI+CiAgICA8dXNlIGhyZWY9IiNmb290IiB0cmFuc2Zvcm09InRyYW5zbGF0ZSg0NTIgMjQ0KSByb3RhdGUoMjIpIi8+CiAgPC9nPgogIDxnIHN0cm9rZT0iI2ZmYzYyOSIgc3Ryb2tlLXdpZHRoPSI5IiBmaWxsPSJub25lIiBzdHJva2UtZGFzaGFycmF5PSIxNiAxNCIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIj4KICAgIDxwYXRoIGQ9Ik0xODAgMjc0IEwyMzYgMjMyIi8+CiAgICA8cGF0aCBkPSJNMjg2IDI0MCBMMzMyIDI5NiIvPgogICAgPHBhdGggZD0iTTM4MiAyOTYgTDQzMiAyNjIiLz4KICA8L2c+CiAgPGcgZm9udC1mYW1pbHk9InVpLW1vbm9zcGFjZSxtb25vc3BhY2UiIGZvbnQtc2l6ZT0iMjAiIGZpbGw9IiMwZTBlMGUiPgogICAgPHRleHQgeD0iMTMyIiB5PSIzNTIiPjE8L3RleHQ+PHRleHQgeD0iMjQwIiB5PSIzMTYiPjI8L3RleHQ+PHRleHQgeD0iMzM0IiB5PSI0MDAiPjM8L3RleHQ+PHRleHQgeD0iNDM2IiB5PSIzNDgiPjQ8L3RleHQ+CiAgPC9nPgoKICA8dGV4dCB4PSIzMDAiIHk9IjEyMiIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZm9udC1mYW1pbHk9IkhhZXR0ZW5zY2h3ZWlsZXIsJ0FyaWFsIE5hcnJvdyBCb2xkJyxJbXBhY3Qsc2Fucy1zZXJpZiIgZm9udC1zaXplPSI5NiIgZmlsbD0iIzBlMGUwZSIgbGV0dGVyLXNwYWNpbmc9IjIiIHRleHRMZW5ndGg9IjMwMCIgbGVuZ3RoQWRqdXN0PSJzcGFjaW5nQW5kR2x5cGhzIj5TS0FOSzwvdGV4dD4KICA8dGV4dCB4PSIzMDAiIHk9IjE3NiIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZm9udC1mYW1pbHk9IkhhZXR0ZW5zY2h3ZWlsZXIsJ0FyaWFsIE5hcnJvdyBCb2xkJyxJbXBhY3Qsc2Fucy1zZXJpZiIgZm9udC1zaXplPSI1MiIgZmlsbD0iI2M4MzUyYiIgbGV0dGVyLXNwYWNpbmc9IjEwIiB0ZXh0TGVuZ3RoPSIzODAiIGxlbmd0aEFkanVzdD0ic3BhY2luZ0FuZEdseXBocyI+RVRJUVVFVFRFPC90ZXh0PgogIDx0ZXh0IHg9IjMwMCIgeT0iNDY2IiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmb250LWZhbWlseT0idWktbW9ub3NwYWNlLG1vbm9zcGFjZSIgZm9udC1zaXplPSIxOSIgZmlsbD0iIzBlMGUwZSIgbGV0dGVyLXNwYWNpbmc9IjYiIHRleHRMZW5ndGg9IjQ1MCIgbGVuZ3RoQWRqdXN0PSJzcGFjaW5nQW5kR2x5cGhzIj5GSUcuIDEg4oCUIFRIRSBDT1JSRUNUIE1PVkVNRU5UPC90ZXh0PgogIDx0ZXh0IHg9IjMwMCIgeT0iNTAwIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmb250LWZhbWlseT0idWktbW9ub3NwYWNlLG1vbm9zcGFjZSIgZm9udC1zaXplPSIxOSIgZmlsbD0iIzBlMGUwZSIgbGV0dGVyLXNwYWNpbmc9IjEwIj5IQUxGIEJBRCDCtyAyMDE5PC90ZXh0Pgo8L3N2Zz4K', badge: '', sold: true,
+    blurb: 'The 2019 debut. 500 copies, all gone. We are not repressing it — sorry.',
+    sizes: []
+  },
+  {
+    id: 'pins', cat: 'bits', name: 'Enamel Pin Set (3)', price: 12,
+    img: 'data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA0MDAgNDAwIiByb2xlPSJpbWciIGFyaWEtbGFiZWw9IlNldCBvZiB0aHJlZSBlbmFtZWwgcGluczogcG9ya3BpZSBoYXQsIHRyb21ib25lIGFuZCBjaGVja2VyYm9hcmQiPgogIDxkZWZzPgogICAgPHBhdHRlcm4gaWQ9InBpbi1jaGsiIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgcGF0dGVyblVuaXRzPSJ1c2VyU3BhY2VPblVzZSI+CiAgICAgIDxyZWN0IHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgZmlsbD0iI2Y0ZjFlOCIvPgogICAgICA8cmVjdCB3aWR0aD0iMTAiIGhlaWdodD0iMTAiIGZpbGw9IiMwZTBlMGUiLz4KICAgICAgPHJlY3QgeD0iMTAiIHk9IjEwIiB3aWR0aD0iMTAiIGhlaWdodD0iMTAiIGZpbGw9IiMwZTBlMGUiLz4KICAgIDwvcGF0dGVybj4KICAgIDxjbGlwUGF0aCBpZD0icGluQyI+PGNpcmNsZSBjeD0iMjcyIiBjeT0iMjY4IiByPSI2NiIvPjwvY2xpcFBhdGg+CiAgPC9kZWZzPgogIDxyZWN0IHdpZHRoPSI0MDAiIGhlaWdodD0iNDAwIiBmaWxsPSIjYzgzNTJiIi8+CiAgPHJlY3QgeD0iMjYiIHk9IjI2IiB3aWR0aD0iMzQ4IiBoZWlnaHQ9IjM0OCIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjMGUwZTBlIiBzdHJva2Utd2lkdGg9IjYiIHN0cm9rZS1kYXNoYXJyYXk9IjE0IDEwIi8+CgogIDwhLS0gcGluIDE6IHBvcmtwaWUgLS0+CiAgPGNpcmNsZSBjeD0iMTMyIiBjeT0iMTM2IiByPSI2NiIgZmlsbD0iI2ZmYzYyOSIgc3Ryb2tlPSIjMGUwZTBlIiBzdHJva2Utd2lkdGg9IjciLz4KICA8ZyBmaWxsPSIjMGUwZTBlIj4KICAgIDxyZWN0IHg9IjEwNiIgeT0iMTEyIiB3aWR0aD0iNTIiIGhlaWdodD0iMjQiIHJ4PSI0Ii8+CiAgICA8ZWxsaXBzZSBjeD0iMTMyIiBjeT0iMTM4IiByeD0iNDIiIHJ5PSI5Ii8+CiAgPC9nPgoKICA8IS0tIHBpbiAyOiB0cm9tYm9uZSAtLT4KICA8Y2lyY2xlIGN4PSIyNzIiIGN5PSIxMjgiIHI9IjY2IiBmaWxsPSIjZjRmMWU4IiBzdHJva2U9IiMwZTBlMGUiIHN0cm9rZS13aWR0aD0iNyIvPgogIDxnIHN0cm9rZT0iIzBlMGUwZSIgc3Ryb2tlLXdpZHRoPSI5IiBmaWxsPSJub25lIiBzdHJva2UtbGluZWNhcD0icm91bmQiPgogICAgPHBhdGggZD0iTTIzOCAxMTZoNTYiLz48cGF0aCBkPSJNMjUyIDE0Nmg0NCIvPgogIDwvZz4KICA8cGF0aCBkPSJNMjkyIDEwMHY1NmwyNiAxNlY4NHoiIGZpbGw9IiNjODM1MmIiIHN0cm9rZT0iIzBlMGUwZSIgc3Ryb2tlLXdpZHRoPSI2Ii8+CiAgPHJlY3QgeD0iMjQ2IiB5PSIxMTIiIHdpZHRoPSIxMSIgaGVpZ2h0PSIzOCIgcng9IjUiIGZpbGw9IiMwZTBlMGUiLz4KCiAgPCEtLSBwaW4gMzogY2hlY2tlciAtLT4KICA8Y2lyY2xlIGN4PSIyNzIiIGN5PSIyNjgiIHI9IjY2IiBmaWxsPSIjZjRmMWU4IiBzdHJva2U9IiMwZTBlMGUiIHN0cm9rZS13aWR0aD0iNyIvPgogIDxnIGNsaXAtcGF0aD0idXJsKCNwaW5DKSI+PHJlY3QgeD0iMjA2IiB5PSIyMDIiIHdpZHRoPSIxMzIiIGhlaWdodD0iMTMyIiBmaWxsPSJ1cmwoI3Bpbi1jaGspIi8+PC9nPgogIDxjaXJjbGUgY3g9IjI3MiIgY3k9IjI2OCIgcj0iNjYiIGZpbGw9Im5vbmUiIHN0cm9rZT0iIzBlMGUwZSIgc3Ryb2tlLXdpZHRoPSI3Ii8+CgogIDx0ZXh0IHg9IjEyOCIgeT0iMjg2IiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmb250LWZhbWlseT0iSGFldHRlbnNjaHdlaWxlciwnQXJpYWwgTmFycm93IEJvbGQnLEltcGFjdCxzYW5zLXNlcmlmIiBmb250LXNpemU9IjQwIiBmaWxsPSIjMGUwZTBlIiBsZXR0ZXItc3BhY2luZz0iMiIgdGV4dExlbmd0aD0iNzAiIGxlbmd0aEFkanVzdD0ic3BhY2luZ0FuZEdseXBocyI+UElOPC90ZXh0PgogIDx0ZXh0IHg9IjEyOCIgeT0iMzIyIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmb250LWZhbWlseT0iSGFldHRlbnNjaHdlaWxlciwnQXJpYWwgTmFycm93IEJvbGQnLEltcGFjdCxzYW5zLXNlcmlmIiBmb250LXNpemU9IjQwIiBmaWxsPSIjMGUwZTBlIiBsZXR0ZXItc3BhY2luZz0iMiIgdGV4dExlbmd0aD0iNzAiIGxlbmd0aEFkanVzdD0ic3BhY2luZ0FuZEdseXBocyI+U0VUPC90ZXh0PgogIDx0ZXh0IHg9IjEyOCIgeT0iMzQ4IiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmb250LWZhbWlseT0idWktbW9ub3NwYWNlLG1vbm9zcGFjZSIgZm9udC1zaXplPSIxNSIgZmlsbD0iIzBlMGUwZSIgbGV0dGVyLXNwYWNpbmc9IjYiIHRleHRMZW5ndGg9IjEzMCIgbGVuZ3RoQWRqdXN0PSJzcGFjaW5nQW5kR2x5cGhzIj5USFJFRSBPRkY8L3RleHQ+Cjwvc3ZnPgo=', badge: '',
+    blurb: 'Porkpie, trombone, and the half-bad checker. Butterfly clutch backs.',
+    sizes: []
+  },
+  {
+    id: 'hat', cat: 'bits', name: 'The Porkpie Hat', price: 34,
+    img: 'data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA0MDAgNDAwIiByb2xlPSJpbWciIGFyaWEtbGFiZWw9IkJsYWNrIHdvb2wgcG9ya3BpZSBoYXQgd2l0aCBhIHJlZCBncm9zZ3JhaW4gYmFuZCI+CiAgPGRlZnM+CiAgICA8cGF0dGVybiBpZD0iaDItY2hrIiB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHBhdHRlcm5Vbml0cz0idXNlclNwYWNlT25Vc2UiPgogICAgICA8cmVjdCB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIGZpbGw9IiNmNGYxZTgiLz4KICAgICAgPHJlY3Qgd2lkdGg9IjEyIiBoZWlnaHQ9IjEyIiBmaWxsPSIjMGUwZTBlIi8+CiAgICAgIDxyZWN0IHg9IjEyIiB5PSIxMiIgd2lkdGg9IjEyIiBoZWlnaHQ9IjEyIiBmaWxsPSIjMGUwZTBlIi8+CiAgICA8L3BhdHRlcm4+CiAgPC9kZWZzPgogIDxyZWN0IHdpZHRoPSI0MDAiIGhlaWdodD0iNDAwIiBmaWxsPSIjMWU3YTVlIi8+CiAgPHJlY3QgeT0iMzAwIiB3aWR0aD0iNDAwIiBoZWlnaHQ9IjEwMCIgZmlsbD0idXJsKCNoMi1jaGspIiBvcGFjaXR5PSIuMzUiLz4KCiAgPCEtLSBicmltIC0tPgogIDxlbGxpcHNlIGN4PSIyMDAiIGN5PSIyNjIiIHJ4PSIxNTYiIHJ5PSI0NCIgZmlsbD0iIzBlMGUwZSIvPgogIDxlbGxpcHNlIGN4PSIyMDAiIGN5PSIyNTIiIHJ4PSIxNTYiIHJ5PSI0NCIgZmlsbD0iIzE5MTkxOSIgc3Ryb2tlPSIjMGUwZTBlIiBzdHJva2Utd2lkdGg9IjYiLz4KICA8IS0tIGNyb3duIC0tPgogIDxwYXRoIGQ9Ik0xMDQgMjUyIFYxNjYgcTAtMzAgOTYtMzAgdDk2IDMwIHY4NiIgZmlsbD0iIzE0MTQxNCIgc3Ryb2tlPSIjMGUwZTBlIiBzdHJva2Utd2lkdGg9IjYiLz4KICA8ZWxsaXBzZSBjeD0iMjAwIiBjeT0iMTY2IiByeD0iOTYiIHJ5PSIyNiIgZmlsbD0iIzFjMWMxYyIgc3Ryb2tlPSIjMGUwZTBlIiBzdHJva2Utd2lkdGg9IjYiLz4KICA8IS0tIHBpbmNoZWQgY3JlYXNlIC0tPgogIDxlbGxpcHNlIGN4PSIyMDAiIGN5PSIxNjYiIHJ4PSI3MCIgcnk9IjE2IiBmaWxsPSIjMGUwZTBlIiBvcGFjaXR5PSIuOCIvPgogIDwhLS0gYmFuZCAtLT4KICA8cGF0aCBkPSJNMTA0IDIyNCBoMTkyIHYyNiBIMTA0eiIgZmlsbD0iI2M4MzUyYiIgc3Ryb2tlPSIjMGUwZTBlIiBzdHJva2Utd2lkdGg9IjUiLz4KICA8cmVjdCB4PSIyNTIiIHk9IjIxMiIgd2lkdGg9IjI2IiBoZWlnaHQ9IjUwIiBmaWxsPSIjYzgzNTJiIiBzdHJva2U9IiMwZTBlMGUiIHN0cm9rZS13aWR0aD0iNSIvPgogIDx0ZXh0IHg9IjIwMCIgeT0iMzU2IiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmb250LWZhbWlseT0iSGFldHRlbnNjaHdlaWxlciwnQXJpYWwgTmFycm93IEJvbGQnLEltcGFjdCxzYW5zLXNlcmlmIiBmb250LXNpemU9IjM0IiBmaWxsPSIjZjRmMWU4IiBsZXR0ZXItc3BhY2luZz0iNiIgdGV4dExlbmd0aD0iMjAwIiBsZW5ndGhBZGp1c3Q9InNwYWNpbmdBbmRHbHlwaHMiPlBPUktQSUU8L3RleHQ+Cjwvc3ZnPgo=', badge: 'Low stock',
+    blurb: 'Wool felt, flat crown, grosgrain band. Made by a hatter in Luton.',
+    sizes: ['S/M', 'L/XL']
+  },
+  {
+    id: 'tote', cat: 'bits', name: '"Doors 7, Offbeat 8" Tote', price: 14,
+    img: 'data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA0MDAgNDAwIiByb2xlPSJpbWciIGFyaWEtbGFiZWw9Ik5hdHVyYWwgY2FudmFzIHRvdGUgYmFnIHByaW50ZWQgRG9vcnMgNywgT2ZmYmVhdCA4Ij4KICA8cmVjdCB3aWR0aD0iNDAwIiBoZWlnaHQ9IjQwMCIgZmlsbD0iIzBlMGUwZSIvPgogIDwhLS0gaGFuZGxlcyAtLT4KICA8ZyBmaWxsPSJub25lIiBzdHJva2U9IiNlOGUyZDIiIHN0cm9rZS13aWR0aD0iMTIiPgogICAgPHBhdGggZD0iTTE0OCAxMjIgVjk2IGE1MiAzMCAwIDAgMSAxMDQgMCB2MjYiLz4KICA8L2c+CiAgPGcgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjMGUwZTBlIiBzdHJva2Utd2lkdGg9IjMiPgogICAgPHBhdGggZD0iTTE0OCAxMjIgVjk2IGE1MiAzMCAwIDAgMSAxMDQgMCB2MjYiLz4KICA8L2c+CiAgPCEtLSBib2R5IC0tPgogIDxyZWN0IHg9Ijg2IiB5PSIxMTgiIHdpZHRoPSIyMjgiIGhlaWdodD0iMjIwIiByeD0iNCIgZmlsbD0iI2U4ZTJkMiIgc3Ryb2tlPSIjMGUwZTBlIiBzdHJva2Utd2lkdGg9IjYiLz4KICA8cmVjdCB4PSI4NiIgeT0iMTE4IiB3aWR0aD0iMjI4IiBoZWlnaHQ9IjE0IiBmaWxsPSIjZDVjZGI4IiBzdHJva2U9IiMwZTBlMGUiIHN0cm9rZS13aWR0aD0iNCIvPgoKICA8dGV4dCB4PSIyMDAiIHk9IjE5NiIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZm9udC1mYW1pbHk9IkhhZXR0ZW5zY2h3ZWlsZXIsJ0FyaWFsIE5hcnJvdyBCb2xkJyxJbXBhY3Qsc2Fucy1zZXJpZiIgZm9udC1zaXplPSI0NCIgZmlsbD0iIzBlMGUwZSIgbGV0dGVyLXNwYWNpbmc9IjIiIHRleHRMZW5ndGg9IjE3MCIgbGVuZ3RoQWRqdXN0PSJzcGFjaW5nQW5kR2x5cGhzIj5ET09SUyA3PC90ZXh0PgogIDx0ZXh0IHg9IjIwMCIgeT0iMjQwIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmb250LWZhbWlseT0iSGFldHRlbnNjaHdlaWxlciwnQXJpYWwgTmFycm93IEJvbGQnLEltcGFjdCxzYW5zLXNlcmlmIiBmb250LXNpemU9IjQ0IiBmaWxsPSIjYzgzNTJiIiBsZXR0ZXItc3BhY2luZz0iMiIgdGV4dExlbmd0aD0iMTk2IiBsZW5ndGhBZGp1c3Q9InNwYWNpbmdBbmRHbHlwaHMiPk9GRkJFQVQgODwvdGV4dD4KICA8cmVjdCB4PSIxMjAiIHk9IjI1OCIgd2lkdGg9IjE2MCIgaGVpZ2h0PSI4IiBmaWxsPSIjMGUwZTBlIi8+CiAgPGcgZmlsbD0iIzBlMGUwZSI+CiAgICA8cmVjdCB4PSIxNTAiIHk9IjI4NCIgd2lkdGg9IjI0IiBoZWlnaHQ9IjI0Ii8+PHJlY3QgeD0iMTk4IiB5PSIyODQiIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIvPgogICAgPHJlY3QgeD0iMTc0IiB5PSIzMDgiIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIvPjxyZWN0IHg9IjIyMiIgeT0iMzA4IiB3aWR0aD0iMjQiIGhlaWdodD0iMjQiLz4KICA8L2c+Cjwvc3ZnPgo=', badge: '',
+    blurb: 'Thick 12oz canvas, long handles, holds two LPs and a pint of regret.',
+    sizes: []
+  },
+  {
+    id: 'bundle-lp', cat: 'bundle', name: 'LP + Tee Bundle', price: 45,
+    img: 'data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA0MDAgNDAwIiByb2xlPSJpbWciIGFyaWEtbGFiZWw9IkJ1bmRsZSBvZiB0aGUgbXVzdGFyZCBMUCBhbmQgdGhlIGFsYnVtIHQtc2hpcnQiPgogIDxkZWZzPgogICAgPHBhdGggaWQ9InRlZTMiIGQ9Ik0xMjQgMTE2IEw5NiAxMzAgTDY2IDE4MiBMMTAyIDIwMiBMMTEyIDE3OCBMMTEyIDMzMCBRMTY2IDM0MCAyMjAgMzMwIEwyMjAgMTc4IEwyMzIgMjAyIEwyNjggMTgyIEwyMzggMTMwIEwyMTAgMTE2IFExNjYgMTQyIDEyNCAxMTYgWiIvPgogIDwvZGVmcz4KICA8cmVjdCB3aWR0aD0iNDAwIiBoZWlnaHQ9IjQwMCIgZmlsbD0iI2Y0ZjFlOCIvPgogIDxyZWN0IHk9IjAiIHdpZHRoPSI0MDAiIGhlaWdodD0iNDAwIiBmaWxsPSIjMWU3YTVlIi8+CgogIDwhLS0gcmVjb3JkIHNsZWV2ZSBiZWhpbmQgLS0+CiAgPGcgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoMjA2IDk2KSI+CiAgICA8Y2lyY2xlIGN4PSI5NiIgY3k9Ijk2IiByPSI4MiIgZmlsbD0iIzBlMGUwZSIvPgogICAgPGNpcmNsZSBjeD0iOTYiIGN5PSI5NiIgcj0iMzAiIGZpbGw9IiNmZmM2MjkiLz4KICAgIDxjaXJjbGUgY3g9Ijk2IiBjeT0iOTYiIHI9IjYiIGZpbGw9IiNmNGYxZTgiLz4KICAgIDxyZWN0IHg9IjAiIHk9IjAiIHdpZHRoPSIxNzYiIGhlaWdodD0iMTc2IiBmaWxsPSIjZmZjNjI5IiBzdHJva2U9IiMwZTBlMGUiIHN0cm9rZS13aWR0aD0iNiIvPgogICAgPGVsbGlwc2UgY3g9Ijg4IiBjeT0iOTIiIHJ4PSI0NiIgcnk9IjMwIiBmaWxsPSIjZjRmMWU4IiBzdHJva2U9IiMwZTBlMGUiIHN0cm9rZS13aWR0aD0iNSIvPgogICAgPGNpcmNsZSBjeD0iODgiIGN5PSI5MiIgcj0iMTgiIGZpbGw9IiNjODM1MmIiIHN0cm9rZT0iIzBlMGUwZSIgc3Ryb2tlLXdpZHRoPSI0Ii8+CiAgICA8cmVjdCB4PSI2MCIgeT0iNDIiIHdpZHRoPSI1NiIgaGVpZ2h0PSIyMCIgcng9IjMiIGZpbGw9IiMwZTBlMGUiLz4KICAgIDxlbGxpcHNlIGN4PSI4OCIgY3k9IjYzIiByeD0iNjQiIHJ5PSI4IiBmaWxsPSIjMGUwZTBlIi8+CiAgICA8cmVjdCB4PSIwIiB5PSIxNDYiIHdpZHRoPSIxNzYiIGhlaWdodD0iMzAiIGZpbGw9IiMwZTBlMGUiLz4KICA8L2c+CgogIDwhLS0gc2hpcnQgaW4gZnJvbnQgLS0+CiAgPHVzZSBocmVmPSIjdGVlMyIgZmlsbD0iI2Y0ZjFlOCIgc3Ryb2tlPSIjMGUwZTBlIiBzdHJva2Utd2lkdGg9IjYiLz4KICA8cmVjdCB4PSIxMzAiIHk9IjE5NiIgd2lkdGg9IjcyIiBoZWlnaHQ9IjcyIiBmaWxsPSIjZmZjNjI5IiBzdHJva2U9IiMwZTBlMGUiIHN0cm9rZS13aWR0aD0iNCIvPgogIDxlbGxpcHNlIGN4PSIxNjYiIGN5PSIyMzIiIHJ4PSIyMiIgcnk9IjE0IiBmaWxsPSIjZjRmMWU4IiBzdHJva2U9IiMwZTBlMGUiIHN0cm9rZS13aWR0aD0iMyIvPgogIDxjaXJjbGUgY3g9IjE2NiIgY3k9IjIzMiIgcj0iOCIgZmlsbD0iI2M4MzUyYiIvPgoKICA8ZyBmb250LWZhbWlseT0iSGFldHRlbnNjaHdlaWxlciwnQXJpYWwgTmFycm93IEJvbGQnLEltcGFjdCxzYW5zLXNlcmlmIiBmaWxsPSIjZjRmMWU4Ij4KICAgIDx0ZXh0IHg9IjIwIiB5PSI1NiIgZm9udC1zaXplPSI0MiIgbGV0dGVyLXNwYWNpbmc9IjIiIHRleHRMZW5ndGg9IjIxMCIgbGVuZ3RoQWRqdXN0PSJzcGFjaW5nQW5kR2x5cGhzIj5MUCArIFRFRTwvdGV4dD4KICA8L2c+CiAgPHRleHQgeD0iMjAiIHk9IjgwIiBmb250LWZhbWlseT0idWktbW9ub3NwYWNlLG1vbm9zcGFjZSIgZm9udC1zaXplPSIxNSIgZmlsbD0iI2ZmYzYyOSIgbGV0dGVyLXNwYWNpbmc9IjYiIHRleHRMZW5ndGg9IjIzMCIgbGVuZ3RoQWRqdXN0PSJzcGFjaW5nQW5kR2x5cGhzIj5TQVZFIE5JTkUgUE9VTkRTPC90ZXh0Pgo8L3N2Zz4K', badge: 'Save £9',
+    blurb: 'Mustard LP plus the album tee, in your size. The obvious one.',
+    sizes: ['S', 'M', 'L', 'XL', '2XL']
+  },
+  {
+    id: 'bundle-kit', cat: 'bundle', name: 'Tour Survival Kit', price: 58,
+    img: 'data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA0MDAgNDAwIiByb2xlPSJpbWciIGFyaWEtbGFiZWw9IlRvdXIgc3Vydml2YWwga2l0IGJveCBjb250YWluaW5nIGEgdGVlLCBwaW4gc2V0LCB0b3RlIGFuZCBzaWduZWQgc2V0bGlzdCI+CiAgPGRlZnM+CiAgICA8cGF0dGVybiBpZD0iay1jaGsiIHdpZHRoPSIyMiIgaGVpZ2h0PSIyMiIgcGF0dGVyblVuaXRzPSJ1c2VyU3BhY2VPblVzZSI+CiAgICAgIDxyZWN0IHdpZHRoPSIyMiIgaGVpZ2h0PSIyMiIgZmlsbD0iI2Y0ZjFlOCIvPgogICAgICA8cmVjdCB3aWR0aD0iMTEiIGhlaWdodD0iMTEiIGZpbGw9IiMwZTBlMGUiLz4KICAgICAgPHJlY3QgeD0iMTEiIHk9IjExIiB3aWR0aD0iMTEiIGhlaWdodD0iMTEiIGZpbGw9IiMwZTBlMGUiLz4KICAgIDwvcGF0dGVybj4KICA8L2RlZnM+CiAgPHJlY3Qgd2lkdGg9IjQwMCIgaGVpZ2h0PSI0MDAiIGZpbGw9IiNmZmM2MjkiLz4KCiAgPCEtLSBzZXRsaXN0IHBhcGVyIC0tPgogIDxnIHRyYW5zZm9ybT0icm90YXRlKC03IDIwMCAyMTApIj4KICAgIDxyZWN0IHg9IjExOCIgeT0iOTYiIHdpZHRoPSIxNjQiIGhlaWdodD0iMjAwIiBmaWxsPSIjZjRmMWU4IiBzdHJva2U9IiMwZTBlMGUiIHN0cm9rZS13aWR0aD0iNSIvPgogICAgPHRleHQgeD0iMjAwIiB5PSIxMjgiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGZvbnQtZmFtaWx5PSJIYWV0dGVuc2Nod2VpbGVyLCdBcmlhbCBOYXJyb3cgQm9sZCcsSW1wYWN0LHNhbnMtc2VyaWYiIGZvbnQtc2l6ZT0iMjQiIGZpbGw9IiMwZTBlMGUiIGxldHRlci1zcGFjaW5nPSIzIiB0ZXh0TGVuZ3RoPSIxMTAiIGxlbmd0aEFkanVzdD0ic3BhY2luZ0FuZEdseXBocyI+U0VUTElTVDwvdGV4dD4KICAgIDxnIHN0cm9rZT0iIzBlMGUwZSIgc3Ryb2tlLXdpZHRoPSI0IiBvcGFjaXR5PSIuOCI+CiAgICAgIDxwYXRoIGQ9Ik0xMzYgMTUwaDEyOE0xMzYgMTcyaDExMk0xMzYgMTk0aDEyOE0xMzYgMjE2aDk2TTEzNiAyMzhoMTIwIi8+CiAgICA8L2c+CiAgICA8cGF0aCBkPSJNMTQyIDI2OHEyNi0yMiA0OCAwdDU0LTE0IiBmaWxsPSJub25lIiBzdHJva2U9IiNjODM1MmIiIHN0cm9rZS13aWR0aD0iNSIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIi8+CiAgPC9nPgoKICA8IS0tIGJveCBmcm9udCAtLT4KICA8cmVjdCB4PSI1MiIgeT0iMjM4IiB3aWR0aD0iMjk2IiBoZWlnaHQ9IjEyMiIgZmlsbD0iIzBlMGUwZSIgc3Ryb2tlPSIjMGUwZTBlIiBzdHJva2Utd2lkdGg9IjYiLz4KICA8cmVjdCB4PSI1MiIgeT0iMjM4IiB3aWR0aD0iMjk2IiBoZWlnaHQ9IjIyIiBmaWxsPSJ1cmwoI2stY2hrKSIvPgogIDx0ZXh0IHg9IjIwMCIgeT0iMzA4IiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmb250LWZhbWlseT0iSGFldHRlbnNjaHdlaWxlciwnQXJpYWwgTmFycm93IEJvbGQnLEltcGFjdCxzYW5zLXNlcmlmIiBmb250LXNpemU9IjQwIiBmaWxsPSIjZjRmMWU4IiBsZXR0ZXItc3BhY2luZz0iMyIgdGV4dExlbmd0aD0iMjgwIiBsZW5ndGhBZGp1c3Q9InNwYWNpbmdBbmRHbHlwaHMiPlRPVVIgU1VSVklWQUw8L3RleHQ+CiAgPHRleHQgeD0iMjAwIiB5PSIzNDAiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGZvbnQtZmFtaWx5PSJ1aS1tb25vc3BhY2UsbW9ub3NwYWNlIiBmb250LXNpemU9IjE2IiBmaWxsPSIjZmZjNjI5IiBsZXR0ZXItc3BhY2luZz0iMTAiIHRleHRMZW5ndGg9IjE5MCIgbGVuZ3RoQWRqdXN0PSJzcGFjaW5nQW5kR2x5cGhzIj5GT1VSIElURU1TPC90ZXh0PgoKICA8IS0tIHBpbiBwZWVraW5nIG91dCAtLT4KICA8Y2lyY2xlIGN4PSI4MiIgY3k9IjIyMiIgcj0iMzAiIGZpbGw9IiNjODM1MmIiIHN0cm9rZT0iIzBlMGUwZSIgc3Ryb2tlLXdpZHRoPSI1Ii8+CiAgPGcgZmlsbD0iIzBlMGUwZSI+CiAgICA8cmVjdCB4PSI3MCIgeT0iMjEyIiB3aWR0aD0iMjQiIGhlaWdodD0iMTEiIHJ4PSIyIi8+CiAgICA8ZWxsaXBzZSBjeD0iODIiIGN5PSIyMjQiIHJ4PSIxOSIgcnk9IjQuNSIvPgogIDwvZz4KICA8IS0tIHRvdGUgcGVla2luZyBvdXQgLS0+CiAgPHJlY3QgeD0iMjkyIiB5PSIxOTAiIHdpZHRoPSI2NiIgaGVpZ2h0PSI2MiIgZmlsbD0iI2U4ZTJkMiIgc3Ryb2tlPSIjMGUwZTBlIiBzdHJva2Utd2lkdGg9IjUiLz4KICA8cGF0aCBkPSJNMzEwIDE5MHYtMTRhMTUgOSAwIDAgMSAzMCAwdjE0IiBmaWxsPSJub25lIiBzdHJva2U9IiMwZTBlMGUiIHN0cm9rZS13aWR0aD0iNSIvPgo8L3N2Zz4K', badge: 'Ltd.',
+    blurb: 'Checker tee, pin set, tote, signed setlist from a show on this run.',
+    sizes: ['S', 'M', 'L', 'XL', '2XL']
+  }
+];
+
+const DISCOG = [
+  {
+    id: 'porkpie', title: 'Porkpie Paranoia', year: 2026, kind: 'Album',
+    cover: 'data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA2MDAgNjAwIiByb2xlPSJpbWciIGFyaWEtbGFiZWw9IlBvcmtwaWUgUGFyYW5vaWEgY292ZXI6IGEgcG9ya3BpZSBoYXQgb3ZlciBhIGNoZWNrZXJib2FyZCBleWUiPgogIDxkZWZzPgogICAgPHBhdHRlcm4gaWQ9InAtY2hrIiB3aWR0aD0iNDgiIGhlaWdodD0iNDgiIHBhdHRlcm5Vbml0cz0idXNlclNwYWNlT25Vc2UiPgogICAgICA8cmVjdCB3aWR0aD0iNDgiIGhlaWdodD0iNDgiIGZpbGw9IiNmNGYxZTgiLz4KICAgICAgPHJlY3Qgd2lkdGg9IjI0IiBoZWlnaHQ9IjI0IiBmaWxsPSIjMGUwZTBlIi8+CiAgICAgIDxyZWN0IHg9IjI0IiB5PSIyNCIgd2lkdGg9IjI0IiBoZWlnaHQ9IjI0IiBmaWxsPSIjMGUwZTBlIi8+CiAgICA8L3BhdHRlcm4+CiAgPC9kZWZzPgogIDxyZWN0IHdpZHRoPSI2MDAiIGhlaWdodD0iNjAwIiBmaWxsPSIjZmZjNjI5Ii8+CiAgPHJlY3QgeT0iMzg0IiB3aWR0aD0iNjAwIiBoZWlnaHQ9Ijk2IiBmaWxsPSJ1cmwoI3AtY2hrKSIvPgoKICA8IS0tIHN0YXJpbmcgZXllIC0tPgogIDxlbGxpcHNlIGN4PSIzMDAiIGN5PSIyNzgiIHJ4PSIxNTAiIHJ5PSI5NiIgZmlsbD0iI2Y0ZjFlOCIgc3Ryb2tlPSIjMGUwZTBlIiBzdHJva2Utd2lkdGg9IjEwIi8+CiAgPGNpcmNsZSBjeD0iMzAwIiBjeT0iMjc4IiByPSI2MiIgZmlsbD0iI2M4MzUyYiIgc3Ryb2tlPSIjMGUwZTBlIiBzdHJva2Utd2lkdGg9IjEwIi8+CiAgPGNpcmNsZSBjeD0iMzAwIiBjeT0iMjc4IiByPSIyNCIgZmlsbD0iIzBlMGUwZSIvPgogIDxjaXJjbGUgY3g9IjMyMiIgY3k9IjI1OCIgcj0iMTAiIGZpbGw9IiNmNGYxZTgiLz4KCiAgPCEtLSBoYXQgLS0+CiAgPGcgZmlsbD0iIzBlMGUwZSI+CiAgICA8cmVjdCB4PSIyMjIiIHk9IjExMiIgd2lkdGg9IjE1NiIgaGVpZ2h0PSI2MiIgcng9IjgiLz4KICAgIDxlbGxpcHNlIGN4PSIzMDAiIGN5PSIxNzYiIHJ4PSIxNzYiIHJ5PSIyNCIvPgogIDwvZz4KICA8cmVjdCB4PSIyMjIiIHk9IjExMiIgd2lkdGg9IjE1NiIgaGVpZ2h0PSIxOCIgZmlsbD0iI2M4MzUyYiIvPgoKICA8dGV4dCB4PSIzMDAiIHk9IjUzMCIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZm9udC1mYW1pbHk9IkhhZXR0ZW5zY2h3ZWlsZXIsJ0FyaWFsIE5hcnJvdyBCb2xkJyxJbXBhY3Qsc2Fucy1zZXJpZiIgZm9udC1zaXplPSI3NiIgZmlsbD0iIzBlMGUwZSIgbGV0dGVyLXNwYWNpbmc9IjIiIHRleHRMZW5ndGg9IjM0MCIgbGVuZ3RoQWRqdXN0PSJzcGFjaW5nQW5kR2x5cGhzIj5QT1JLUElFPC90ZXh0PgogIDx0ZXh0IHg9IjMwMCIgeT0iNTc4IiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmb250LWZhbWlseT0iSGFldHRlbnNjaHdlaWxlciwnQXJpYWwgTmFycm93IEJvbGQnLEltcGFjdCxzYW5zLXNlcmlmIiBmb250LXNpemU9IjUyIiBmaWxsPSIjYzgzNTJiIiBsZXR0ZXItc3BhY2luZz0iNiIgdGV4dExlbmd0aD0iMzYwIiBsZW5ndGhBZGp1c3Q9InNwYWNpbmdBbmRHbHlwaHMiPlBBUkFOT0lBPC90ZXh0PgogIDx0ZXh0IHg9IjI0IiB5PSI0NiIgZm9udC1mYW1pbHk9InVpLW1vbm9zcGFjZSxtb25vc3BhY2UiIGZvbnQtc2l6ZT0iMjAiIGZpbGw9IiMwZTBlMGUiIGxldHRlci1zcGFjaW5nPSI2Ij5IQUxGIEJBRDwvdGV4dD4KICA8dGV4dCB4PSI1NzYiIHk9IjQ2IiB0ZXh0LWFuY2hvcj0iZW5kIiBmb250LWZhbWlseT0idWktbW9ub3NwYWNlLG1vbm9zcGFjZSIgZm9udC1zaXplPSIyMCIgZmlsbD0iIzBlMGUwZSIgbGV0dGVyLXNwYWNpbmc9IjQiPkxQMDQ8L3RleHQ+Cjwvc3ZnPgo=', accent: '#ffc629',
+    blurb: 'Recorded live to tape in four days at Foleshill Road, then argued about for eleven months. Horns up front, nerves showing.',
+    formats: ['LP', 'CD', 'Digital', 'Cassette'],
+    tracks: ['Porkpie Paranoia', 'Council Tax Rocksteady', 'Two Tone Two Faced', 'Offbeat Anxiety', 'The Long Way Round the Ring Road',
+             'Trombone Kid', 'Nothing Doing (Skank)', 'Late Bus Lament', 'Rudeness Is a Discipline', 'Ninety Nine Excuses',
+             'The Empire, Two Nights', 'Half Bad, All In']
+  },
+  {
+    id: 'locarno', title: 'Live at the Locarno', year: 2024, kind: 'Live Album',
+    cover: 'data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA2MDAgNjAwIiByb2xlPSJpbWciIGFyaWEtbGFiZWw9IkxpdmUgYXQgdGhlIExvY2Fybm8gY292ZXI6IHN0YWdlIHNwb3RsaWdodHMgb3ZlciBhIGNyb3dkIj4KICA8cmVjdCB3aWR0aD0iNjAwIiBoZWlnaHQ9IjYwMCIgZmlsbD0iI2M4MzUyYiIvPgoKICA8IS0tIHNwb3RsaWdodCBjb25lcyAtLT4KICA8ZyBmaWxsPSIjZmZjNjI5IiBvcGFjaXR5PSIuODUiPgogICAgPHBhdGggZD0iTTEyMCAwIEwzNCA0NzAgTDIyNiA0NzAgWiIvPgogICAgPHBhdGggZD0iTTMwMCAwIEwyMDYgNDcwIEwzOTQgNDcwIFoiLz4KICAgIDxwYXRoIGQ9Ik00ODAgMCBMMzc0IDQ3MCBMNTY2IDQ3MCBaIi8+CiAgPC9nPgogIDxnIGZpbGw9IiNmNGYxZTgiIG9wYWNpdHk9Ii4zNSI+CiAgICA8cGF0aCBkPSJNMTIwIDAgTDkyIDQ3MCBMMTY4IDQ3MCBaIi8+CiAgICA8cGF0aCBkPSJNMzAwIDAgTDI2NiA0NzAgTDMzNCA0NzAgWiIvPgogICAgPHBhdGggZD0iTTQ4MCAwIEw0MzYgNDcwIEw1MDggNDcwIFoiLz4KICA8L2c+CgogIDwhLS0gY3Jvd2QgLS0+CiAgPGcgZmlsbD0iIzBlMGUwZSI+CiAgICA8cGF0aCBkPSJNMCA0NzBoNjAwdjEzMEgweiIvPgogICAgPGNpcmNsZSBjeD0iNDYiIGN5PSI0NjIiIHI9IjI2Ii8+PGNpcmNsZSBjeD0iMTEyIiBjeT0iNDQ2IiByPSIzMCIvPjxjaXJjbGUgY3g9IjE4MiIgY3k9IjQ2NiIgcj0iMjQiLz4KICAgIDxjaXJjbGUgY3g9IjI0OCIgY3k9IjQ0MCIgcj0iMzAiLz48Y2lyY2xlIGN4PSIzMTgiIGN5PSI0NjQiIHI9IjI2Ii8+PGNpcmNsZSBjeD0iMzg2IiBjeT0iNDQ0IiByPSIzMCIvPgogICAgPGNpcmNsZSBjeD0iNDU2IiBjeT0iNDY2IiByPSIyNCIvPjxjaXJjbGUgY3g9IjUyNCIgY3k9IjQ0NiIgcj0iMzAiLz48Y2lyY2xlIGN4PSI1ODIiIGN5PSI0NjQiIHI9IjI2Ii8+CiAgICA8IS0tIHJhaXNlZCBoYW5kcyAtLT4KICAgIDxyZWN0IHg9IjE0MCIgeT0iMzkyIiB3aWR0aD0iMTIiIGhlaWdodD0iNjAiIHJ4PSI2Ii8+PHJlY3QgeD0iMjkyIiB5PSIzNzYiIHdpZHRoPSIxMiIgaGVpZ2h0PSI3NiIgcng9IjYiLz4KICAgIDxyZWN0IHg9IjQyOCIgeT0iMzk4IiB3aWR0aD0iMTIiIGhlaWdodD0iNTYiIHJ4PSI2Ii8+CiAgPC9nPgoKICA8dGV4dCB4PSIzMDAiIHk9IjEzMCIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZm9udC1mYW1pbHk9IkhhZXR0ZW5zY2h3ZWlsZXIsJ0FyaWFsIE5hcnJvdyBCb2xkJyxJbXBhY3Qsc2Fucy1zZXJpZiIgZm9udC1zaXplPSI1OCIgZmlsbD0iIzBlMGUwZSIgbGV0dGVyLXNwYWNpbmc9IjQiIHRleHRMZW5ndGg9IjMwMCIgbGVuZ3RoQWRqdXN0PSJzcGFjaW5nQW5kR2x5cGhzIj5MSVZFIEFUIFRIRTwvdGV4dD4KICA8dGV4dCB4PSIzMDAiIHk9IjIwNiIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZm9udC1mYW1pbHk9IkhhZXR0ZW5zY2h3ZWlsZXIsJ0FyaWFsIE5hcnJvdyBCb2xkJyxJbXBhY3Qsc2Fucy1zZXJpZiIgZm9udC1zaXplPSI5MiIgZmlsbD0iIzBlMGUwZSIgbGV0dGVyLXNwYWNpbmc9IjIiIHRleHRMZW5ndGg9IjQzMCIgbGVuZ3RoQWRqdXN0PSJzcGFjaW5nQW5kR2x5cGhzIj5MT0NBUk5PPC90ZXh0PgogIDxyZWN0IHg9IjE4MCIgeT0iMjI4IiB3aWR0aD0iMjQwIiBoZWlnaHQ9IjgiIGZpbGw9IiMwZTBlMGUiLz4KICA8dGV4dCB4PSIzMDAiIHk9IjU2NiIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZm9udC1mYW1pbHk9InVpLW1vbm9zcGFjZSxtb25vc3BhY2UiIGZvbnQtc2l6ZT0iMjIiIGZpbGw9IiNmNGYxZTgiIGxldHRlci1zcGFjaW5nPSIxMCI+SEFMRiBCQUQgwrcgMjAyNDwvdGV4dD4KPC9zdmc+Cg==', accent: '#c8352b',
+    blurb: 'Two desk mixes from the 2024 homecoming, warts and curfew violation included. Track 10 is the fire alarm.',
+    formats: ['2xLP', 'Digital'],
+    tracks: ['Intro (Ring Road)', 'Skank Etiquette', 'Bad Habit Boogie', 'Overdrawn', 'Ghent Again',
+             'Brass Neck', 'Instrumental for the Bar Staff', 'Doors Seven', 'Half Bad', 'Curfew']
+  },
+  {
+    id: 'rudeness', title: 'The Rudeness EP', year: 2022, kind: 'EP',
+    cover: 'data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA2MDAgNjAwIiByb2xlPSJpbWciIGFyaWEtbGFiZWw9IlRoZSBSdWRlbmVzcyBFUCBjb3Zlcjogb3JnYW4ga2V5cyBhbmQgYSBjaGVja2VyIGJvcmRlciI+CiAgPGRlZnM+CiAgICA8cGF0dGVybiBpZD0ici1jaGsiIHdpZHRoPSI0MCIgaGVpZ2h0PSI0MCIgcGF0dGVyblVuaXRzPSJ1c2VyU3BhY2VPblVzZSI+CiAgICAgIDxyZWN0IHdpZHRoPSI0MCIgaGVpZ2h0PSI0MCIgZmlsbD0iI2Y0ZjFlOCIvPgogICAgICA8cmVjdCB3aWR0aD0iMjAiIGhlaWdodD0iMjAiIGZpbGw9IiMwZTBlMGUiLz4KICAgICAgPHJlY3QgeD0iMjAiIHk9IjIwIiB3aWR0aD0iMjAiIGhlaWdodD0iMjAiIGZpbGw9IiMwZTBlMGUiLz4KICAgIDwvcGF0dGVybj4KICA8L2RlZnM+CiAgPHJlY3Qgd2lkdGg9IjYwMCIgaGVpZ2h0PSI2MDAiIGZpbGw9IiMxZTdhNWUiLz4KICA8cmVjdCB3aWR0aD0iNjAwIiBoZWlnaHQ9IjQwIiBmaWxsPSJ1cmwoI3ItY2hrKSIvPgogIDxyZWN0IHk9IjU2MCIgd2lkdGg9IjYwMCIgaGVpZ2h0PSI0MCIgZmlsbD0idXJsKCNyLWNoaykiLz4KCiAgPCEtLSBvcmdhbiBrZXlib2FyZCwgb24gdGhlIHNrZXcgLS0+CiAgPGcgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoMzAwIDMzMCkgcm90YXRlKC04KSB0cmFuc2xhdGUoLTMwMCAtMzMwKSI+CiAgICA8cmVjdCB4PSI4NiIgeT0iMjUyIiB3aWR0aD0iNDI4IiBoZWlnaHQ9IjE1NiIgZmlsbD0iI2Y0ZjFlOCIgc3Ryb2tlPSIjMGUwZTBlIiBzdHJva2Utd2lkdGg9IjEwIi8+CiAgICA8ZyBzdHJva2U9IiMwZTBlMGUiIHN0cm9rZS13aWR0aD0iNiI+CiAgICAgIDxwYXRoIGQ9Ik0xNDcgMjUydjE1Nk0yMDggMjUydjE1Nk0yNjkgMjUydjE1Nk0zMzAgMjUydjE1Nk0zOTEgMjUydjE1Nk00NTIgMjUydjE1NiIvPgogICAgPC9nPgogICAgPGcgZmlsbD0iIzBlMGUwZSI+CiAgICAgIDxyZWN0IHg9IjEyOCIgeT0iMjUyIiB3aWR0aD0iMzQiIGhlaWdodD0iOTQiLz48cmVjdCB4PSIxOTIiIHk9IjI1MiIgd2lkdGg9IjM0IiBoZWlnaHQ9Ijk0Ii8+CiAgICAgIDxyZWN0IHg9IjMxNCIgeT0iMjUyIiB3aWR0aD0iMzQiIGhlaWdodD0iOTQiLz48cmVjdCB4PSIzNzYiIHk9IjI1MiIgd2lkdGg9IjM0IiBoZWlnaHQ9Ijk0Ii8+CiAgICAgIDxyZWN0IHg9IjQzOCIgeT0iMjUyIiB3aWR0aD0iMzQiIGhlaWdodD0iOTQiLz4KICAgIDwvZz4KICAgIDxyZWN0IHg9Ijg2IiB5PSIyMjIiIHdpZHRoPSI0MjgiIGhlaWdodD0iMzAiIGZpbGw9IiNjODM1MmIiIHN0cm9rZT0iIzBlMGUwZSIgc3Ryb2tlLXdpZHRoPSIxMCIvPgogIDwvZz4KCiAgPHRleHQgeD0iMzAwIiB5PSIxNTAiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGZvbnQtZmFtaWx5PSJIYWV0dGVuc2Nod2VpbGVyLCdBcmlhbCBOYXJyb3cgQm9sZCcsSW1wYWN0LHNhbnMtc2VyaWYiIGZvbnQtc2l6ZT0iMTEyIiBmaWxsPSIjZjRmMWU4IiBsZXR0ZXItc3BhY2luZz0iNCIgdGV4dExlbmd0aD0iNDcwIiBsZW5ndGhBZGp1c3Q9InNwYWNpbmdBbmRHbHlwaHMiPlJVREVORVNTPC90ZXh0PgogIDx0ZXh0IHg9IjMwMCIgeT0iMTk2IiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmb250LWZhbWlseT0idWktbW9ub3NwYWNlLG1vbm9zcGFjZSIgZm9udC1zaXplPSIyMiIgZmlsbD0iI2ZmYzYyOSIgbGV0dGVyLXNwYWNpbmc9IjE0Ij5USEUgRS5QLjwvdGV4dD4KICA8dGV4dCB4PSIzMDAiIHk9IjUzMCIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZm9udC1mYW1pbHk9InVpLW1vbm9zcGFjZSxtb25vc3BhY2UiIGZvbnQtc2l6ZT0iMjAiIGZpbGw9IiNmNGYxZTgiIGxldHRlci1zcGFjaW5nPSIxMCI+SEFMRiBCQUQgwrcgRklWRSBTSURFUzwvdGV4dD4KPC9zdmc+Cg==', accent: '#1e7a5e',
+    blurb: 'Five songs cut between tours on borrowed studio time. The one where the organ took over.',
+    formats: ['10"', 'Digital'],
+    tracks: ['Rudeness', 'Hammond Trouble', 'Sunday Best', 'A Word With You Outside', 'Rudeness (Dub)']
+  },
+  {
+    id: 'offbeat', title: 'Offbeat & Overdrawn', year: 2021, kind: 'Album',
+    cover: 'data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA2MDAgNjAwIiByb2xlPSJpbWciIGFyaWEtbGFiZWw9Ik9mZmJlYXQgYW5kIE92ZXJkcmF3biBjb3ZlcjogYSBmYWxsaW5nIGJhciBjaGFydCBvbiBhIGNoZWNrZXJib2FyZCBmaWVsZCI+CiAgPGRlZnM+CiAgICA8cGF0dGVybiBpZD0iby1jaGsiIHdpZHRoPSI1MCIgaGVpZ2h0PSI1MCIgcGF0dGVyblVuaXRzPSJ1c2VyU3BhY2VPblVzZSI+CiAgICAgIDxyZWN0IHdpZHRoPSI1MCIgaGVpZ2h0PSI1MCIgZmlsbD0iI2Y0ZjFlOCIvPgogICAgICA8cmVjdCB3aWR0aD0iMjUiIGhlaWdodD0iMjUiIGZpbGw9IiMwZTBlMGUiLz4KICAgICAgPHJlY3QgeD0iMjUiIHk9IjI1IiB3aWR0aD0iMjUiIGhlaWdodD0iMjUiIGZpbGw9IiMwZTBlMGUiLz4KICAgIDwvcGF0dGVybj4KICA8L2RlZnM+CiAgPHJlY3Qgd2lkdGg9IjYwMCIgaGVpZ2h0PSI2MDAiIGZpbGw9IiMyZjZmZDAiLz4KICA8cmVjdCB4PSIwIiB5PSIwIiB3aWR0aD0iNjAwIiBoZWlnaHQ9IjYwMCIgZmlsbD0idXJsKCNvLWNoaykiIG9wYWNpdHk9Ii4xNiIvPgoKICA8IS0tIHRoZSBiYWxhbmNlIGdvZXMgdGhlIHdyb25nIHdheSAtLT4KICA8ZyBmaWxsPSIjZjRmMWU4IiBzdHJva2U9IiMwZTBlMGUiIHN0cm9rZS13aWR0aD0iOCI+CiAgICA8cmVjdCB4PSI3MiIgIHk9IjIyMCIgd2lkdGg9IjcyIiBoZWlnaHQ9IjIzMCIvPgogICAgPHJlY3QgeD0iMTY0IiB5PSIyNjgiIHdpZHRoPSI3MiIgaGVpZ2h0PSIxODIiLz4KICAgIDxyZWN0IHg9IjI1NiIgeT0iMzE0IiB3aWR0aD0iNzIiIGhlaWdodD0iMTM2Ii8+CiAgICA8cmVjdCB4PSIzNDgiIHk9IjM2MCIgd2lkdGg9IjcyIiBoZWlnaHQ9IjkwIi8+CiAgPC9nPgogIDxyZWN0IHg9IjQ0MCIgeT0iNDUwIiB3aWR0aD0iNzIiIGhlaWdodD0iOTYiIGZpbGw9IiNjODM1MmIiIHN0cm9rZT0iIzBlMGUwZSIgc3Ryb2tlLXdpZHRoPSI4Ii8+CiAgPHBhdGggZD0iTTY0IDQ1MGg0ODAiIHN0cm9rZT0iIzBlMGUwZSIgc3Ryb2tlLXdpZHRoPSIxMiIvPgogIDxwYXRoIGQ9Ik05MiAxOTAgTDUyMCA0NzAiIHN0cm9rZT0iI2ZmYzYyOSIgc3Ryb2tlLXdpZHRoPSIxNCIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIi8+CiAgPHBhdGggZD0iTTQ5OCA0MzBsMzAgNDYtNTQgNnoiIGZpbGw9IiNmZmM2MjkiIHN0cm9rZT0iIzBlMGUwZSIgc3Ryb2tlLXdpZHRoPSI2Ii8+CgogIDx0ZXh0IHg9IjMwMCIgeT0iMTA0IiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmb250LWZhbWlseT0iSGFldHRlbnNjaHdlaWxlciwnQXJpYWwgTmFycm93IEJvbGQnLEltcGFjdCxzYW5zLXNlcmlmIiBmb250LXNpemU9Ijg2IiBmaWxsPSIjZjRmMWU4IiBsZXR0ZXItc3BhY2luZz0iMiIgdGV4dExlbmd0aD0iMzYwIiBsZW5ndGhBZGp1c3Q9InNwYWNpbmdBbmRHbHlwaHMiPk9GRkJFQVQ8L3RleHQ+CiAgPHRleHQgeD0iMzAwIiB5PSIxNjQiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGZvbnQtZmFtaWx5PSJIYWV0dGVuc2Nod2VpbGVyLCdBcmlhbCBOYXJyb3cgQm9sZCcsSW1wYWN0LHNhbnMtc2VyaWYiIGZvbnQtc2l6ZT0iNjAiIGZpbGw9IiNmZmM2MjkiIGxldHRlci1zcGFjaW5nPSI2IiB0ZXh0TGVuZ3RoPSI0MjAiIGxlbmd0aEFkanVzdD0ic3BhY2luZ0FuZEdseXBocyI+JmFtcDsgT1ZFUkRSQVdOPC90ZXh0PgogIDx0ZXh0IHg9IjMwMCIgeT0iNTgwIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmb250LWZhbWlseT0idWktbW9ub3NwYWNlLG1vbm9zcGFjZSIgZm9udC1zaXplPSIyMCIgZmlsbD0iI2Y0ZjFlOCIgbGV0dGVyLXNwYWNpbmc9IjEwIj5IQUxGIEJBRCDCtyBMUDAyPC90ZXh0Pgo8L3N2Zz4K', accent: '#2f6fd0',
+    blurb: 'Written skint, recorded skinter. Still the one people shout for, and we still play all of it.',
+    formats: ['LP', 'CD', 'Digital'],
+    tracks: ['Overdrawn', 'Brass Neck', 'The Landlord Waltz', 'Ghent Again', 'Small Hours, Large Debts',
+             'Skank the Interest', 'Cheque Bounce Rocksteady', 'Nine to Nowhere', 'Van Trouble', 'Weekend Money', 'Overdrawn (Reprise)']
+  },
+  {
+    id: 'skank', title: 'Skank Etiquette', year: 2019, kind: 'Album',
+    cover: 'data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA2MDAgNjAwIiByb2xlPSJpbWciIGFyaWEtbGFiZWw9IlNrYW5rIEV0aXF1ZXR0ZSBjb3ZlcjogZGFuY2Utc3RlcCBmb290cHJpbnQgZGlhZ3JhbSI+CiAgPGRlZnM+CiAgICA8cGF0dGVybiBpZD0icy1jaGsiIHdpZHRoPSI2MCIgaGVpZ2h0PSI2MCIgcGF0dGVyblVuaXRzPSJ1c2VyU3BhY2VPblVzZSI+CiAgICAgIDxyZWN0IHdpZHRoPSI2MCIgaGVpZ2h0PSI2MCIgZmlsbD0iI2Y0ZjFlOCIvPgogICAgICA8cmVjdCB3aWR0aD0iMzAiIGhlaWdodD0iMzAiIGZpbGw9IiMwZTBlMGUiLz4KICAgICAgPHJlY3QgeD0iMzAiIHk9IjMwIiB3aWR0aD0iMzAiIGhlaWdodD0iMzAiIGZpbGw9IiMwZTBlMGUiLz4KICAgIDwvcGF0dGVybj4KICAgIDxnIGlkPSJmb290Ij4KICAgICAgPGVsbGlwc2UgY3g9IjAiIGN5PSIwIiByeD0iMjYiIHJ5PSI0MCIvPgogICAgICA8ZWxsaXBzZSBjeD0iMCIgY3k9IjQ2IiByeD0iMTciIHJ5PSIxNSIvPgogICAgPC9nPgogIDwvZGVmcz4KCiAgPHJlY3Qgd2lkdGg9IjYwMCIgaGVpZ2h0PSI2MDAiIGZpbGw9IiNmNGYxZTgiLz4KICA8cmVjdCB5PSI1NTIiIHdpZHRoPSI2MDAiIGhlaWdodD0iNDgiIGZpbGw9InVybCgjcy1jaGspIi8+CiAgPHJlY3QgeD0iMzQiIHk9IjM0IiB3aWR0aD0iNTMyIiBoZWlnaHQ9IjQ5MCIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjMGUwZTBlIiBzdHJva2Utd2lkdGg9IjgiLz4KCiAgPCEtLSBzdGVwIGRpYWdyYW0gLS0+CiAgPGcgZmlsbD0iIzBlMGUwZSI+CiAgICA8dXNlIGhyZWY9IiNmb290IiB0cmFuc2Zvcm09InRyYW5zbGF0ZSgxNTAgMjUwKSByb3RhdGUoLTE4KSIvPgogICAgPHVzZSBocmVmPSIjZm9vdCIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoMjU4IDIxMCkgcm90YXRlKDE0KSIvPgogICAgPHVzZSBocmVmPSIjZm9vdCIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoMzUyIDMwMCkgcm90YXRlKC0yNCkiLz4KICA8L2c+CiAgPGcgZmlsbD0iI2M4MzUyYiI+CiAgICA8dXNlIGhyZWY9IiNmb290IiB0cmFuc2Zvcm09InRyYW5zbGF0ZSg0NTIgMjQ0KSByb3RhdGUoMjIpIi8+CiAgPC9nPgogIDxnIHN0cm9rZT0iI2ZmYzYyOSIgc3Ryb2tlLXdpZHRoPSI5IiBmaWxsPSJub25lIiBzdHJva2UtZGFzaGFycmF5PSIxNiAxNCIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIj4KICAgIDxwYXRoIGQ9Ik0xODAgMjc0IEwyMzYgMjMyIi8+CiAgICA8cGF0aCBkPSJNMjg2IDI0MCBMMzMyIDI5NiIvPgogICAgPHBhdGggZD0iTTM4MiAyOTYgTDQzMiAyNjIiLz4KICA8L2c+CiAgPGcgZm9udC1mYW1pbHk9InVpLW1vbm9zcGFjZSxtb25vc3BhY2UiIGZvbnQtc2l6ZT0iMjAiIGZpbGw9IiMwZTBlMGUiPgogICAgPHRleHQgeD0iMTMyIiB5PSIzNTIiPjE8L3RleHQ+PHRleHQgeD0iMjQwIiB5PSIzMTYiPjI8L3RleHQ+PHRleHQgeD0iMzM0IiB5PSI0MDAiPjM8L3RleHQ+PHRleHQgeD0iNDM2IiB5PSIzNDgiPjQ8L3RleHQ+CiAgPC9nPgoKICA8dGV4dCB4PSIzMDAiIHk9IjEyMiIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZm9udC1mYW1pbHk9IkhhZXR0ZW5zY2h3ZWlsZXIsJ0FyaWFsIE5hcnJvdyBCb2xkJyxJbXBhY3Qsc2Fucy1zZXJpZiIgZm9udC1zaXplPSI5NiIgZmlsbD0iIzBlMGUwZSIgbGV0dGVyLXNwYWNpbmc9IjIiIHRleHRMZW5ndGg9IjMwMCIgbGVuZ3RoQWRqdXN0PSJzcGFjaW5nQW5kR2x5cGhzIj5TS0FOSzwvdGV4dD4KICA8dGV4dCB4PSIzMDAiIHk9IjE3NiIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZm9udC1mYW1pbHk9IkhhZXR0ZW5zY2h3ZWlsZXIsJ0FyaWFsIE5hcnJvdyBCb2xkJyxJbXBhY3Qsc2Fucy1zZXJpZiIgZm9udC1zaXplPSI1MiIgZmlsbD0iI2M4MzUyYiIgbGV0dGVyLXNwYWNpbmc9IjEwIiB0ZXh0TGVuZ3RoPSIzODAiIGxlbmd0aEFkanVzdD0ic3BhY2luZ0FuZEdseXBocyI+RVRJUVVFVFRFPC90ZXh0PgogIDx0ZXh0IHg9IjMwMCIgeT0iNDY2IiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmb250LWZhbWlseT0idWktbW9ub3NwYWNlLG1vbm9zcGFjZSIgZm9udC1zaXplPSIxOSIgZmlsbD0iIzBlMGUwZSIgbGV0dGVyLXNwYWNpbmc9IjYiIHRleHRMZW5ndGg9IjQ1MCIgbGVuZ3RoQWRqdXN0PSJzcGFjaW5nQW5kR2x5cGhzIj5GSUcuIDEg4oCUIFRIRSBDT1JSRUNUIE1PVkVNRU5UPC90ZXh0PgogIDx0ZXh0IHg9IjMwMCIgeT0iNTAwIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmb250LWZhbWlseT0idWktbW9ub3NwYWNlLG1vbm9zcGFjZSIgZm9udC1zaXplPSIxOSIgZmlsbD0iIzBlMGUwZSIgbGV0dGVyLXNwYWNpbmc9IjEwIj5IQUxGIEJBRCDCtyAyMDE5PC90ZXh0Pgo8L3N2Zz4K', accent: '#f4f1e8',
+    blurb: 'The debut. Recorded in a pub back room for £400 and a curry. Original vinyl is long gone.',
+    formats: ['LP (OOP)', 'CD', 'Digital'],
+    tracks: ['Skank Etiquette', 'Bad Habit Boogie', 'Porkpie', 'First Offbeat', 'The Pub That Became a Letting Agency',
+             'Trouble at the Bus Stop', 'Half Bad', 'Coventry Sound System', 'Two of Everything', 'Last Orders']
+  }
+];
+
+</script>
+<script>
+/* HALF BAD — behaviour for every page. No dependencies, no build step.
+
+   Each page is a thin shell: it declares which page it is via <body data-page>
+   and provides empty containers. Everything shared — ticker, nav, footer, cart
+   — is rendered from here so the chrome has one source of truth rather than six
+   copies drifting apart. Section rendering is conditional on its container
+   existing, so one file serves all pages. */
+(function () {
+  'use strict';
+
+  const $ = (sel, root) => (root || document).querySelector(sel);
+  const $$ = (sel, root) => Array.from((root || document).querySelectorAll(sel));
+  const money = n => '£' + n.toFixed(2);
+  const esc = s => String(s).replace(/[&<>"']/g, c =>
+    ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
+
+  const MONTHS = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+  const PAGE = document.body.dataset.page || '';
+
+  const NAV = [
+    { key: 'tour', href: 'tour.html', label: 'Tour' },
+    { key: 'merch', href: 'merch.html', label: 'Merch' },
+    { key: 'music', href: 'music.html', label: 'Music' },
+    { key: 'band', href: 'band.html', label: 'Band' }
+  ];
+
+  /* ── Shared chrome ──────────────────────────────────────── */
+
+  function chromeHTML() {
+    const links = NAV.map(n =>
+      `<a href="${n.href}"${n.key === PAGE ? ' class="is-current" aria-current="page"' : ''}>${n.label}</a>`
+    ).join('');
+
+    const shout = `
+      <b>★</b> New album <em>PORKPIE PARANOIA</em> out now
+      <b>★</b> UK &amp; EU tour on sale Friday 10am
+      <b>★</b> Free 7" with every vinyl order
+      <b>★</b> Coventry homecoming show — 2 nights, 1 left`;
+
+    return `
+      <div class="ticker" aria-label="Announcements">
+        <div class="ticker__track"><span class="ticker__set">${shout}${shout}</span></div>
+      </div>
+      <header class="nav">
+        <div class="nav__inner">
+          <a class="brand" href="index.html" aria-label="HALF BAD home">
+            <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA2NCA2NCIgcm9sZT0iaW1nIiBhcmlhLWxhYmVsPSJIYWxmIEJhZCBsb2dvIj4KICA8ZGVmcz4KICAgIDxwYXR0ZXJuIGlkPSJjaGsiIHdpZHRoPSIxNiIgaGVpZ2h0PSIxNiIgcGF0dGVyblVuaXRzPSJ1c2VyU3BhY2VPblVzZSI+CiAgICAgIDxyZWN0IHdpZHRoPSIxNiIgaGVpZ2h0PSIxNiIgZmlsbD0iI2Y0ZjFlOCIvPgogICAgICA8cmVjdCB3aWR0aD0iOCIgaGVpZ2h0PSI4IiBmaWxsPSIjMGUwZTBlIi8+CiAgICAgIDxyZWN0IHg9IjgiIHk9IjgiIHdpZHRoPSI4IiBoZWlnaHQ9IjgiIGZpbGw9IiMwZTBlMGUiLz4KICAgIDwvcGF0dGVybj4KICAgIDxjbGlwUGF0aCBpZD0icm91bmRlbCI+PGNpcmNsZSBjeD0iMzIiIGN5PSIzMiIgcj0iMzAiLz48L2NsaXBQYXRoPgogIDwvZGVmcz4KICA8Y2lyY2xlIGN4PSIzMiIgY3k9IjMyIiByPSIzMSIgZmlsbD0iIzBlMGUwZSIvPgogIDxnIGNsaXAtcGF0aD0idXJsKCNyb3VuZGVsKSI+CiAgICA8cmVjdCB3aWR0aD0iNjQiIGhlaWdodD0iNjQiIGZpbGw9InVybCgjY2hrKSIvPgogICAgPHJlY3QgeT0iMjQiIHdpZHRoPSI2NCIgaGVpZ2h0PSIxNiIgZmlsbD0iI2M4MzUyYiIvPgogIDwvZz4KICA8Y2lyY2xlIGN4PSIzMiIgY3k9IjMyIiByPSIzMCIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjMGUwZTBlIiBzdHJva2Utd2lkdGg9IjQiLz4KICA8IS0tIHBvcmtwaWUgaGF0IC0tPgogIDxnIGZpbGw9IiMwZTBlMGUiPgogICAgPHJlY3QgeD0iMjAiIHk9IjIyIiB3aWR0aD0iMjQiIGhlaWdodD0iMTEiIHJ4PSIyIi8+CiAgICA8cmVjdCB4PSIyMCIgeT0iMjIiIHdpZHRoPSIyNCIgaGVpZ2h0PSI0IiBmaWxsPSIjZmZjNjI5Ii8+CiAgICA8ZWxsaXBzZSBjeD0iMzIiIGN5PSIzNCIgcng9IjE5IiByeT0iNC41Ii8+CiAgPC9nPgo8L3N2Zz4K" alt="" width="42" height="42">
+            <span class="brand__type">HALF<span class="brand__slash">/</span>BAD</span>
+          </a>
+          <nav class="nav__links" id="navLinks" aria-label="Primary">
+            ${links}
+            <a href="list.html" class="nav__cta${PAGE === 'list' ? ' is-current' : ''}">Mailing List</a>
+          </nav>
+          <div class="nav__tools">
+            <button class="cart" id="cartBtn" aria-label="Open cart" aria-expanded="false" aria-controls="cartPanel">
+              <span class="cart__icon" aria-hidden="true">▣</span>
+              <span class="cart__label">Cart</span>
+              <span class="cart__count" id="cartCount">0</span>
+            </button>
+            <button class="burger" id="burger" aria-label="Menu" aria-expanded="false" aria-controls="navLinks">
+              <span></span><span></span><span></span>
+            </button>
+          </div>
+        </div>
+        <div class="checkerstrip" aria-hidden="true"></div>
+      </header>`;
+  }
+
+  function footerHTML() {
+    return `
+      <div class="checkerstrip" aria-hidden="true"></div>
+      <div class="wrap foot__inner">
+        <div class="foot__brand">
+          <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA2NCA2NCIgcm9sZT0iaW1nIiBhcmlhLWxhYmVsPSJIYWxmIEJhZCBsb2dvIj4KICA8ZGVmcz4KICAgIDxwYXR0ZXJuIGlkPSJjaGsiIHdpZHRoPSIxNiIgaGVpZ2h0PSIxNiIgcGF0dGVyblVuaXRzPSJ1c2VyU3BhY2VPblVzZSI+CiAgICAgIDxyZWN0IHdpZHRoPSIxNiIgaGVpZ2h0PSIxNiIgZmlsbD0iI2Y0ZjFlOCIvPgogICAgICA8cmVjdCB3aWR0aD0iOCIgaGVpZ2h0PSI4IiBmaWxsPSIjMGUwZTBlIi8+CiAgICAgIDxyZWN0IHg9IjgiIHk9IjgiIHdpZHRoPSI4IiBoZWlnaHQ9IjgiIGZpbGw9IiMwZTBlMGUiLz4KICAgIDwvcGF0dGVybj4KICAgIDxjbGlwUGF0aCBpZD0icm91bmRlbCI+PGNpcmNsZSBjeD0iMzIiIGN5PSIzMiIgcj0iMzAiLz48L2NsaXBQYXRoPgogIDwvZGVmcz4KICA8Y2lyY2xlIGN4PSIzMiIgY3k9IjMyIiByPSIzMSIgZmlsbD0iIzBlMGUwZSIvPgogIDxnIGNsaXAtcGF0aD0idXJsKCNyb3VuZGVsKSI+CiAgICA8cmVjdCB3aWR0aD0iNjQiIGhlaWdodD0iNjQiIGZpbGw9InVybCgjY2hrKSIvPgogICAgPHJlY3QgeT0iMjQiIHdpZHRoPSI2NCIgaGVpZ2h0PSIxNiIgZmlsbD0iI2M4MzUyYiIvPgogIDwvZz4KICA8Y2lyY2xlIGN4PSIzMiIgY3k9IjMyIiByPSIzMCIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjMGUwZTBlIiBzdHJva2Utd2lkdGg9IjQiLz4KICA8IS0tIHBvcmtwaWUgaGF0IC0tPgogIDxnIGZpbGw9IiMwZTBlMGUiPgogICAgPHJlY3QgeD0iMjAiIHk9IjIyIiB3aWR0aD0iMjQiIGhlaWdodD0iMTEiIHJ4PSIyIi8+CiAgICA8cmVjdCB4PSIyMCIgeT0iMjIiIHdpZHRoPSIyNCIgaGVpZ2h0PSI0IiBmaWxsPSIjZmZjNjI5Ii8+CiAgICA8ZWxsaXBzZSBjeD0iMzIiIGN5PSIzNCIgcng9IjE5IiByeT0iNC41Ii8+CiAgPC9nPgo8L3N2Zz4K" alt="" width="52" height="52">
+          <p>HALF BAD<br><small>Coventry, England</small></p>
+        </div>
+        <nav class="foot__col" aria-label="Site">
+          <h3>Site</h3>
+          ${NAV.map(n => `<a href="${n.href}">${n.label}</a>`).join('')}
+          <a href="list.html">Mailing list</a>
+        </nav>
+        <nav class="foot__col" aria-label="Elsewhere">
+          <h3>Elsewhere</h3>
+          <a href="#">Bandcamp</a><a href="#">Spotify</a><a href="#">Instagram</a><a href="#">YouTube</a>
+        </nav>
+        <div class="foot__col">
+          <h3>Business</h3>
+          <a href="mailto:booking@halfbad.example">Booking</a>
+          <a href="mailto:press@halfbad.example">Press &amp; photos</a>
+          <a href="mailto:shop@halfbad.example">Order help</a>
+        </div>
+      </div>
+      <p class="foot__legal">© <span id="year">2026</span> HALF BAD. All dates subject to the van. Site built with two colours.</p>`;
+  }
+
+  function cartHTML() {
+    return `
+      <div class="cartpanel" id="cartPanel" hidden aria-label="Shopping cart">
+        <div class="cartpanel__head">
+          <h2>Your Cart</h2>
+          <button class="cartpanel__close" id="cartClose" aria-label="Close cart">✕</button>
+        </div>
+        <ul class="cartpanel__list" id="cartList"></ul>
+        <div class="cartpanel__foot">
+          <p class="cartpanel__total"><span>Subtotal</span><b id="cartTotal">£0.00</b></p>
+          <button class="btn btn--primary btn--wide" id="checkout">Checkout</button>
+          <p class="cartpanel__note">Demo store — nothing is charged.</p>
+        </div>
+      </div>
+      <div class="scrim" id="scrim" hidden></div>`;
+  }
+
+  function renderChrome() {
+    $('#siteChrome').innerHTML = chromeHTML();
+    $('#siteFooter').innerHTML = footerHTML();
+    document.body.insertAdjacentHTML('beforeend', cartHTML());
+    $('#year').textContent = new Date().getFullYear();
+
+    const links = $('#navLinks');
+    $('#burger').addEventListener('click', function () {
+      this.setAttribute('aria-expanded', String(links.classList.toggle('is-open')));
+    });
+    links.addEventListener('click', e => {
+      if (e.target.tagName === 'A') {
+        links.classList.remove('is-open');
+        $('#burger').setAttribute('aria-expanded', 'false');
+      }
+    });
+  }
+
+  /* ── Tour ───────────────────────────────────────────────── */
+
+  const today = new Date(); today.setHours(0, 0, 0, 0);
+
+  function dateRow(gig, level) {
+    const H = 'h' + (level || 3);
+    // ISO parts parsed by hand so a row never shifts by timezone.
+    const [y, m, d] = gig.date.split('-').map(Number);
+    const past = new Date(y, m - 1, d) < today;
+
+    const status = gig.status === 'soldout'
+      ? '<span class="tag tag--sold">Sold Out</span>'
+      : gig.status === 'low'
+        ? '<span class="tag tag--low">Low Tickets</span>'
+        : '';
+
+    // A sold-out row already carries the tag, so the button offers the useful thing.
+    const action = gig.status === 'soldout'
+      ? '<a class="btn btn--small btn--ghost" href="list.html">Waiting List</a>'
+      : '<a class="btn btn--small btn--primary" href="list.html">Tickets</a>';
+
+    const li = document.createElement('li');
+    li.className = 'datepin' + (past ? ' is-past' : '');
+    li.dataset.region = gig.region;
+    li.innerHTML = `
+      <div class="datepin__when">
+        <span class="d">${String(d).padStart(2, '0')}</span>
+        <span class="m">${MONTHS[m - 1]} ${y}</span>
+      </div>
+      <div class="datepin__where">
+        <${H} class="datepin__city">${esc(gig.city)} <span class="country">${esc(gig.country)}</span></${H}>
+        <p>${esc(gig.venue)}${gig.note ? ' · ' + esc(gig.note) : ''}</p>
+      </div>
+      <div class="datepin__act">${status}${action}</div>`;
+    return li;
+  }
+
+  function initTour() {
+    const datesEl = $('#dates');
+    if (!datesEl) return;
+    const countEl = $('#tourCount');
+    const emptyEl = $('#tourEmpty');
+
+    function render(region) {
+      const list = region === 'all' ? TOUR : TOUR.filter(g => g.region === region);
+      datesEl.replaceChildren(...list.map(g => dateRow(g, 2)));
+      countEl.textContent = list.length;
+      emptyEl.hidden = list.length > 0;
+    }
+
+    $$('.filters--tour .chip').forEach(chip => {
+      chip.addEventListener('click', () => {
+        $$('.filters--tour .chip').forEach(c => c.classList.remove('is-on'));
+        chip.classList.add('is-on');
+        render(chip.dataset.region);
+      });
+    });
+    render('all');
+  }
+
+  /* ── Merch ──────────────────────────────────────────────── */
+
+  function productCard(p, level) {
+    const H = 'h' + (level || 3);
+    const el = document.createElement('article');
+    el.className = 'card';
+    el.dataset.cat = p.cat;
+
+    const sizeSelect = p.sizes.length
+      ? `<label class="visually-hidden" for="size-${p.id}">Size for ${esc(p.name)}</label>
+         <select class="card__size" id="size-${p.id}">
+           ${p.sizes.map(s => `<option>${esc(s)}</option>`).join('')}
+         </select>`
+      : '<span class="card__size" aria-hidden="true">One size</span>';
+
+    el.innerHTML = `
+      <div class="card__media">
+        <img src="${p.img}" alt="${esc(p.name)}" loading="lazy" width="400" height="400">
+        ${p.badge ? `<span class="card__badge">${esc(p.badge)}</span>` : ''}
+        ${p.sold ? '<span class="card__sold">Sold Out</span>' : ''}
+      </div>
+      <div class="card__body">
+        <${H} class="card__name">${esc(p.name)}</${H}>
+        <p class="card__blurb">${esc(p.blurb)}</p>
+        <div class="card__row">
+          <span class="card__price">${money(p.price)}</span>
+          ${sizeSelect}
+        </div>
+        ${p.sold
+          ? '<button class="btn btn--wide" disabled>Sold Out</button>'
+          : `<button class="btn btn--primary btn--wide" data-add="${p.id}">Add to Cart</button>`}
+      </div>`;
+    return el;
+  }
+
+  function initMerch() {
+    const gridEl = $('#merchGrid');
+    if (!gridEl) return;
+
+    function render(cat) {
+      const list = cat === 'all' ? MERCH : MERCH.filter(p => p.cat === cat);
+      gridEl.replaceChildren(...list.map(p => productCard(p, 2)));
+    }
+
+    $$('.filters--merch .chip').forEach(chip => {
+      chip.addEventListener('click', () => {
+        $$('.filters--merch .chip').forEach(c => c.classList.remove('is-on'));
+        chip.classList.add('is-on');
+        render(chip.dataset.cat);
+      });
+    });
+    render('all');
+  }
+
+  /* ── Discography ────────────────────────────────────────── */
+
+  function releaseCard(rel, level) {
+    const H = 'h' + (level || 3);
+    const art = document.createElement('article');
+    art.className = 'rel';
+    art.style.setProperty('--accent', rel.accent);
+    art.innerHTML = `
+      <div class="rel__cover"><img src="${rel.cover}" alt="${esc(rel.title)} cover artwork" loading="lazy" width="600" height="600"></div>
+      <div class="rel__info">
+        <p class="rel__meta">${rel.year} · ${esc(rel.kind)} · ${rel.tracks.length} tracks</p>
+        <${H} class="rel__title">${esc(rel.title)}</${H}>
+        <p class="rel__blurb">${esc(rel.blurb)}</p>
+        <ul class="rel__formats">${rel.formats.map(f => `<li>${esc(f)}</li>`).join('')}</ul>
+        <div class="rel__links">
+          <a class="btn btn--primary btn--small" href="merch.html">Buy</a>
+          <a class="btn btn--ghost btn--small" href="#">Bandcamp</a>
+          <a class="btn btn--ghost btn--small" href="#">Stream</a>
+        </div>
+        <details class="tracklist">
+          <summary>Tracklist</summary>
+          <ol>${rel.tracks.map(t => `<li>${esc(t)}</li>`).join('')}</ol>
+        </details>
+      </div>`;
+    return art;
+  }
+
+  function initDiscog() {
+    const el = $('#discog');
+    if (!el) return;
+    el.replaceChildren(...DISCOG.map(r => releaseCard(r, 2)));
+  }
+
+  /* ── Home teasers ───────────────────────────────────────── */
+
+  function initHome() {
+    const nextEl = $('#nextDates');
+    if (!nextEl) return;
+
+    nextEl.replaceChildren(...TOUR.slice(0, 3).map(g => dateRow(g, 3)));
+    $('#statReleases').textContent = String(DISCOG.length).padStart(2, '0');
+    $('#statShows').textContent = String(TOUR.length).padStart(2, '0');
+
+    const latest = DISCOG[0];
+    const feat = $('#latestRelease');
+    feat.style.setProperty('--accent', latest.accent);
+    feat.innerHTML = `
+      <div class="rel__cover"><img src="${latest.cover}" alt="${esc(latest.title)} cover artwork" width="600" height="600"></div>
+      <div class="rel__info">
+        <p class="rel__meta">${latest.year} · ${esc(latest.kind)} · ${latest.tracks.length} tracks</p>
+        <h3 class="rel__title">${esc(latest.title)}</h3>
+        <p class="rel__blurb">${esc(latest.blurb)}</p>
+        <div class="rel__links">
+          <a class="btn btn--primary btn--small" href="merch.html">Buy the Record</a>
+          <a class="btn btn--ghost btn--small" href="music.html">All Releases</a>
+        </div>
+      </div>`;
+
+    const picks = MERCH.filter(p => !p.sold).slice(0, 3);
+    $('#merchPicks').replaceChildren(...picks.map(p => productCard(p, 3)));
+  }
+
+  /* ── Cart ───────────────────────────────────────────────── */
+
+  const KEY = 'halfbad.cart.v1';
+  let cart = [];
+  try { cart = JSON.parse(localStorage.getItem(KEY)) || []; } catch (_) { cart = []; }
+
+  function saveCart() {
+    try { localStorage.setItem(KEY, JSON.stringify(cart)); } catch (_) { /* private mode */ }
+  }
+
+  function addToCart(product, size) {
+    const line = cart.find(l => l.id === product.id && l.size === size);
+    if (line) line.qty += 1;
+    else cart.push({ id: product.id, name: product.name, price: product.price, size: size, qty: 1 });
+    saveCart();
+    drawCart();
+  }
+
+  function drawCart() {
+    const list = $('#cartList');
+    $('#cartCount').textContent = cart.reduce((n, l) => n + l.qty, 0);
+    $('#cartTotal').textContent = money(cart.reduce((n, l) => n + l.qty * l.price, 0));
+
+    if (!cart.length) {
+      list.innerHTML = '<li class="cartpanel__empty">Nothing in here yet.<br>The vinyl comes with a free 7".</li>';
+      return;
+    }
+    list.innerHTML = cart.map((l, i) => `
+      <li class="cartline">
+        <div>
+          <h3>${esc(l.name)}</h3>
+          <p>${l.size ? esc(l.size) + ' · ' : ''}Qty ${l.qty}</p>
+          <button class="cartline__rm" data-rm="${i}">Remove</button>
+        </div>
+        <span class="cartline__price">${money(l.price * l.qty)}</span>
+      </li>`).join('');
+  }
+
+  function openCart(open) {
+    $('#cartPanel').hidden = !open;
+    $('#scrim').hidden = !open;
+    $('#cartBtn').setAttribute('aria-expanded', String(open));
+    if (open) $('#cartClose').focus();
+  }
+
+  function initCart() {
+    $('#cartBtn').addEventListener('click', () => openCart($('#cartPanel').hidden));
+    $('#cartClose').addEventListener('click', () => openCart(false));
+    $('#scrim').addEventListener('click', () => openCart(false));
+    document.addEventListener('keydown', e => { if (e.key === 'Escape') openCart(false); });
+
+    $('#cartList').addEventListener('click', e => {
+      const btn = e.target.closest('[data-rm]');
+      if (!btn) return;
+      cart.splice(Number(btn.dataset.rm), 1);
+      saveCart();
+      drawCart();
+    });
+
+    $('#checkout').addEventListener('click', () => {
+      if (!cart.length) return;
+      alert('Demo store — no payment is taken.\n\nOn the real thing this hands off to the shop.\nCome say hello at the merch desk instead.');
+    });
+
+    // One delegated listener covers every grid on the page.
+    document.addEventListener('click', e => {
+      const btn = e.target.closest('[data-add]');
+      if (!btn) return;
+      const product = MERCH.find(p => p.id === btn.dataset.add);
+      if (!product) return;
+      const size = $('#size-' + product.id);
+      addToCart(product, size && size.tagName === 'SELECT' ? size.value : '');
+      btn.textContent = 'Added ✓';
+      setTimeout(() => { btn.textContent = 'Add to Cart'; }, 1200);
+    });
+
+    drawCart();
+  }
+
+  /* ── Mailing list ───────────────────────────────────────── */
+
+  function initForm() {
+    const form = $('#signup');
+    if (!form) return;
+    const note = $('#formNote');
+    form.addEventListener('submit', e => {
+      e.preventDefault();
+      const email = $('#email');
+      const city = $('#city').value.trim();
+      if (!email.checkValidity()) {
+        note.textContent = 'That email does not look right. Try again.';
+        note.classList.add('is-bad');
+        email.focus();
+        return;
+      }
+      note.classList.remove('is-bad');
+      note.textContent = city
+        ? `You're on the list. ${city} is going on the routing map.`
+        : "You're on the list. Check your inbox for the presale code.";
+      form.reset();
+    });
+  }
+
+  renderChrome();
+  initCart();
+  initHome();
+  initTour();
+  initMerch();
+  initDiscog();
+  initForm();
+})();
+
+</script>
+</body>
+</html>

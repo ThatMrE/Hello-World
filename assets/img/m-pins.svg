@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" role="img" aria-label="Set of three enamel pins: porkpie hat, trombone and checkerboard">
+  <defs>
+    <pattern id="pin-chk" width="20" height="20" patternUnits="userSpaceOnUse">
+      <rect width="20" height="20" fill="#f4f1e8"/>
+      <rect width="10" height="10" fill="#0e0e0e"/>
+      <rect x="10" y="10" width="10" height="10" fill="#0e0e0e"/>
+    </pattern>
+    <clipPath id="pinC"><circle cx="272" cy="268" r="66"/></clipPath>
+  </defs>
+  <rect width="400" height="400" fill="#c8352b"/>
+  <rect x="26" y="26" width="348" height="348" fill="none" stroke="#0e0e0e" stroke-width="6" stroke-dasharray="14 10"/>
+
+  <!-- pin 1: porkpie -->
+  <circle cx="132" cy="136" r="66" fill="#ffc629" stroke="#0e0e0e" stroke-width="7"/>
+  <g fill="#0e0e0e">
+    <rect x="106" y="112" width="52" height="24" rx="4"/>
+    <ellipse cx="132" cy="138" rx="42" ry="9"/>
+  </g>
+
+  <!-- pin 2: trombone -->
+  <circle cx="272" cy="128" r="66" fill="#f4f1e8" stroke="#0e0e0e" stroke-width="7"/>
+  <g stroke="#0e0e0e" stroke-width="9" fill="none" stroke-linecap="round">
+    <path d="M238 116h56"/><path d="M252 146h44"/>
+  </g>
+  <path d="M292 100v56l26 16V84z" fill="#c8352b" stroke="#0e0e0e" stroke-width="6"/>
+  <rect x="246" y="112" width="11" height="38" rx="5" fill="#0e0e0e"/>
+
+  <!-- pin 3: checker -->
+  <circle cx="272" cy="268" r="66" fill="#f4f1e8" stroke="#0e0e0e" stroke-width="7"/>
+  <g clip-path="url(#pinC)"><rect x="206" y="202" width="132" height="132" fill="url(#pin-chk)"/></g>
+  <circle cx="272" cy="268" r="66" fill="none" stroke="#0e0e0e" stroke-width="7"/>
+
+  <text x="128" y="286" text-anchor="middle" font-family="Haettenschweiler,'Arial Narrow Bold',Impact,sans-serif" font-size="40" fill="#0e0e0e" letter-spacing="2" textLength="70" lengthAdjust="spacingAndGlyphs">PIN</text>
+  <text x="128" y="322" text-anchor="middle" font-family="Haettenschweiler,'Arial Narrow Bold',Impact,sans-serif" font-size="40" fill="#0e0e0e" letter-spacing="2" textLength="70" lengthAdjust="spacingAndGlyphs">SET</text>
+  <text x="128" y="348" text-anchor="middle" font-family="ui-monospace,monospace" font-size="15" fill="#0e0e0e" letter-spacing="6" textLength="130" lengthAdjust="spacingAndGlyphs">THREE OFF</text>
+</svg>

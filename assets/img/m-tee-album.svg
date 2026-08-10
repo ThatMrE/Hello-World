@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" role="img" aria-label="Bone-coloured t-shirt printed with the Porkpie Paranoia album cover">
+  <defs>
+    <path id="tee2" d="M148 74 L112 92 L74 158 L118 184 L132 154 L132 348 Q200 360 268 348 L268 154 L282 184 L326 158 L288 92 L252 74 Q200 108 148 74 Z"/>
+  </defs>
+  <rect width="400" height="400" fill="#0e0e0e"/>
+  <use href="#tee2" fill="#f4f1e8"/>
+
+  <!-- album print -->
+  <g>
+    <rect x="146" y="164" width="108" height="108" fill="#ffc629" stroke="#0e0e0e" stroke-width="4"/>
+    <ellipse cx="200" cy="218" rx="34" ry="22" fill="#f4f1e8" stroke="#0e0e0e" stroke-width="4"/>
+    <circle cx="200" cy="218" r="13" fill="#c8352b" stroke="#0e0e0e" stroke-width="3"/>
+    <rect x="176" y="180" width="48" height="18" rx="3" fill="#0e0e0e"/>
+    <ellipse cx="200" cy="199" rx="54" ry="7" fill="#0e0e0e"/>
+    <rect x="146" y="252" width="108" height="20" fill="#0e0e0e"/>
+  </g>
+  <text x="200" y="300" text-anchor="middle" font-family="Haettenschweiler,'Arial Narrow Bold',Impact,sans-serif" font-size="22" fill="#0e0e0e" letter-spacing="2" textLength="104" lengthAdjust="spacingAndGlyphs">PORKPIE PARANOIA</text>
+  <use href="#tee2" fill="none" stroke="#0e0e0e" stroke-width="5"/>
+</svg>

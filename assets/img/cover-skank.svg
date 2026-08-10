@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 600" role="img" aria-label="Skank Etiquette cover: dance-step footprint diagram">
+  <defs>
+    <pattern id="s-chk" width="60" height="60" patternUnits="userSpaceOnUse">
+      <rect width="60" height="60" fill="#f4f1e8"/>
+      <rect width="30" height="30" fill="#0e0e0e"/>
+      <rect x="30" y="30" width="30" height="30" fill="#0e0e0e"/>
+    </pattern>
+    <g id="foot">
+      <ellipse cx="0" cy="0" rx="26" ry="40"/>
+      <ellipse cx="0" cy="46" rx="17" ry="15"/>
+    </g>
+  </defs>
+
+  <rect width="600" height="600" fill="#f4f1e8"/>
+  <rect y="552" width="600" height="48" fill="url(#s-chk)"/>
+  <rect x="34" y="34" width="532" height="490" fill="none" stroke="#0e0e0e" stroke-width="8"/>
+
+  <!-- step diagram -->
+  <g fill="#0e0e0e">
+    <use href="#foot" transform="translate(150 250) rotate(-18)"/>
+    <use href="#foot" transform="translate(258 210) rotate(14)"/>
+    <use href="#foot" transform="translate(352 300) rotate(-24)"/>
+  </g>
+  <g fill="#c8352b">
+    <use href="#foot" transform="translate(452 244) rotate(22)"/>
+  </g>
+  <g stroke="#ffc629" stroke-width="9" fill="none" stroke-dasharray="16 14" stroke-linecap="round">
+    <path d="M180 274 L236 232"/>
+    <path d="M286 240 L332 296"/>
+    <path d="M382 296 L432 262"/>
+  </g>
+  <g font-family="ui-monospace,monospace" font-size="20" fill="#0e0e0e">
+    <text x="132" y="352">1</text><text x="240" y="316">2</text><text x="334" y="400">3</text><text x="436" y="348">4</text>
+  </g>
+
+  <text x="300" y="122" text-anchor="middle" font-family="Haettenschweiler,'Arial Narrow Bold',Impact,sans-serif" font-size="96" fill="#0e0e0e" letter-spacing="2" textLength="300" lengthAdjust="spacingAndGlyphs">SKANK</text>
+  <text x="300" y="176" text-anchor="middle" font-family="Haettenschweiler,'Arial Narrow Bold',Impact,sans-serif" font-size="52" fill="#c8352b" letter-spacing="10" textLength="380" lengthAdjust="spacingAndGlyphs">ETIQUETTE</text>
+  <text x="300" y="466" text-anchor="middle" font-family="ui-monospace,monospace" font-size="19" fill="#0e0e0e" letter-spacing="6" textLength="450" lengthAdjust="spacingAndGlyphs">FIG. 1 — THE CORRECT MOVEMENT</text>
+  <text x="300" y="500" text-anchor="middle" font-family="ui-monospace,monospace" font-size="19" fill="#0e0e0e" letter-spacing="10">HALF BAD · 2019</text>
+</svg>

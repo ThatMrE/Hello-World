@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" role="img" aria-label="Black wool porkpie hat with a red grosgrain band">
+  <defs>
+    <pattern id="h2-chk" width="24" height="24" patternUnits="userSpaceOnUse">
+      <rect width="24" height="24" fill="#f4f1e8"/>
+      <rect width="12" height="12" fill="#0e0e0e"/>
+      <rect x="12" y="12" width="12" height="12" fill="#0e0e0e"/>
+    </pattern>
+  </defs>
+  <rect width="400" height="400" fill="#1e7a5e"/>
+  <rect y="300" width="400" height="100" fill="url(#h2-chk)" opacity=".35"/>
+
+  <!-- brim -->
+  <ellipse cx="200" cy="262" rx="156" ry="44" fill="#0e0e0e"/>
+  <ellipse cx="200" cy="252" rx="156" ry="44" fill="#191919" stroke="#0e0e0e" stroke-width="6"/>
+  <!-- crown -->
+  <path d="M104 252 V166 q0-30 96-30 t96 30 v86" fill="#141414" stroke="#0e0e0e" stroke-width="6"/>
+  <ellipse cx="200" cy="166" rx="96" ry="26" fill="#1c1c1c" stroke="#0e0e0e" stroke-width="6"/>
+  <!-- pinched crease -->
+  <ellipse cx="200" cy="166" rx="70" ry="16" fill="#0e0e0e" opacity=".8"/>
+  <!-- band -->
+  <path d="M104 224 h192 v26 H104z" fill="#c8352b" stroke="#0e0e0e" stroke-width="5"/>
+  <rect x="252" y="212" width="26" height="50" fill="#c8352b" stroke="#0e0e0e" stroke-width="5"/>
+  <text x="200" y="356" text-anchor="middle" font-family="Haettenschweiler,'Arial Narrow Bold',Impact,sans-serif" font-size="34" fill="#f4f1e8" letter-spacing="6" textLength="200" lengthAdjust="spacingAndGlyphs">PORKPIE</text>
+</svg>

@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" role="img" aria-label="Navy chore jacket with embroidered chest mark">
+  <defs>
+    <path id="jkt" d="M142 66 L104 86 L64 168 L112 196 L128 160 L128 352 Q200 364 272 352 L272 160 L288 196 L336 168 L296 86 L258 66 L200 104 Z"/>
+  </defs>
+  <rect width="400" height="400" fill="#d9d4c6"/>
+  <use href="#jkt" fill="#1f3346"/>
+  <!-- placket + buttons -->
+  <path d="M200 104 V356" stroke="#0e0e0e" stroke-width="4"/>
+  <rect x="186" y="104" width="28" height="252" fill="#22384d" stroke="#0e0e0e" stroke-width="3"/>
+  <g fill="#ffc629">
+    <circle cx="200" cy="150" r="6"/><circle cx="200" cy="204" r="6"/>
+    <circle cx="200" cy="258" r="6"/><circle cx="200" cy="312" r="6"/>
+  </g>
+  <!-- collar -->
+  <path d="M142 66 L200 104 L258 66 L246 96 L200 126 L154 96 Z" fill="#16283a" stroke="#0e0e0e" stroke-width="3"/>
+  <!-- pockets -->
+  <g fill="#22384d" stroke="#0e0e0e" stroke-width="3">
+    <rect x="140" y="264" width="44" height="52" rx="3"/>
+    <rect x="216" y="264" width="44" height="52" rx="3"/>
+  </g>
+  <!-- embroidered mark -->
+  <g transform="translate(238 176)">
+    <circle r="20" fill="#0e0e0e" stroke="#ffc629" stroke-width="3"/>
+    <rect x="-11" y="-6" width="22" height="9" rx="2" fill="#ffc629"/>
+    <ellipse cy="4" rx="17" ry="4" fill="#ffc629"/>
+  </g>
+  <use href="#jkt" fill="none" stroke="#0e0e0e" stroke-width="5"/>
+</svg>

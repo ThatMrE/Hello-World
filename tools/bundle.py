@@ -1,10 +1,9 @@
 #!/usr/bin/env python3
 """Fold each page into a self-contained HTML file under dist/.
 
-The multi-file source stays the source of truth; this exists so the site can be
-handed to a host that wants plain files with no dependencies. CSS and JS are
-inlined and SVGs become data URIs — including the ones named only inside
-data.js. Links between pages stay relative, so dist/ works as a whole.
+The multi-file source stays the source of truth. This script inlines the CSS and
+JS and turns every SVG into a data URI, including the ones that only data.js
+names. Links between pages stay relative, so dist/ works as a whole.
 """
 import base64
 import pathlib

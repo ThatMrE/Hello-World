@@ -1,10 +1,8 @@
 /* HALF BAD — behaviour for every page. No dependencies, no build step.
 
-   Each page is a thin shell: it declares which page it is via <body data-page>
-   and provides empty containers. Everything shared — ticker, nav, footer, cart
-   — is rendered from here so the chrome has one source of truth rather than six
-   copies drifting apart. Section rendering is conditional on its container
-   existing, so one file serves all pages. */
+   This file renders the shared chrome and each page's sections. A section
+   renders only when its container exists, so one file serves all pages.
+   See the README for how a page shell fits together. */
 (function () {
   'use strict';
 

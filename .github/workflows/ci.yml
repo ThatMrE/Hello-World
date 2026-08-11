@@ -1,8 +1,7 @@
 name: CI
 
-# Deployment is handled by the git-linked Netlify project, which builds this
-# repo on every push and opens a preview per pull request. This workflow only
-# guards the generated bundles.
+# The git-linked Netlify project handles deployment. This workflow only guards
+# the generated bundles.
 on:
   push:
     branches: [master]
